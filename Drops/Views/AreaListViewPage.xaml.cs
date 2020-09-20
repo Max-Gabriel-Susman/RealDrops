@@ -23,7 +23,7 @@ namespace Drops.Views
                 new Area(0.0, 0.0, "nutz")
             };
 
-        BindingContext = this;
+            BindingContext = this;
         }
 
         // Properties
@@ -42,7 +42,10 @@ namespace Drops.Views
 
         async void OnAreaButtonClicked(object sender, EventArgs args)
         {
-            
+            await Navigation.PushAsync(new AreaCreationDetailView
+            {
+
+            });
         }
         
     }

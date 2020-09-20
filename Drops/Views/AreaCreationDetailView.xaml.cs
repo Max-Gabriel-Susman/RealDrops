@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Drops.Models;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace Drops.Views
 {
@@ -11,5 +12,7 @@ namespace Drops.Views
         {
             InitializeComponent();
         }
+
+
     }
 }

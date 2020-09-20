@@ -10,15 +10,15 @@ namespace Drops.Models
         // Constructors
         public User() { }
 
-        public User(string username, string password)
+        public User(string username, string password, ObservableCollection<Area> ownedAreas, ObservableCollection<Area> receivedAreas)
         {
             this.Username = username;
 
             this.Password = password;
 
-            this.OwnedAreas = new ObservableCollection<Area>();
+            this.OwnedAreas = ownedAreas;
 
-            this.RecievedAreas = new ObservableCollection<Area>();
+            this.RecievedAreas = receivedAreas;
         }
 
         // Properties
@@ -26,24 +26,18 @@ namespace Drops.Models
 
         public int ID { get; set; }
 
-        public string Username { get; private set; }
+        public string Username { get; set; }
 
         public string Password { get; private set; }
 
-        private ObservableCollection<Area> OwnedAreas = new ObservableCollection<Area>();
+        // public ObservableCollection<Area> OwnedAreas = new ObservableCollection<Area>();
+        public ObservableCollection<Area> OwnedAreas { get; set; }
 
-        private ObservableCollection<Area> RecievedAreas = new ObservableCollection<Area>();
+        public ObservableCollection<Area> RecievedAreas { get; set; }
 
         // Currently populated with mockdata
-        public ObservableCollection<Area> AllAreas = new ObservableCollection<Area>()
-        {
-            //new Area(0.0, 0.0),
-
-            //new Area(0.0, 0.0),
-
-            //new Area(0.0, 0.0)
-        };
-
+        public ObservableCollection<Area> AllAreas { get; set; } // = new ObservableCollection<Area>()
+        
         // Methods
         public void UpdateUsername(string newUsername)
         {

@@ -1,73 +1,55 @@
 ﻿<Properties StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/AreaCreationDetailView.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/LoginPage.xaml.cs">
     <Files>
-      <File FileName="Drops/Views/MapPage.xaml.cs" Line="103" Column="17" />
-      <File FileName="Drops.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Drops/Models/Drop.cs" />
-      <File FileName="Drops/Data/DropDatabase.cs" />
-      <File FileName="Drops/App.xaml.cs" />
-      <File FileName="Drops/Views/DropListViewpage.xaml.cs" />
-      <File FileName="Drops/Models/DropMap.cs" Line="31" Column="46" />
-      <File FileName="Drops/ViewModels/MainPageViewModel.cs" Line="11" Column="27" />
-      <File FileName="Drops/Views/MainPage.xaml.cs" Line="22" Column="2" />
-      <File FileName="Drops/Views/MainPage.xaml" Line="17" Column="95" />
-      <File FileName="Drops/Models/User.cs" Line="58" Column="78" />
-      <File FileName="Drops/Models/Area.cs" Line="13" Column="67" />
-      <File FileName="Drops/Models/DropPin.cs" />
-      <File FileName="Drops/Models/Option.cs" />
-      <File FileName="Drops/Views/MapPage.xaml" Line="43" Column="75" />
-      <File FileName="Drops/Views/DumpsterViewPage.xaml" />
-      <File FileName="Drops/Views/DumpsterViewPage.xaml.cs" />
-      <File FileName="Drops/Views/AreaListViewPage.xaml" Line="6" Column="68" />
-      <File FileName="Drops/Views/AreaListViewPage.xaml.cs" Line="47" Column="1" />
-      <File FileName="Drops/ViewModels/AreaListViewModel.cs" />
+      <File FileName="Drops/Views/AreaListViewPage.xaml" Line="30" Column="69" />
+      <File FileName="Drops/Views/AreaListViewPage.xaml.cs" />
+      <File FileName="Drops/Views/AreaCreationDetailView.xaml" />
+      <File FileName="Drops/Models/Area.cs" />
+      <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" />
+      <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" />
       <File FileName="Drops/Views/PeopleListViewPage.xaml" />
-      <File FileName="Drops/Models/Userbase.cs" Line="12" Column="33" />
-      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="52" Column="38" />
-      <File FileName="Drops/Views/LoginPage.xaml" Line="6" Column="60" />
-      <File FileName="Drops/Views/OptionsDetailViewPage.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Views/OptionsListViewPage.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Views/OptionsListViewPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/AreaCreationDetailView.cs" Line="4" Column="40" />
-      <File FileName="Drops/Views/AreaCreationDetailView.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/MapPage.xaml.cs" />
+      <File FileName="Drops/Models/Userbase.cs" Line="29" Column="107" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="60" Column="1" />
+      <File FileName="Drops/Views/MapPage.xaml" />
+      <File FileName="Drops/Models/User.cs" />
+      <File FileName="Drops/Views/SearchResultsListViewPage.xaml" />
+      <File FileName="Drops/Views/DropDetailViewPage.xaml" />
+      <File FileName="Drops/Views/MainPage.xaml" />
+      <File FileName="Drops/ViewModels/DropListViewModel.cs" />
+      <File FileName="Drops/Views/AreaShareViewPage.xaml" />
+      <File FileName="Drops/Views/AreaShareViewPage.xaml.cs" />
+      <File FileName="Drops.iOS/Main.cs" />
+      <File FileName="Drops/Models/Drop.cs" />
+      <File FileName="Drops/Models/DropMap.cs" />
+      <File FileName="Drops/Views/LoginPage.xaml" />
+      <File FileName="Drops/Views/LostCredentialsPage.xaml" />
+      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Drops" expanded="True">
             <Node name="Drops" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-              <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="AreaCreationDetailView.xaml" expanded="True">
-                  <Node name="AreaCreationDetailView.xaml.cs" selected="True" />
-                </Node>
+                <Node name="AreaCreationDetailView.xaml" expanded="True" />
                 <Node name="AreaListViewPage.xaml" expanded="True" />
-                <Node name="DropListViewpage.xaml" expanded="True" />
-                <Node name="DumpsterViewPage.xaml" expanded="True" />
-                <Node name="LoginPage.xaml" expanded="True" />
-                <Node name="LostCredentialsPage.xaml" expanded="True" />
-                <Node name="MainPage.xaml" expanded="True" />
+                <Node name="AreaShareViewPage.xaml" expanded="True" />
+                <Node name="DropListViewPage.xaml" expanded="True" />
+                <Node name="LoginPage.xaml" expanded="True">
+                  <Node name="LoginPage.xaml.cs" selected="True" />
+                </Node>
                 <Node name="MapPage.xaml" expanded="True" />
-                <Node name="OptionsDetailViewPage.xaml" expanded="True" />
-                <Node name="OptionsListViewPage.xaml" expanded="True" />
                 <Node name="PeopleListViewPage.xaml" expanded="True" />
               </Node>
-              <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Drops.Android" expanded="True" />
             <Node name="Drops.iOS" expanded="True" />
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

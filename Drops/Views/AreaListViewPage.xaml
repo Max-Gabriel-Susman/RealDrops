@@ -34,33 +34,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        <!-- <ListView x:Name="MyList"
-                  SeparatorVisibility="None"
-                  HasUnevenRows="True"
-                  ItemsSource="{Binding Drops}"
-                  Footer="">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                       <ViewCell>
-                              <Grid Margin="10">
-                                  <Grid.ColumnDefinitions>
-                                      <ColumnDefinition Width="Auto"/>
-                                      <ColumnDefinition Width="*"/>
-                                  </Grid.ColumnDefinitions>
-                                  <Label VerticalOptions="CenterAndExpand" Text="{Binding Label}"/>
-                                  what was MyList? 
-                                  <Button Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference MyList}}"
-                                          CommandParameter="{Binding .}"
-                                          Grid.Column="1"
-                                          Padding="30,10"
-                                          Text="Delete"
-                                          HorizontalOptions="EndAndExpand"
-                                          BackgroundColor="Black"
-                                          TextColor="White"/>
-                              </Grid>
-                       </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView> -->
     </ContentPage.Content>
 </ContentPage>

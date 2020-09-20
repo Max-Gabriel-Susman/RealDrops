@@ -25,10 +25,4 @@
   <ItemGroup>
     <Compile Remove="Models\DropListViewPage.xaml.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\DropListViewpage.xaml.cs">
-      <DependentUpon>DropListViewpage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
 </Project>

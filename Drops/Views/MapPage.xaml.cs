@@ -84,7 +84,7 @@ namespace Drops.Views
 
             await Navigation.PushAsync(new PeopleListViewPage
             {
-
+                
             });
         }
 
@@ -96,9 +96,7 @@ namespace Drops.Views
 
             await Navigation.PushAsync(new AreaListViewPage
             {
-                ActiveUser = ActiveUser,
-
-                AllAreas = ActiveUser.AllAreas,
+               
 
                 
                 
@@ -123,11 +121,7 @@ namespace Drops.Views
 
             DropMap.Drops.Add(new Drop(pin));
 
-            //foreach(Drop drop in DropMap.Drops)
-            //    Console.WriteLine(drop.Label);
             
-            // Creates a drop that will be used to represent the new pin inside of the database
-            // App.Database.SaveDropAsync(new Drop(pin));
         }
     }
 }

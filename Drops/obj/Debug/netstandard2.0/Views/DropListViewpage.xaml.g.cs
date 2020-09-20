@@ -8,21 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Drops.Views.DropListViewpage.xaml", "Views/DropListViewpage.xaml", typeof(global::Drops.Views.DropListViewpage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Drops.Views.DropListViewPage.xaml", "Views/DropListViewPage.xaml", typeof(global::Drops.Views.MainPage))]
 
 namespace Drops.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/DropListViewpage.xaml")]
-    public partial class DropListViewpage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/DropListViewPage.xaml")]
+    public partial class MainPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ListView dropsListView;
+        private global::Xamarin.Forms.ListView MyList;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(DropListViewpage));
-            dropsListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "dropsListView");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainPage));
+            MyList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "MyList");
         }
     }
 }

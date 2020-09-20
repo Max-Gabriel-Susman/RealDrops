@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Drops.Models;
 using Drops.ViewModels;
 using Xamarin.Forms;
@@ -12,6 +13,15 @@ namespace Drops.Views
         public LoginPage()
         {
             InitializeComponent();
+
+
+
+            Userbase.ActiveUser = null;
+
+            System.Diagnostics.Debug.WriteLine(UsernameEntry);
+            System.Diagnostics.Debug.WriteLine(PasswordEntry);
+            System.Diagnostics.Debug.WriteLine("Login page constructor");
+            
             BindingContext = new LoginPageViewModel();
         }
 
@@ -43,16 +53,24 @@ namespace Drops.Views
         {
 
             // Authenticate Credentials
-            if (Userbase.Authentication(UsernameEntry, PasswordEntry))
+            System.Diagnostics.Debug.WriteLine($" this is the username entry : {UsernameEntry}");
+            System.Diagnostics.Debug.WriteLine($" this is the password entry : {PasswordEntry}");
 
+            //System.Diagnostics.Debug.WriteLine(Userbase.Authentication(UsernameEntry, PasswordEntry));
+
+            if (Userbase.Authentication(UsernameEntry, PasswordEntry))
 
                 // Navigate to the Applications Content
                 await Navigation.PushAsync(new MapPage
                 {
-                    ActiveUser = new User(UsernameEntry, PasswordEntry)
+                    
+
+
                 });
 
+           // else
 
+                
         }
 
         async void OnRegistrationButtonClicked(object sender, EventArgs e)
