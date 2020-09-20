@@ -30,13 +30,16 @@ namespace Drops.Views
 
         async void OnShareTapped(object obj)
         {
-            System.Diagnostics.Debug.WriteLine("OnShareTapped invoked");
+            
+
+            User user = obj as User;
+
+            System.Diagnostics.Debug.WriteLine(user.Username);
 
             await Navigation.PushAsync(new AreaShareViewPage
             {
                 // Passes Active User to the New ContentPage
-               
-
+               Recipient = user
 
             });
 

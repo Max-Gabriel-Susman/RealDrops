@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Drops.Views.AreaShareViewPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Your owned areas"/>
+            <Label Text="Your owned areas"
+                   x:Name="MyList"/>
             <ListView ItemsSource="{Binding OwnedAreas}"
                       SeparatorVisibility="None">
                 <ListView.ItemTemplate>
@@ -14,13 +15,22 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Text="{Binding Name}" />
-                                <CheckBox Grid.Column="1"/>
+                                <!--<CheckBox Grid.Column="1"
+                                          CheckedChanged="OnCheckBoxCheckedChanged" />-->
+                                <Button Command="{Binding Path=BindingContext.ShareCommand, Source={x:Reference MyList}}"
+                                        CommandParameter="{Binding .}"
+                                        HorizontalOptions="EndAndExpand"
+                                        Padding="30,10"
+                                        Text="Share"
+                                        BackgroundColor="Green"
+                                        TextColor="White"
+                                        Grid.Column="1"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Share Selected Areas with User?"/>
+            <Button Text="Share Selected Areas with User?" Clicked="OnShareButtonClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

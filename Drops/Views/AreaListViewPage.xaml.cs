@@ -14,14 +14,7 @@ namespace Drops.Views
         {
             InitializeComponent();
 
-            AllAreas = new ObservableCollection<Area>()
-            {
-                new Area(0.0, 0.0, "deez"),
-
-                new Area(0.0, 0.0, "robot"),
-
-                new Area(0.0, 0.0, "nutz")
-            };
+            AllAreas = Userbase.ActiveUser.AllAreas;
 
             BindingContext = this;
         }

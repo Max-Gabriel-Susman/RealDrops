@@ -45,9 +45,9 @@ namespace Drops.Views
         }
 
         // Properties
-        public User ActiveUser { get; set; }
+        
 
-        // MARK: - Methods
+        // EVENT HANDLERS
         async void OnSearchBarButtonClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SearchResultsListViewPage
@@ -92,7 +92,7 @@ namespace Drops.Views
 
         async void OnAreasButtonClicked(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(ActiveUser.Username);
+            
 
             await Navigation.PushAsync(new AreaListViewPage
             {

@@ -7,7 +7,7 @@ namespace Drops.Models
 {
     public class User
     {
-        // Constructors
+        // CONSTRUCT
         public User() { }
 
         public User(string username, string password, ObservableCollection<Area> ownedAreas, ObservableCollection<Area> receivedAreas)
@@ -19,6 +19,17 @@ namespace Drops.Models
             this.OwnedAreas = ownedAreas;
 
             this.RecievedAreas = receivedAreas;
+
+            this.AllAreas = new ObservableCollection<Area>();
+
+            foreach (Area area in this.OwnedAreas)
+
+                this.AllAreas.Add(area);
+
+            foreach (Area area in this.RecievedAreas)
+
+                this.AllAreas.Add(area);
+
         }
 
         // Properties
@@ -30,7 +41,7 @@ namespace Drops.Models
 
         public string Password { get; private set; }
 
-        // public ObservableCollection<Area> OwnedAreas = new ObservableCollection<Area>();
+        // public ObservableCollection<Area> OwnedAreas = new ObservableCollection<Area>();        
         public ObservableCollection<Area> OwnedAreas { get; set; }
 
         public ObservableCollection<Area> RecievedAreas { get; set; }
