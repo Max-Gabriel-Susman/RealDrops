@@ -7,7 +7,7 @@ namespace Drops.Models
 {
     public class User
     {
-        // CONSTRUCT
+        // CONSTRUCTORS
         public User() { }
 
         public User(string username, string password, ObservableCollection<Area> ownedAreas, ObservableCollection<Area> receivedAreas)
@@ -32,7 +32,7 @@ namespace Drops.Models
 
         }
 
-        // Properties
+        // PROPERTIES
         [PrimaryKey, AutoIncrement]
 
         public int ID { get; set; }
@@ -40,6 +40,8 @@ namespace Drops.Models
         public string Username { get; set; }
 
         public string Password { get; private set; }
+
+        public Area ActiveArea { get; set; }
 
         // public ObservableCollection<Area> OwnedAreas = new ObservableCollection<Area>();        
         public ObservableCollection<Area> OwnedAreas { get; set; }
@@ -62,7 +64,7 @@ namespace Drops.Models
 
         public void CreateArea(double latitude, double longitude, string name)
         {
-            Area area = new Area(latitude, longitude, name);
+            Area area = new Area(latitude, longitude, name, this.Username);
 
             OwnedAreas.Add(area);
 

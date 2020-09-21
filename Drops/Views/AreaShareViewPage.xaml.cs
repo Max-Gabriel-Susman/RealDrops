@@ -38,6 +38,8 @@ namespace Drops.Views
             {
                 Console.WriteLine(user.Username);
             }
+
+            Navigation.PopAsync();
         }
 
         // Adds Area to the target Users ReceivedAreas collection

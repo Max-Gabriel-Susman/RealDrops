@@ -27,7 +27,7 @@
                                               Text="Delete"
                                               HorizontalOptions="EndAndExpand"
                                               BackgroundColor="Black"
-                                              TextColor="White"/>-->
+                                              TextColor="White"/>--> 
                                   </Grid>
                            </ViewCell>
                         </DataTemplate>

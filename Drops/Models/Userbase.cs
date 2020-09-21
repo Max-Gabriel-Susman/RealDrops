@@ -11,11 +11,11 @@ namespace Drops.Models
         {
             // new User("Admin", "Adminadmin", new ObservableCollection<Area>(){ new Area(0.0, 0.0, "ligma"), new Area(0.0, 0.0, "nutz"), new Area(0.0, 0.0, "bitch") }, new ObservableCollection<Area>()),
 
-            new User("Admin", "Adminadmin", new ObservableCollection<Area>() {new Area(0.0, 0.0, "a"), new Area(0.0, 0.0, "b") }, new ObservableCollection<Area>()),
+            new User("Admin", "Adminadmin", new ObservableCollection<Area>() {new Area(0.0, 0.0, "a", "Admin"), new Area(0.0, 0.0, "b", "Admin") }, new ObservableCollection<Area>()),
 
-            new User("Two", "Twotwotwo", new ObservableCollection<Area>() {new Area(0.0, 0.0, "c"), new Area(0.0, 0.0, "d") }, new ObservableCollection<Area>()),
+            new User("Two", "Twotwotwo", new ObservableCollection<Area>() {new Area(0.0, 0.0, "c", "Two"), new Area(0.0, 0.0, "d", "Two") }, new ObservableCollection<Area>()),
 
-            new User("Three", "Threethreethree", new ObservableCollection<Area>() {new Area(0.0, 0.0, "e"), new Area(0.0, 0.0, "f") }, new ObservableCollection<Area>())
+            new User("Three", "Threethreethree", new ObservableCollection<Area>() {new Area(0.0, 0.0, "e", "Three"), new Area(0.0, 0.0, "f", "Three") }, new ObservableCollection<Area>())
         };
 
         // Readonly Property that Returns a collection of all users excluding the ActiveUser

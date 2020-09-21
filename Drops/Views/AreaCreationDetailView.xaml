@@ -6,12 +6,18 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Search here:" />
-            <models:DropMap MapType="Hybrid">
-
+            <models:DropMap x:Name="dropMap"
+                            ScaleY="1"
+                            
+                            MapType="Hybrid"
+                            MapClicked="OnMapClicked">
             </models:DropMap>
-            <Entry Placeholder="Enter a name: "/>
-            <Button Text="Create Area" />
+            <Entry Placeholder="Enter a name: "
+                   x:Name="nameEntry"
+                   Text="{Binding AreaNameEntry}"/>
+            <Button Command="{Binding Path=BindingContext.CreateCommand}"
+                    CommandParameter="{Binding .}"
+                    Text="Create Area" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

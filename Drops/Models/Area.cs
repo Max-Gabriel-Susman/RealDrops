@@ -9,8 +9,8 @@ namespace Drops.Models
     
     public class Area
     {
-        // Constructor
-        public Area(double latitude, double longitude, string name)
+        // CONSTRUCTORS
+        public Area(double latitude, double longitude, string name, string owner)
         {
             this.Latitude = latitude;
 
@@ -23,16 +23,18 @@ namespace Drops.Models
             this.ViewHeight = 1.0;
 
             this.Name = name;
+
+            this.Owner = owner;
         }
 
-        // Properties
+        // PROPERTIES
         [PrimaryKey, AutoIncrement]
 
-        private double Latitude { get; }
+        public double Latitude { get; set; }
 
-        private double Longitude { get; }
+        public double Longitude { get; set; }
 
-        private double ViewHeight { get; }
+        public double ViewHeight { get; set; }
 
         // private int ID { get; set; }
 
@@ -43,7 +45,10 @@ namespace Drops.Models
         public DropMap DropMap { get; set; }
 
         public string Name { get; set; }
-        // Methods
+
+        public string Owner { get; set; }
+
+        // METHODS
         private void FocusDropMap()
         {
             DropMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(Latitude, Longitude), Distance.FromMiles(ViewHeight)));

@@ -15,17 +15,30 @@ namespace Drops.Views
 {
     public partial class MapPage : ContentPage
     {
-        // MARK: - Constructors
+        // FIELDS
+        private double DefaultLatitude = 41.7377780;
+
+        private double DefaultLongitude = -111.8308330;
+
+        private double DefaultViewHeight = 1.0;
+
+        // CONSTRUCTORS
         public MapPage()
         {
-
             InitializeComponent();
             // BindingContext = new MainPageViewModel();
-
+            ActiveArea = Userbase.ActiveUser.ActiveArea;
             // Centers map on Logan Utah on App entry, in the future the map will be centered on the users location on app entry
-            dropMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(41.7377780, -111.8308330), Distance.FromMiles(1.0)));
+            if (ActiveArea == null)
+            {
+                // This Navigates to the the default area 
+                dropMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(41.7377780, -111.8308330), Distance.FromMiles(1.0)));
+            }
+            else
+            {
+                dropMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(ActiveArea.Latitude, ActiveArea.Longitude), Distance.FromMiles(ActiveArea.ViewHeight)));
+            }
 
-            
 
             //// Pulls the list of drops from the database
             //List<Drop> drops = App.Database.GetDropsAsync().Result;
@@ -42,10 +55,12 @@ namespace Drops.Views
 
             //    });
             //}
+
+            BindingContext = this;
         }
 
         // Properties
-        
+        public Area ActiveArea { get; set; }
 
         // EVENT HANDLERS
         async void OnSearchBarButtonClicked(object sender, EventArgs e)
@@ -71,7 +86,7 @@ namespace Drops.Views
         {
 
             
-            await Navigation.PushAsync(new MainPage
+            await Navigation.PushAsync(new DropListViewPage
             {
                 // let's save all the drops
                 
