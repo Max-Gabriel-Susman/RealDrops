@@ -15,24 +15,19 @@ namespace Drops.Views
 {
     public partial class MapPage : ContentPage
     {
-        // FIELDS
-        private double DefaultLatitude = 41.7377780;
-
-        private double DefaultLongitude = -111.8308330;
-
-        private double DefaultViewHeight = 1.0;
-
         // CONSTRUCTORS
         public MapPage()
         {
             InitializeComponent();
             // BindingContext = new MainPageViewModel();
             ActiveArea = Userbase.ActiveUser.ActiveArea;
+
+            DefaultArea = Userbase.DefaultArea;
             // Centers map on Logan Utah on App entry, in the future the map will be centered on the users location on app entry
             if (ActiveArea == null)
             {
-                // This Navigates to the the default area 
-                dropMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(41.7377780, -111.8308330), Distance.FromMiles(1.0)));
+                // This Navigates to the the default area, we shuld use location tracking to make it follow the user
+                dropMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position( DefaultArea.Latitude, DefaultArea.Latitude), Distance.FromMiles(DefaultArea.ViewHeight)));
             }
             else
             {
@@ -57,35 +52,42 @@ namespace Drops.Views
             //}
 
             BindingContext = this;
+            // BindingContext = new MapPageViewModel();
         }
 
-        // Properties
-        public Area ActiveArea { get; set; }
+        // PROPERTIES
+        public Area ActiveArea { get; }
+
+        public Area DefaultArea { get; }
 
         // EVENT HANDLERS
         async void OnSearchBarButtonClicked(object sender, EventArgs e)
+        // Handles Search button clicks
         {
+            // Adds a SearchResultsListViewPage to the stack
             await Navigation.PushAsync(new SearchResultsListViewPage
             {
 
             });
         }
 
-        // Handles Navigation to OptionsListViewPage
+        
         async void OnOptionsButtonClicked(object sender, EventArgs e)
+        // Handles Options button clicks
         {
-
+            // Adds a OptionsListViewPage to the stack
             await Navigation.PushAsync(new OptionsListViewPage
             {
                 
             });
         }
 
-        // Handles Navigation to PinsListViewPage
-        async void OnPinsButtonClicked(object sender, EventArgs e)
+        
+        async void OnDropsButtonClicked(object sender, EventArgs e)
+        // Handles Drops Button CLicks
         {
 
-            
+            // Adds a DropListViewPage to the stack
             await Navigation.PushAsync(new DropListViewPage
             {
                 // let's save all the drops
@@ -94,21 +96,22 @@ namespace Drops.Views
             });
         }
 
-        // Handles Switching between satellite(Hybrid) and street map views INACTIVE
-        async void OnPeopleButtonClicked(object sender, EventArgs e) {
-
+        
+        async void OnPeopleButtonClicked(object sender, EventArgs e)
+        // Handles People Button Clicks
+        {
+            // Adds a PeopleListViewPage to the stack
             await Navigation.PushAsync(new PeopleListViewPage
             {
                 
             });
         }
 
-        
-
         async void OnAreasButtonClicked(object sender, EventArgs e)
+        // Handles Areas Button Clicks
         {
-            
 
+            // Adds an AreaListViewPage to the stack
             await Navigation.PushAsync(new AreaListViewPage
             {
                
@@ -118,8 +121,9 @@ namespace Drops.Views
             });
         }
 
-        // Handles Drop Creation
-        void OnMapClicked(object sender, MapClickedEventArgs e)
+        
+        private void OnMapClicked(object sender, MapClickedEventArgs e)
+        // Handles Map Clicks
         {
             // An blank pin is instantiated
             var pin = new Pin()

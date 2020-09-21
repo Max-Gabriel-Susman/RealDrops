@@ -10,7 +10,7 @@ namespace Drops.Views
         public OptionsDetailViewPage()
         {
             InitializeComponent();
-            // BindingContext = new MainPageViewModel();
+            BindingContext = new OptionsDetailViewModel();
         }
     }
 }

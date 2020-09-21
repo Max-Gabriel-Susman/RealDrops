@@ -3,11 +3,19 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Create Area" Clicked="OnAreaButtonClicked"/>
+            <Label Text=""
+                   TextColor="Black"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   x:Name="activeAreaBanner"/>
+            <Button Text="Create Area"
+                    Clicked="OnAreaButtonClicked"
+                    TextColor="White"
+                    BackgroundColor="Green"/>
             <ListView ItemsSource="{Binding AllAreas}"
-                  x:Name="MyList"
-                  SeparatorVisibility="None"
-                  HasUnevenRows="True"
+                      x:Name="MyList"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="True"
 
                   Footer="">
                 <ListView.ItemTemplate>
@@ -19,15 +27,14 @@
                                           <ColumnDefinition Width="*"/>
                                       </Grid.ColumnDefinitions>
                                       <Label VerticalOptions="CenterAndExpand" Text="{Binding Name}"/>
-                                 
-                                      <!-- <Button Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference MyList}}"
+                                      <Button Command="{Binding Path=BindingContext.ActivateCommand, Source={x:Reference MyList}}"
                                               CommandParameter="{Binding .}"
                                               Grid.Column="1"
                                               Padding="30,10"
-                                              Text="Delete"
+                                              Text="Activate"
                                               HorizontalOptions="EndAndExpand"
-                                              BackgroundColor="Black"
-                                              TextColor="White"/>--> 
+                                              BackgroundColor="Blue"
+                                              TextColor="White"/>
                                   </Grid>
                            </ViewCell>
                         </DataTemplate>

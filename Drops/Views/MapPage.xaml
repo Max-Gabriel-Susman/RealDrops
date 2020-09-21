@@ -57,7 +57,7 @@
                         BackgroundColor="White" />
 
                 <Button IsEnabled="True"
-                        Clicked="OnPinsButtonClicked"
+                        Clicked="OnDropsButtonClicked"
                         Text="Drops"
                         FontSize="36"
                         TextColor="Pink"

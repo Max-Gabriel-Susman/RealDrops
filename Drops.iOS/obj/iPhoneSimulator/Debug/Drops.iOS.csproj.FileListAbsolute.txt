@@ -53,14 +53,14 @@
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.dll
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Drops.pdb
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.pdb
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csproj.CoreCompileInputs.cache
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csproj.CopyComplete
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.exe
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.pdb
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csprojAssemblyReference.cache
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/ibtool/_BundleResourceWithLogicalName.items
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/actool/_PartialAppManifest.items
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/actool/_BundleResourceWithLogicalName.items
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/coremlc/_PartialAppManifest.items
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/coremlc/_BundleResourceWithLogicalName.items
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/optimized/
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csproj.CoreCompileInputs.cache
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csproj.CopyComplete
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.exe
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.pdb
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csprojAssemblyReference.cache

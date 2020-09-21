@@ -20,6 +20,7 @@ namespace Drops.Views
             ShareCommand = new Command(OnShareTapped);
 
             BindingContext = this;
+            // BindingContext = new PeopleListViewModel();
         }
 
         // wot does icommand need?

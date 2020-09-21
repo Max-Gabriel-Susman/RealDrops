@@ -23,6 +23,7 @@ namespace Drops.Views
             });
 
             BindingContext = this;
+            // BindingContext = new OptionListViewModel();
         }
 
 

@@ -6,7 +6,7 @@ namespace Drops.Models
 {
     public class Userbase
     {
-        // Shared Instance (Mock Data)
+        // PROPERTIES
         public static ObservableCollection<User> Users = new ObservableCollection<User>()
         {
             // new User("Admin", "Adminadmin", new ObservableCollection<Area>(){ new Area(0.0, 0.0, "ligma"), new Area(0.0, 0.0, "nutz"), new Area(0.0, 0.0, "bitch") }, new ObservableCollection<Area>()),
@@ -18,8 +18,8 @@ namespace Drops.Models
             new User("Three", "Threethreethree", new ObservableCollection<Area>() {new Area(0.0, 0.0, "e", "Three"), new Area(0.0, 0.0, "f", "Three") }, new ObservableCollection<Area>())
         };
 
+        public static ObservableCollection<User> OtherUsers
         // Readonly Property that Returns a collection of all users excluding the ActiveUser
-        public static ObservableCollection<User> OtherUsers 
         {
             get
             {
@@ -36,15 +36,18 @@ namespace Drops.Models
 
             }
         }
+        
+        public static Area DefaultArea = new Area(41.7377780, -111.8308330, "Default Area", "Admin"); // make sure this guy doesn't get deyeeted
 
         public static User ActiveUser { get; set; }
 
         public Userbase(){ }
 
-        // Determines the validity of credential entry
+        // METHODS
         public static bool Authentication(string username, string password)
+        // Determines the validity of credential entry
         {
-            
+
             foreach (User user in Users)
             {
                 System.Diagnostics.Debug.WriteLine(Equals(user.Username, username) && Equals(user.Password, password));
@@ -61,11 +64,12 @@ namespace Drops.Models
             return false;
         }
 
-        // Attempts to create a new user while satisfying credential reqs
+        
         public static string CreateUser(string username, string password)
+        // Attempts to create a new user while satisfying credential reqs
         {
             // Checks for identical usernames
-            foreach(User user in Users)
+            foreach (User user in Users)
             {
                 if (user.Username == username)
 

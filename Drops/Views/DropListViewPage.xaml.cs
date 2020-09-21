@@ -27,6 +27,7 @@ namespace Drops.Views
             DeleteCommand = new Command(OnDeleteTapped);
 
             BindingContext = this;
+            // BindingContext = new DropListVewModel();
 
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
+using Drops.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -22,6 +23,8 @@ namespace Drops.Views
             Pin = new Pin();
 
             AreaNameEntry = "";
+
+            // BindingContext = new AreaCreationViewModel();
         }
 
         // PROPERTIES
