@@ -10,41 +10,30 @@ namespace Drops.Views
 {
     public partial class PeopleListViewPage : ContentPage
     {
+        // FIELDS
+        PeopleListViewModel vm;
+
+        // CONSTRUCTORS
         public PeopleListViewPage()
         {
             InitializeComponent();
 
-            OtherUsers = Userbase.OtherUsers;
-            //Users = Userbase.Users;
+            System.Diagnostics.Debug.WriteLine("People list code behind constructed");
 
-            ShareCommand = new Command(OnShareTapped);
+            vm = new PeopleListViewModel();
 
-            BindingContext = this;
-            // BindingContext = new PeopleListViewModel();
+            BindingContext = vm;
+
+            vm.Title = "People";
         }
 
-        // wot does icommand need?
-        public ICommand ShareCommand { get; }
-
-        public ObservableCollection<User> OtherUsers { get; set; }
-        //public ObservableCollection<User> Users { get; set; }
-
-        async void OnShareTapped(object obj)
+        // LIFECYCLE METHODS
+        // we need to move this functionality to the login page
+        protected override void OnAppearing()
         {
-            
+            base.OnAppearing();
 
-            User user = obj as User;
-
-            System.Diagnostics.Debug.WriteLine(user.Username);
-
-            await Navigation.PushAsync(new AreaShareViewPage
-            {
-                // Passes Active User to the New ContentPage
-               Recipient = user
-
-            });
-
-            
+            vm.RefreshCommand.Execute(null);
         }
     }
 }

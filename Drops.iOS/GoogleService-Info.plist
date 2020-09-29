@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>106548138082-fmpqt0pb0dklko8n3ma0a7sc74pqflbj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.106548138082-fmpqt0pb0dklko8n3ma0a7sc74pqflbj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDE8skd28yh8ioT8IqKLJcJAoilH24CDkA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>106548138082</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mgs.Drops</string>
+	<key>PROJECT_ID</key>
+	<string>drops-b47ff</string>
+	<key>STORAGE_BUCKET</key>
+	<string>drops-b47ff.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:106548138082:ios:a077569686eec43d2b813b</string>
+	<key>DATABASE_URL</key>
+	<string>https://drops-b47ff.firebaseio.com</string>
+</dict>
+</plist>
