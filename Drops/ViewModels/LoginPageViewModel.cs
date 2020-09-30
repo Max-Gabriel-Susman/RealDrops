@@ -14,11 +14,6 @@ namespace Drops.ViewModels
 {
     public class LoginPageViewModel : BaseViewModel
     {
-        // FIELDS
-        List<DropsUser> users;
-
-        List<DropsArea> areas;
-
         // CONSTRUCTORS
         public LoginPageViewModel()
         {
@@ -69,32 +64,67 @@ namespace Drops.ViewModels
                 Application.Current.MainPage.Navigation.PushAsync(new LostCredentialsPage());
             });
 
-            GetCommand = new Command(() =>
+            RefreshCommand = new Command(async () =>
             {
-                System.Diagnostics.Debug.WriteLine("Listing user properties ... NOW");
-                System.Diagnostics.Debug.WriteLine("");
-                foreach (DropsArea area in Areas)
-                {
-                    System.Diagnostics.Debug.WriteLine(area.ID);
-                    System.Diagnostics.Debug.WriteLine(area.Owner);
-                    System.Diagnostics.Debug.WriteLine(area.Area);
-                    System.Diagnostics.Debug.WriteLine(area.Latitude);
-                    System.Diagnostics.Debug.WriteLine(area.Longitude);
-                    System.Diagnostics.Debug.WriteLine("");
-                }
+                foreach(DropsArea area in await CosmosDBService.GetAreas())
+                    AllAreas.Areas.Add(area);
 
-                System.Diagnostics.Debug.WriteLine("Listing user properties ... NOW");
-                System.Diagnostics.Debug.WriteLine("");
-                foreach (DropsArea area in Areas)
-                {
-                    System.Diagnostics.Debug.WriteLine(area.ID);
-                    System.Diagnostics.Debug.WriteLine(area.Owner);
-                    System.Diagnostics.Debug.WriteLine(area.Area);
-                    System.Diagnostics.Debug.WriteLine(area.Latitude);
-                    System.Diagnostics.Debug.WriteLine(area.Longitude);
-                    System.Diagnostics.Debug.WriteLine("");
-                }
+                foreach (DropsUser user in await CosmosDBService.GetUsers())
+                    AllUsers.Users.Add(user);
             });
+
+            // just a dev tool, remove for deployment version
+            //GetCommand = new Command(() =>
+            //{
+            //    System.Diagnostics.Debug.WriteLine("Listing area properties ... NOW");
+            //    System.Diagnostics.Debug.WriteLine("");
+            //    foreach (DropsArea area in Areas)
+            //    {
+            //        System.Diagnostics.Debug.WriteLine(area.ID);
+            //        System.Diagnostics.Debug.WriteLine(area.Owner);
+            //        System.Diagnostics.Debug.WriteLine(area.Area);
+            //        System.Diagnostics.Debug.WriteLine(area.Latitude);
+            //        System.Diagnostics.Debug.WriteLine(area.Longitude);
+            //        System.Diagnostics.Debug.WriteLine(area.Pins);
+            //        // we need to iterate over each key in the outer dictionary and foreach inner key log  the key and it's value
+            //        foreach (var pair in area.Pins)
+            //        {
+            //            Dictionary<string, string> pin = pair.Value;
+
+            //            string name = pair.Key;
+
+            //            foreach (var innerPair in pair.Value)
+            //            {
+            //                string key = innerPair.Key;
+
+            //                string value = innerPair.Value;
+
+            //                System.Diagnostics.Debug.WriteLine($"Pin {name}'s {key} is set at {value}.");
+            //            }
+            //        }
+            //        //for(int i = 0; i < area.Pins.Count; i++)
+            //        //{
+            //        //    area.Pins[i]
+            //        //}
+
+            //            System.Diagnostics.Debug.WriteLine("");
+            //    }
+
+            //    System.Diagnostics.Debug.WriteLine("Listing user properties ... NOW");
+            //    System.Diagnostics.Debug.WriteLine("");
+            //    foreach (DropsUser user in Users)
+            //    {
+            //        System.Diagnostics.Debug.WriteLine(user.ID);
+            //        System.Diagnostics.Debug.WriteLine(user.Username);
+            //        System.Diagnostics.Debug.WriteLine(user.Password);
+            //        System.Diagnostics.Debug.WriteLine(user.ActiveArea);
+            //        System.Diagnostics.Debug.WriteLine(user.Areas);
+            //        foreach(string area in user.Areas)
+            //            System.Diagnostics.Debug.WriteLine(area);
+                    
+            //        System.Diagnostics.Debug.WriteLine("");
+            //    }
+            //});
         }
 
         // PROPERTIES
@@ -116,29 +146,38 @@ namespace Drops.ViewModels
 
         public ICommand LoginCommand { get; }
 
-        public ICommand GetCommand { get; }
+        //public ICommand GetCommand { get; }
 
-        public List<DropsArea> Areas { get => areas; set => SetProperty(ref areas, value); }
+        public ICommand RefreshCommand { get; }
 
-        public List<DropsUser> Users { get => users; set => SetProperty(ref users, value); }
-
-        // EVENT HANDLERS
-        async Task ExecuteRefreshCommand()
+        public ObservableCollection<DropsArea> Areas
         {
-            if (IsBusy)
-                return;
-
-            IsBusy = true;
-
-            try
-            {
-                Areas = await CosmosDBService.GetAreas();
-                Users = await CosmosDBService.GetUsers();
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            get => AllAreas.Areas;
         }
+
+        public ObservableCollection<DropsUser> Users
+        {
+            get => AllUsers.Users;
+        }
+
+        // METHODS
+        //async Task ExecuteRefreshCommand()
+        //{
+        //    if (IsBusy)
+        //        return;
+
+        //    IsBusy = true;
+
+        //    try
+        //    {
+        //        Areas = await CosmosDBService.GetAreas();
+
+        //        Users = await CosmosDBService.GetUsers();
+        //    }
+        //    finally
+        //    {
+        //        IsBusy = false;
+        //    }
+        //}
     }
 }

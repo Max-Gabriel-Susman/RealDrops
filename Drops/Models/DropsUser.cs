@@ -14,16 +14,28 @@ namespace Drops.Models
         // PROPERTIES
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public DropsUser()
+        public DropsUser(string id,
+                         string username,
+                         string password,
+                         string activeArea,
+                         Dictionary<string, string> areas)
         {
-            
+            ID = id;
+
+            Username = username;
+
+            Password = password;
+
+            ActiveArea = activeArea;
+
+            Areas = areas;
         }
 
         //public List<int> Areas { get; set; }
 
-        int id;
+        string id;
         [JsonProperty("id")]
-        public int ID
+        public string ID
         {
             get => id;
             set
@@ -86,21 +98,21 @@ namespace Drops.Models
         }
 
         // not really sure if this is actually the right way to do this
-        //List<int> areas;
-        //[JsonProperty("areas")]
-        //public List<int> Areas
-        //{
-        //    get => areas;
-        //    set
-        //    {
-        //        if (areas == value)
-        //            return;
+        Dictionary<string, string> areas;
+        [JsonProperty("areas")]
+        public Dictionary<string, string> Areas
+        {
+            get => areas;
+            set
+            {
+                if (areas == value)
+                    return;
 
-        //        areas = value;
+                areas = value;
 
-        //        HandlePropertyChanged();
-        //    }
-        //}
+                HandlePropertyChanged();
+            }
+        }
 
         // METHODS
         void HandlePropertyChanged([CallerMemberName] string propertyName = "")

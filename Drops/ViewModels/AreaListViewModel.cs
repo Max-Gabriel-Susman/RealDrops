@@ -14,21 +14,7 @@ namespace Drops.ViewModels
 {
     public class AreaListViewModel : BaseViewModel
     {
-        // FIELDS
-        List<DropsArea> areas;
-
-        // CONSTRUCTORS
-        public AreaListViewModel()
-        {
-        }
-
-        // PROPERTIES
-        
-
-        
-        public ICommand GetCommand { get; }
-
-       
+        public AreaListViewModel() { }
 
         //public AreaListViewModel()
         //{

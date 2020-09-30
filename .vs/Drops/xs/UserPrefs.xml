@@ -7,32 +7,30 @@
       <File FileName="Drops.iOS/AppDelegate.cs" />
       <File FileName="Drops.iOS/Entitlements.plist" />
       <File FileName="Drops.iOS/Info.plist" />
-      <File FileName="Drops.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Drops/ViewModels/MapPageViewModel.cs" Line="43" Column="1" />
+      <File FileName="Drops.iOS/Main.cs" />
+      <File FileName="Drops/ViewModels/MapPageViewModel.cs" />
       <File FileName="Drops/Views/DropListViewPage.xaml" />
-      <File FileName="Drops/Views/AreaListViewPage.xaml" Line="12" Column="36" />
-      <File FileName="Drops/ViewModels/AreaListViewModel.cs" Line="22" Column="10" />
-      <File FileName="Drops/Models/DropsUser.cs" Line="23" Column="1" />
-      <File FileName="Drops/Helpers/APIKeys.cs" Line="19" Column="1" />
-      <File FileName="Drops/Services/CosmosDBService.cs" Line="175" Column="12" />
-      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="96" Column="18" />
+      <File FileName="Drops/Views/AreaListViewPage.xaml" />
+      <File FileName="Drops/ViewModels/AreaListViewModel.cs" />
+      <File FileName="Drops/Models/DropsUser.cs" />
+      <File FileName="Drops/Helpers/APIKeys.cs" />
+      <File FileName="Drops/Services/CosmosDBService.cs" />
+      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" />
       <File FileName="Drops/Views/LoginPage.xaml" />
-      <File FileName="Drops/ViewModels/PeopleListViewModel.cs" Line="40" Column="22" />
-      <File FileName="Drops/Views/PeopleListViewPage.xaml" Line="39" Column="19" />
-      <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" Line="37" Column="10" />
+      <File FileName="Drops/ViewModels/PeopleListViewModel.cs" />
+      <File FileName="Drops/Views/PeopleListViewPage.xaml" />
+      <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" />
       <File FileName="Drops/ViewModels/BaseViewModel.cs" />
-      <File FileName="Drops/Models/Userbase.cs" Line="74" Column="100" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="21" Column="25" />
-      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="27" Column="1" />
-      <File FileName="Drops/Models/Drop.cs" Line="14" Column="97" />
-      <File FileName="Drops/Models/DropsArea.cs" Line="23" Column="22" />
-      <File FileName="Drops/Views/AreaListViewPage.xaml.cs" Line="27" Column="30" />
-      <File FileName="Drops/Models/Areas.cs" Line="6" Column="31" />
-      <File FileName="Drops/ViewModels/AreaShareViewModel.cs" Line="35" Column="33" />
-      <File FileName="Drops/Views/MapPage.xaml.cs" Line="47" Column="16" />
-      <File FileName="Drops/ViewModels/AreaCreationViewModel.cs" Line="27" Column="19" />
-      <File FileName="Drops/ViewModels/DropListVewModel.cs" Line="23" Column="16" />
-      <File FileName="Drops/Views/AreaCreationDetailView.xaml" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" />
+      <File FileName="Drops/Models/DropsArea.cs" />
+      <File FileName="Drops/Views/AreaListViewPage.xaml.cs" />
+      <File FileName="Drops/ViewModels/AreaShareViewModel.cs" />
+      <File FileName="Drops/Views/MapPage.xaml.cs" />
+      <File FileName="Drops/ViewModels/AreaCreationViewModel.cs" />
+      <File FileName="Drops/ViewModels/DropListVewModel.cs" />
+      <File FileName="Drops/Views/AreaCreationDetailView.xaml" />
+      <File FileName="Drops/ViewModels/LostCredentialsPageViewModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -45,17 +43,17 @@
               <Node name="Helpers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True">
-                <Node name="LoginPageViewModel.cs" selected="True" />
-              </Node>
+              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="LoginPage.xaml" expanded="True" />
-                <Node name="MapPage.xaml" expanded="True" />
-                <Node name="PeopleListViewPage.xaml" expanded="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Drops.iOS" expanded="True" />
+            <Node name="Drops.iOS" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="LaunchScreen.storyboard" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

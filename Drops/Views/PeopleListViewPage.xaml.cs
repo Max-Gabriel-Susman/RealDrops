@@ -10,30 +10,7 @@ namespace Drops.Views
 {
     public partial class PeopleListViewPage : ContentPage
     {
-        // FIELDS
-        PeopleListViewModel vm;
-
         // CONSTRUCTORS
-        public PeopleListViewPage()
-        {
-            InitializeComponent();
-
-            System.Diagnostics.Debug.WriteLine("People list code behind constructed");
-
-            vm = new PeopleListViewModel();
-
-            BindingContext = vm;
-
-            vm.Title = "People";
-        }
-
-        // LIFECYCLE METHODS
-        // we need to move this functionality to the login page
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            vm.RefreshCommand.Execute(null);
-        }
-    }
+        public PeopleListViewPage() { InitializeComponent(); }
+    }       
 }

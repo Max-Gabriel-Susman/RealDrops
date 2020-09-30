@@ -84,15 +84,16 @@ namespace Drops.Services
         }
 
         // CREATE
-        //public async static Task InsertToDoItem(ToDoItem item)
-        //{
-        //    if (!await Initialize())
-        //        return;
+        // first we have to make sure that DropsUser fields the right information to create a valid user on the backend as well
+        public async static Task InsertUser(DropsUser user)
+        {
+            if (!await Initialize())
+                return;
 
-        //    await docClient.CreateDocumentAsync(
-        //        UriFactory.CreateDocumentCollectionUri(databaseName, collectionName),
-        //        item);
-        //}
+            await docClient.CreateDocumentAsync(
+                UriFactory.CreateDocumentCollectionUri(databaseName, userCollectionName),
+                user);
+        }
 
         // DELETE
         //public async static Task DeleteToDoItem(ToDoItem item)
@@ -103,7 +104,7 @@ namespace Drops.Services
         //    var docUri = UriFactory.CreateDocumentUri(databaseName, collectionName, item.Id);
         //    await docClient.DeleteDocumentAsync(docUri);
         //}
-       
+
 
         // UPDATE
         //public async static Task UpdateToDoItem(ToDoItem item)
@@ -114,7 +115,7 @@ namespace Drops.Services
         //    var docUri = UriFactory.CreateDocumentUri(databaseName, collectionName, item.Id);
         //    await docClient.ReplaceDocumentAsync(docUri, item);
         //}
-        
+
 
 
 
