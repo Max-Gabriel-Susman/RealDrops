@@ -11,20 +11,7 @@ namespace Drops
 {
     public partial class App : Application
     {
-        //static DropDatabase database;
-
-        //public static DropDatabase Database
-        //{
-        //    get
-        //    {
-        //        if (database == null)
-        //        {
-        //            // where is environment defined in notes app?
-        //            database = new DropDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DropMap.db3"));
-        //        }
-        //        return database;
-        //    }
-        //}
+        
 
         // Constructor(s)
         public App()
@@ -34,7 +21,7 @@ namespace Drops
 
             // MainPage = new NavigationPage(new MapPage());
             MainPage = new NavigationPage(new LoginPage());
-            
+            //MainPage = new LoginPage();
         }
 
         // LifeCycle Methods

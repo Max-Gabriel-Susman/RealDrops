@@ -1,23 +1,63 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Drops.Views.AreaListViewPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Drops.ViewModels"
+             x:Class="Drops.Views.AreaListViewPage">
+    <ContentPage.BindingContext>
+        <local:AreaListViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
 
-    <ContentPage.Content>
+        <Button Text="Create New Area"
+                TextColor="Beige"
+                BackgroundColor="Green"
+                Command="{Binding CreateAreaCommand}"/>
+
+        <ListView ItemsSource="{Binding SubscribedAreas}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="10">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions> 
+                                
+                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Area}"/>
+                            <Button Grid.Column="1"
+                                    Padding="30,10"
+                                    Text="Share Areas"
+                                    HorizontalOptions="EndAndExpand"
+                                    BackgroundColor="Green"
+                                    TextColor="White"/>
+                        </Grid>
+                        <!--<Grid>
+                            
+                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Username}"/>
+                        </Grid>-->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+    <!--<ContentPage.Content>
         <StackLayout>
-            <Label Text=""
+            <Label Text="{Binding ActiveAreaName}"
                    TextColor="Black"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
                    x:Name="activeAreaBanner"/>
             <Button Text="Create Area"
-                    Clicked="OnAreaButtonClicked"
+                    Command="{Binding CreateAreaCommand}"
                     TextColor="White"
                     BackgroundColor="Green"/>
             <ListView ItemsSource="{Binding AllAreas}"
                       x:Name="MyList"
                       SeparatorVisibility="None"
                       HasUnevenRows="True"
-
-                  Footer="">
+                      Footer="">
                 <ListView.ItemTemplate>
                         <DataTemplate>
                            <ViewCell>
@@ -27,7 +67,7 @@
                                           <ColumnDefinition Width="*"/>
                                       </Grid.ColumnDefinitions>
                                       <Label VerticalOptions="CenterAndExpand" Text="{Binding Name}"/>
-                                      <Button Command="{Binding Path=BindingContext.ActivateCommand, Source={x:Reference MyList}}"
+                                      <Button Command="{Binding Path=BindingContext.ActivateAreaCommand, Source={x:Reference MyList}}"
                                               CommandParameter="{Binding .}"
                                               Grid.Column="1"
                                               Padding="30,10"
@@ -41,5 +81,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 </ContentPage>

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
 using Drops.ViewModels;
+using Drops.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -16,71 +17,85 @@ namespace Drops.Views
         {
             InitializeComponent();
 
-            CreateCommand = new Command(OnCreateButtonClicked);
+            SubscribedAreas = new ObservableCollection<DropsArea>();
+
+            AllAreas.GetSubscribedAreas(SubscribedAreas);
+
+            // Creates an area locally and inserts in in the DB
+            CreateAreaCommand = new Command( async () =>
+            {
+                System.Diagnostics.Debug.WriteLine("create are acommand invoked");
+
+                NewArea = new DropsArea()
+                {
+                    AreaName = AreaNameEntry,
+
+                    Latitude = Latitude ?? 0.0,
+
+                    Longitude = Longitude ?? 0.0,
+
+                    Pins = new Dictionary<string, Dictionary<string, string>>(),
+
+                    Subscribers = new Dictionary<string, string>()
+                    {
+                        {AllUsers.ActiveUser.Username, "owner"}
+                    }
+                };
+
+                await CosmosDBService.InsertArea(NewArea);
+
+                await Application.Current.MainPage.Navigation.PopAsync();
+            });
 
             BindingContext = this;
-
-            Pin = new Pin();
-
-            AreaNameEntry = "";
-
-            // BindingContext = new AreaCreationViewModel();
         }
 
         // PROPERTIES
-        public ICommand CreateCommand { get; }
+        public ObservableCollection<DropsArea> SubscribedAreas { get; set; }
 
-        public Pin Pin { get; set; } 
+        public DropsArea NewArea { get; set; }
+
+        public ICommand CreateAreaCommand { get; }
+
+        public double? Latitude { get; set; }
+
+        public double? Longitude { get; set; }
+
+        public string Label { get; set; }
 
         public string AreaNameEntry { get; set; }
 
-        // EVENT HANDLERS
 
-        // Clears previous pin and then creates a new one where the user has tapped
+        // EVENT HANDLER
+        // it seems as thought the dissapearing elements only occurs on ios
+        // also the options button does not fit on android, wtf
+        // I tried to fix the issue by nesting the dissapearinng views in a stack view to no avail,
+        // when the map isn't present the elements don't dissapear, which makes me think they were never absent, they were just covered up or pushed out of the way
+        // going to try placing the elements above the map and see if that helps
         void OnMapClicked(object sender, MapClickedEventArgs e)
+        // Look into migrating this functionality to the view model, probably going to be a command with extra databinding for the pin
         {
-            // Clears previous pin if present
-            dropMap.Pins.Clear();
+            map.Pins.Clear();
 
-            // Instantiates a new pin
-            Pin = new Pin()
-            {
-                Position = new Position(e.Position.Latitude, e.Position.Longitude),
+            Latitude = e.Position.Latitude;
+
+            Longitude = e.Position.Longitude;
+
+            Pin pin = new Pin()
+            {   
+                Position = new Position(Latitude ?? 0.0, Longitude ?? 0.0),
 
                 Label = "Undeclared"
             };
-
-            // Stores the new pin
-            dropMap.Pins.Add(Pin);
+            map.Pins.Add(pin);
         }
 
-        // Stores user input in the AreaNameEntry in a local Property
-        void OnAreaNameEntryChanged(object sender, TextChangedEventArgs e)
+        // LIFECYCLE METHODS
+        protected override void OnAppearing()
         {
-            AreaNameEntry = e.NewTextValue;
+            base.OnAppearing();
 
-            System.Diagnostics.Debug.WriteLine(AreaNameEntry);
-        }
-
-        // Creates an area and pops the AreaCreationDetailView from the stack
-        public void OnCreateButtonClicked(object obj)
-        {
-            // A new area is created and added to ActiveUser's OwnedArea Collectio
-            System.Diagnostics.Debug.WriteLine(AreaNameEntry);
-
-            if(true)
-            {
-                Userbase.ActiveUser.CreateArea(Pin.Position.Latitude, Pin.Position.Longitude, AreaNameEntry);
-
-                Navigation.PopAsync();
-            }
-            else
-            {
-                // Give feedback for Invalid Area Creation
-            }
-
-
-
+            //AllAreas.SubscribedAreas = CosmosDBService.GetAreas();
         }
     }
 }

@@ -202,6 +202,10 @@ Function=xamarin_simd__void_objc_msgSend_NMatrix4_NVector3_NVector3_IntPtr
 	/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/Xamarin.iOS.dll
 Function=xamarin_simd__void_objc_msgSendSuper_NMatrix4_NVector3_NVector3_IntPtr
 	/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=xamarin_simd__void_objc_msgSend_NVector3_IntPtr
+	/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=xamarin_simd__void_objc_msgSendSuper_NVector3_IntPtr
+	/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/Xamarin.iOS.dll
 Function=xamarin_simd__Vector2_objc_msgSend_IntPtr
 	/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/Xamarin.iOS.dll
 Function=xamarin_simd__Vector2_objc_msgSendSuper_IntPtr

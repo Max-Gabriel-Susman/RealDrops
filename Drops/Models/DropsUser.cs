@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Drops.Services;
 
 
 namespace Drops.Models
@@ -14,22 +16,22 @@ namespace Drops.Models
         // PROPERTIES
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public DropsUser(string id,
-                         string username,
-                         string password,
-                         string activeArea,
-                         Dictionary<string, string> areas)
-        {
-            ID = id;
+        //public DropsUser(string id,
+        //                 string username,
+        //                 string password,
+        //                 string activeArea,
+        //                 Dictionary<string, string> areas)
+        //{
+        //    ID = id;
 
-            Username = username;
+        //    Username = username;
 
-            Password = password;
+        //    Password = password;
 
-            ActiveArea = activeArea;
+        //    ActiveArea = activeArea;
 
-            Areas = areas;
-        }
+        //    Areas = areas;
+        //}
 
         //public List<int> Areas { get; set; }
 
@@ -83,7 +85,7 @@ namespace Drops.Models
 
         string activeArea;
         [JsonProperty("activeArea")]
-        public string ActiveArea
+        public string ActiveAreaName
         {
             get => activeArea;
             set
@@ -121,5 +123,6 @@ namespace Drops.Models
 
             PropertyChanged?.Invoke(this, eventArgs);
         }
+
     }
 }

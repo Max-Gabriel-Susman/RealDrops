@@ -2,35 +2,19 @@
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Drops.iOS/Resources/LaunchScreen.storyboard" />
-      <File FileName="Drops.iOS/Properties/AssemblyInfo.cs" />
-      <File FileName="Drops.iOS/AppDelegate.cs" />
-      <File FileName="Drops.iOS/Entitlements.plist" />
-      <File FileName="Drops.iOS/Info.plist" />
-      <File FileName="Drops.iOS/Main.cs" />
-      <File FileName="Drops/ViewModels/MapPageViewModel.cs" />
-      <File FileName="Drops/Views/DropListViewPage.xaml" />
-      <File FileName="Drops/Views/AreaListViewPage.xaml" />
-      <File FileName="Drops/ViewModels/AreaListViewModel.cs" />
-      <File FileName="Drops/Models/DropsUser.cs" />
-      <File FileName="Drops/Helpers/APIKeys.cs" />
-      <File FileName="Drops/Services/CosmosDBService.cs" />
-      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" />
-      <File FileName="Drops/Views/LoginPage.xaml" />
-      <File FileName="Drops/ViewModels/PeopleListViewModel.cs" />
-      <File FileName="Drops/Views/PeopleListViewPage.xaml" />
-      <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" />
-      <File FileName="Drops/ViewModels/BaseViewModel.cs" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
-      <File FileName="Drops/Views/LoginPage.xaml.cs" />
-      <File FileName="Drops/Models/DropsArea.cs" />
-      <File FileName="Drops/Views/AreaListViewPage.xaml.cs" />
+      <File FileName="Drops/Services/CosmosDBService.cs" Line="185" Column="47" />
       <File FileName="Drops/ViewModels/AreaShareViewModel.cs" />
+      <File FileName="Drops/ViewModels/MapPageViewModel.cs" Line="74" Column="1" />
       <File FileName="Drops/Views/MapPage.xaml.cs" />
-      <File FileName="Drops/ViewModels/AreaCreationViewModel.cs" />
+      <File FileName="Drops/Models/AllAreas.cs" />
       <File FileName="Drops/ViewModels/DropListVewModel.cs" />
+      <File FileName="Drops/Views/DropListViewPage.xaml" />
+      <File FileName="Drops/Views/DropListViewPage.xaml.cs" />
       <File FileName="Drops/Views/AreaCreationDetailView.xaml" />
-      <File FileName="Drops/ViewModels/LostCredentialsPageViewModel.cs" />
+      <File FileName="Drops/Views/MapPage.xaml" />
+      <File FileName="Drops.iOS/Main.cs" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" />
+      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -43,23 +27,30 @@
               <Node name="Helpers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="MapPageViewModel.cs" selected="True" />
+              </Node>
               <Node name="Views" expanded="True">
+                <Node name="AreaCreationDetailView.xaml" expanded="True" />
+                <Node name="AreaListViewPage.xaml" expanded="True" />
+                <Node name="AreaShareViewPage.xaml" expanded="True" />
+                <Node name="DropListViewPage.xaml" expanded="True" />
                 <Node name="LoginPage.xaml" expanded="True" />
+                <Node name="MapPage.xaml" expanded="True" />
+                <Node name="PeopleListViewPage.xaml" expanded="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
             <Node name="Drops.iOS" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="LaunchScreen.storyboard" selected="True" />
-              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Resources" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Drops.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.1291290D-C8A5-451E-96AF-55885191E083" />
+  <MonoDevelop.Ide.ItemProperties.Drops.iOS Xamarin.HotReload.DebuggerTimeoutException.Drops.iOS.HideInfoBar="True" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.1291290D-C8A5-451E-96AF-55885191E083" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

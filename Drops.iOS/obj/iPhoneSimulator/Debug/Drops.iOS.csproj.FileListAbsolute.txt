@@ -1,11 +1,19 @@
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.Documents.ServiceInterop.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Cosmos.CRTCompat.dll
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Drops.iOS.exe
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Drops.iOS.pdb
-/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/SQLite-net.dll
-/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.batteries_v2.dll
-/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.nativelibrary.dll
-/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.core.dll
-/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.provider.dynamic_cdecl.dll
-/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Runtime.CompilerServices.Unsafe.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.DocumentDB.Core.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Collections.Immutable.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Diagnostics.TraceSource.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.IO.Compression.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Net.Http.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Net.NameResolution.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Net.NetworkInformation.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Net.Requests.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Net.Security.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.Encoding.dll
+/Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.X509Certificates.dll
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.pdb
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.dll
@@ -53,14 +61,14 @@
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.dll
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Drops.pdb
 /Users/MGS/Projects/Drops/Drops.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.pdb
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.0/ibtool/_BundleResourceWithLogicalName.items
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.0/actool/_PartialAppManifest.items
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.0/actool/_BundleResourceWithLogicalName.items
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.0/coremlc/_PartialAppManifest.items
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.0/coremlc/_BundleResourceWithLogicalName.items
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.0/optimized/
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csproj.CoreCompileInputs.cache
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csproj.CopyComplete
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.exe
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.pdb
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csprojAssemblyReference.cache
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/ibtool/_BundleResourceWithLogicalName.items
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/actool/_PartialAppManifest.items
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/actool/_BundleResourceWithLogicalName.items
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/coremlc/_PartialAppManifest.items
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/coremlc/_BundleResourceWithLogicalName.items
-/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.6/optimized/

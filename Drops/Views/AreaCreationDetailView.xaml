@@ -1,23 +1,47 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Drops.ViewModels"
              x:Class="Drops.Views.AreaCreationDetailView"
              xmlns:models="clr-namespace:Drops.Models"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+
+   <!-- <ContentPage.BindingContext>
+        <local:AreaCreationViewModel/>
+    </ContentPage.BindingContext> -->
+
     <ContentPage.Content>
+
         <StackLayout>
-            <models:DropMap x:Name="dropMap"
-                            ScaleY="1"
-                            
-                            MapType="Hybrid"
-                            MapClicked="OnMapClicked">
-            </models:DropMap>
+
+            <Button Command="{Binding CreateAreaCommand}"
+                    Text="Create Area"
+                    TextColor="Beige"
+                    BackgroundColor="Green" />
+
             <Entry Placeholder="Enter a name: "
                    x:Name="nameEntry"
                    Text="{Binding AreaNameEntry}"/>
-            <Button Command="{Binding Path=BindingContext.CreateCommand}"
-                    CommandParameter="{Binding .}"
-                    Text="Create Area" />
+
+            <maps:Map x:Name="map"
+                        MapType="Hybrid"
+                        MapClicked="OnMapClicked">
+                <x:Arguments>
+                    <maps:MapSpan>
+                        <x:Arguments>
+                            <maps:Position>
+                                <x:Arguments>
+                                    <x:Double>41.7377780</x:Double>
+                                    <x:Double>-111.8308330</x:Double>
+                                </x:Arguments>
+                            </maps:Position>
+                            <x:Double>0.01</x:Double>
+                            <x:Double>0.01</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
+            </maps:Map>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

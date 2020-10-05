@@ -1,17 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Drops.Views.LoginPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Drops.ViewModels"
+             x:Class="Drops.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <local:LoginPageViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Username"
-                   TextChanged="OnUsernameEntryTextChanged"
+            <Entry Placeholder="{Binding UsernamePlaceholder}"
+                   PlaceholderColor="{Binding UsernamePlaceholderColor}"
                    Text="{Binding UsernameEntry}" />
-            <Entry Placeholder="Password"
+            <Entry Placeholder="{Binding PasswordPlaceholder}"
+                   PlaceholderColor="{Binding PasswordPlaceholderColor}"
                    IsPassword="True"
-                   TextChanged="OnPasswordEntryTextChanged"
                    Text="{Binding PasswordEntry}" />
-            <Button Text="Login" Clicked="OnLoginButtonClicked" />
-            <Button Text="Registration" Clicked="OnRegistrationButtonClicked" />
-            <Button Text="Having Trouble Logging in?" Clicked="OnLostCredentialsButtonClicked" />
+            <Button Text="Login"
+                    Clicked="OnLoginButtonClicked"/>
+            <Button Text="Registration"
+                    Command="{Binding NavToRegistrationCommand}"/>
+            <Button Text="Having Trouble Logging in?"/>
+                    
+            <!--<Button Text="Get Users and Areas"
+                    Command="{Binding GetCommand}"/>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

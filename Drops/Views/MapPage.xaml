@@ -2,75 +2,72 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:Drops.Models"
+             xmlns:local="clr-namespace:Drops.ViewModels"
              x:Class="Drops.Views.MapPage"
              Title=""
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.BindingContext>
+        <local:MapPageViewModel/>
+    </ContentPage.BindingContext>   
     <ContentPage.Content>
-        <RelativeLayout>
         
-            <models:DropMap x:Name="dropMap"
-                            ScaleY="1"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
-                            MapType="Hybrid"
-                            MapClicked="OnMapClicked">
-            </models:DropMap>
 
-            <Button IsEnabled="True"
-                    Clicked="OnSearchBarButtonClicked"
-                    Text="Search ..."
-                    FontSize="36"
-                    TextColor="Pink"
-                    BackgroundColor="White"
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Width, Factor=0.0}"
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.05}"
-                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Width, Factor=1.0}"
-                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.075}" />
+            <RelativeLayout>
+        
+                <maps:Map x:Name="map"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                        MapType="Hybrid"
+                        MapClicked="OnMapClicked">
+                </maps:Map> 
+                    
 
-            <StackLayout Orientation="Horizontal"
-                         VerticalOptions="FillAndExpand"
-                         HorizontalOptions="FillAndExpand"
-                         Padding="0,15"
-                         Spacing="10"
-                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.9}"
-                         RelativeLayout.WidthConstraint="{ConstraintExpression
-                                                          Type=RelativeToParent,
-                                                          Property=Width,
-                                                          Factor=1}"
-                         RelativeLayout.HeightConstraint="{ConstraintExpression
-                                                           Type=RelativeToParent,
-                                                           Property=Height,
-                                                           Factor=0.075}">
+            
+
+            
+
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
+                             Padding="0,15"
+                             Spacing="10"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.9}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                              Type=RelativeToParent,
+                                                              Property=Width,
+                                                              Factor=1}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression
+                                                               Type=RelativeToParent,
+                                                               Property=Height,
+                                                               Factor=0.075}">
                 
-                <Button IsEnabled="True"
-                        Clicked="OnAreasButtonClicked"
-                        Text="Areas"
-                        FontSize="36"
-                        TextColor="Pink"
-                        BackgroundColor="White" />
-
-                <Button IsEnabled="True"
-                        Clicked="OnPeopleButtonClicked"
-                        Text="People"
-                        FontSize="36"
-                        TextColor="Pink"
-                        BackgroundColor="White" />
-
-                <Button IsEnabled="True"
-                        Clicked="OnDropsButtonClicked"
-                        Text="Drops"
-                        FontSize="36"
-                        TextColor="Pink"
-                        BackgroundColor="White" />
-
-                <Button IsEnabled="True"
-                        Clicked="OnOptionsButtonClicked"
-                        Text="Options"
-                        FontSize="36"
-                        TextColor="Pink"
-                        BackgroundColor="White" />
+                    <Button IsEnabled="True"
+                            Text="Areas"
+                            FontSize="36"
+                            TextColor="Pink"
+                            BackgroundColor="White"
+                            Command="{Binding AreaListCommand}"/>
+                    <Button IsEnabled="True"
+                            Text="People"
+                            FontSize="36"
+                            TextColor="Pink"
+                            BackgroundColor="White"
+                            Command="{Binding PeopleListCommand}"/>
+                    <Button IsEnabled="True"
+                            Text="Drops"
+                            FontSize="36"
+                            TextColor="Pink"
+                            BackgroundColor="White"
+                            Command="{Binding DropListCommand}"/>
+                    <Button IsEnabled="True"
+                            Text="Options"
+                            FontSize="36"
+                            TextColor="Pink"
+                            BackgroundColor="White"
+                            Command="{Binding OptionListCommand}"/>
                         
-            </StackLayout>
-        </RelativeLayout>
+                </StackLayout>
+            </RelativeLayout>
+        
     </ContentPage.Content>
 </ContentPage>

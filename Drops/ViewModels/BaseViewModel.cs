@@ -9,6 +9,7 @@ namespace Drops.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        // At a later point I need to evaluate the necessity of all the content in this class
         string _title = "";
         public string Title
         {
@@ -23,6 +24,7 @@ namespace Drops.ViewModels
             set => SetProperty(ref _isBusy, value);
         }
 
+        // I think these guys are the special sauce that was making arealistview work it's magic
         protected void SetProperty<T>(ref T backingStore, T value, Action onChanged = null, [CallerMemberName] string propertyName = "")
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))

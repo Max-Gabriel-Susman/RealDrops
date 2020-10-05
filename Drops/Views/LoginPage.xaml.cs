@@ -25,12 +25,32 @@ namespace Drops.Views
             BindingContext = vm;
         }
 
+        // EVENT HANDLERS
+        async void OnLoginButtonClicked(object sender, EventArgs e)
+        {
+            vm.LoginCommand.Execute(null); 
+
+            // we'll handle the actual navigation here
+            if (true) //(vm.IsValid)
+            {
+                Navigation.InsertPageBefore(new MapPage(), this); // MapPage decomissioned indefinitely
+                // Navigation.InsertPageBefore(new MapControlPage(), this);
+                // Navigation.InsertPageBefore(new StaticAssetsPage(), this);
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                // Login failed
+                System.Diagnostics.Debug.WriteLine("login failed");
+            }
+        }
+
         // LIFECYCLE METHODS
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            vm.RefreshCommand.Execute(null);
+            vm.PopulateUsersCommand.Execute(null);
         }
     }
 }

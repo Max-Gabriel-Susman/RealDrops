@@ -7,8 +7,25 @@ using System.Text;
 using System.Threading.Tasks;
 using Drops.Models;
 using Drops.ViewModels;
+using Drops.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+
+/*  ________________________________________________________
+ *  |                                                       |
+ *  |                  !!! ATENTION !!!                     |
+ *  |                                                       |
+ *  |   Just a note to anybody who's viewing this,          |
+ *  |   I am aware that basically all of these members      |
+ *  |   belong in the corresponding view model, however     |
+ *  |   binding the map was proving to be a tad tricky so   |
+ *  |   I'll be migrating this functionality to the view    |
+ *  |   model in the future.                                |
+ *  |                                                       |
+ *  |                  !!! ATENTION !!!                     |
+ *  |                                                       |
+ *  |_______________________________________________________|
+ */
 
 
 namespace Drops.Views
@@ -19,128 +36,124 @@ namespace Drops.Views
         public MapPage()
         {
             InitializeComponent();
-            // BindingContext = new MainPageViewModel();
-            ActiveArea = Userbase.ActiveUser.ActiveArea;
 
-            DefaultArea = Userbase.DefaultArea;
-            // Centers map on Logan Utah on App entry, in the future the map will be centered on the users location on app entry
-            if (ActiveArea == null)
-            {
-                // This Navigates to the the default area, we shuld use location tracking to make it follow the user
-                dropMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position( DefaultArea.Latitude, DefaultArea.Latitude), Distance.FromMiles(DefaultArea.ViewHeight)));
-            }
-            else
-            {
-                dropMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(ActiveArea.Latitude, ActiveArea.Longitude), Distance.FromMiles(ActiveArea.ViewHeight)));
-            }
+            
+            System.Diagnostics.Debug.WriteLine($"Hey the active user is {AllUsers.ActiveUser.ActiveAreaName}");
 
-
-            //// Pulls the list of drops from the database
-            //List<Drop> drops = App.Database.GetDropsAsync().Result;
-
-            //// Populates the map with the list of drops pulled from the database
-            //for(int i = 0; i < drops.Count; i++)
+            //ActiveArea = new DropsArea
             //{
-            //    // Instantiates a pin that will represent a drop from the database
-            //    dropMap.Pins.Add(new Pin {
+            //    Pins = new Dictionary<string, Dictionary<string, string>>()
+            //};
 
-            //        Position = new Position(drops[i].Latitude, drops[i].Longitude),
+            // AllAreas.GetActiveArea(AllAreas.ActiveArea); // wot
 
-            //        Label = drops[i].Label
+            System.Diagnostics.Debug.WriteLine($"Hey there are {AllAreas.ActiveArea.Pins.Count} pins in the active area");
 
-            //    });
-            //}
+            //System.Diagnostics.Debug.WriteLine($"The name of the active area is {ActiveArea.AreaName}");
 
-            BindingContext = this;
-            // BindingContext = new MapPageViewModel();
+            //AllAreas.ActiveMap = map;
+
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(41.7377780, -111.8308330), Distance.FromMiles(1.0)));
+
+           
+
+            foreach (var pair in AllAreas.ActiveArea.Pins)
+            {
+                // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
+                Dictionary<string, string> drop = pair.Value;
+
+                System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
+                // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
+                string label = drop["label"];
+
+                double latitude = Convert.ToDouble(drop["latitude"]);
+
+                double longitude = Convert.ToDouble(drop["longitude"]);
+
+                Pin pin = new Pin()
+                {
+                    Label = label,
+
+                    Position = new Position(latitude, longitude)
+                };
+
+                //map.Pins.Add(pin);
+                
+            }
+
+            //System.Diagnostics.Debug.WriteLine($"This area has {map.Pins.Count } pins");
+
+            // BindingContext = this;
         }
 
         // PROPERTIES
-        public Area ActiveArea { get; }
+        public Map ActiveMap { get; set; } //= Userbase.ActiveUser.ActiveArea.ActiveMap; // maybe for later
 
-        public Area DefaultArea { get; }
+        public DropsArea ActiveArea { get; set; }
+
+        public bool IsSafeToPopulateMapWithPins = AllUsers.IsSafeToPopulateMapWithPins;
+
+        public ObservableCollection<Pin> AreaDrops { get; set; }
+
+        //public ObservableCollection<DropsArea> 
+
+        // METHODS
+        void SwitchIsSafeToPopulateWithPins() { IsSafeToPopulateMapWithPins = !IsSafeToPopulateMapWithPins; }
 
         // EVENT HANDLERS
-        async void OnSearchBarButtonClicked(object sender, EventArgs e)
-        // Handles Search button clicks
-        {
-            // Adds a SearchResultsListViewPage to the stack
-            await Navigation.PushAsync(new SearchResultsListViewPage
-            {
-
-            });
-        }
-
-        
-        async void OnOptionsButtonClicked(object sender, EventArgs e)
-        // Handles Options button clicks
-        {
-            // Adds a OptionsListViewPage to the stack
-            await Navigation.PushAsync(new OptionsListViewPage
-            {
-                
-            });
-        }
-
-        
-        async void OnDropsButtonClicked(object sender, EventArgs e)
-        // Handles Drops Button CLicks
-        {
-
-            // Adds a DropListViewPage to the stack
-            await Navigation.PushAsync(new DropListViewPage
-            {
-                // let's save all the drops
-                
-                // App.Database.SaveDropAsync();
-            });
-        }
-
-        
-        async void OnPeopleButtonClicked(object sender, EventArgs e)
-        // Handles People Button Clicks
-        {
-            // Adds a PeopleListViewPage to the stack
-            await Navigation.PushAsync(new PeopleListViewPage
-            {
-                
-            });
-        }
-
-        async void OnAreasButtonClicked(object sender, EventArgs e)
-        // Handles Areas Button Clicks
-        {
-
-            // Adds an AreaListViewPage to the stack
-            await Navigation.PushAsync(new AreaListViewPage
-            {
-               
-
-                
-                
-            });
-        }
-
-        
-        private void OnMapClicked(object sender, MapClickedEventArgs e)
+        public async void OnMapClicked(object sender, MapClickedEventArgs e)
         // Handles Map Clicks
         {
-            // An blank pin is instantiated
             var pin = new Pin()
             {
-                
                 Position = new Position(e.Position.Latitude, e.Position.Longitude),
 
                 Label = "Unknown"
-
             };
-
             // The blank pin is placed on the map where the users touch input was registered
-            dropMap.Pins.Add(pin);
+            // map.Pins.Add(pin);
 
-            DropMap.Drops.Add(new Drop(pin));
+            // An blank pin is instantiated
+            //if (ActiveArea != null)
+            //{
+            //    var pin = new Pin()
+            //    {
+            //        Position = new Position(e.Position.Latitude, e.Position.Longitude),
 
-            
+            //        Label = "Unknown"
+            //    };
+            //    // The blank pin is placed on the map where the users touch input was registered
+            //    map.Pins.Add(pin);
+
+
+            //    string newPinLatitude = Convert.ToString(e.Position.Latitude);
+
+            //    string newPinLongitude = Convert.ToString(e.Position.Longitude);
+
+            //    string newPinKey = Convert.ToString(ActiveArea.Pins.Count - 1);
+
+            //    Dictionary<string, string> newPinValue = new Dictionary<string, string>()
+            //{
+            //    { "label", "Unknown" },
+
+            //    { "latitude", newPinLatitude },
+
+            //    { "longitude", newPinLongitude }
+            //};
+
+            //    Dictionary<string, Dictionary<string, string>> jsonPin = new Dictionary<string, Dictionary<string, string>>()
+            //{ { newPinKey, newPinValue } };
+
+
+            //    ActiveArea.Pins.Add(newPinKey, newPinValue);
+
+            //    await CosmosDBService.UpdateArea(ActiveArea); // stringToEscape is null wtf
+            //}
+            //else
+            //{
+            //    System.Diagnostics.Debug.WriteLine("Active area is null dumbass");
+            //}
+
         }
     }
 }

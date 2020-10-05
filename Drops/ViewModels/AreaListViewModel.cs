@@ -14,46 +14,45 @@ namespace Drops.ViewModels
 {
     public class AreaListViewModel : BaseViewModel
     {
-        public AreaListViewModel() { }
+        public AreaListViewModel()
+        {
+            SubscribedAreas = new ObservableCollection<DropsArea>();
 
-        //public AreaListViewModel()
-        //{
-        //    AllAreas = Userbase.ActiveUser.AllAreas;
+            AllAreas.GetSubscribedAreas(SubscribedAreas);
 
-        //    ActiveArea = (Userbase.ActiveUser.ActiveArea != null) ? Userbase.ActiveUser.ActiveArea : Userbase.DefaultArea;
+            CreateAreaCommand = new Command(() =>
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new AreaCreationDetailView());
+            });
 
-        //    ActiveAreaName = $"{ActiveArea.Name} is the active area";
+            GetCommand = new Command(() =>
+            {
+                foreach(DropsArea area in SubscribedAreas)
+                {
+                    System.Diagnostics.Debug.WriteLine(area.AreaName);
+                }
+            });
+        }
 
-        //    ActivateAreaCommand = new Command(OnActivateAreaButtonClicked);
+        // PROPERTIES
+        public ObservableCollection<DropsArea> SubscribedAreas { get; }
 
-        //    CreateAreaCommand = new Command(() =>
-        //    {
-        //        Application.Current.MainPage.Navigation.PushAsync(new AreaCreationDetailView());
-        //    });
-        //}
+        public ICommand CreateAreaCommand { get; }
 
-        //// PROPERTIES
-        //public ICommand ActivateAreaCommand { get; }
+        public ICommand GetCommand { get; }
 
-        //public ICommand CreateAreaCommand { get; }
+        // METHODS
+        
 
-        //public Area ActiveArea { get; set; }
+        public void OnActivateAreaButtonClicked(object obj)
+        {
+            //DropsArea area = obj as DropsArea;
 
-        //public string ActiveAreaName { get; set; }
+            //ActiveArea = area;
 
-        //public ObservableCollection<Area> AllAreas { get; set; }
+            //ActiveAreaName = $"{ActiveArea.Area} is the active area";
 
-        //public ObservableCollection<string> AllAreaNames { get; set; }
-
-        //public void OnActivateAreaButtonClicked(object obj)
-        //{
-        //    Area area = obj as Area;
-
-        //    ActiveArea = area;
-
-        //    ActiveAreaName = $"{ActiveArea.Name} is the active area";
-
-        //    System.Diagnostics.Debug.WriteLine($"{area.Name} is the new active area");
-        //}
+            //System.Diagnostics.Debug.WriteLine($"{area.Area} is the new active area");
+        }
     }
 }

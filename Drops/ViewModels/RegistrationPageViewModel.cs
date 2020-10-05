@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Drops.Models;
 using Drops.Views;
@@ -11,67 +12,65 @@ using Xamarin.Forms;
 
 namespace Drops.ViewModels
 {
-    public class RegistrationPageViewModel : INotifyPropertyChanged
+    public class RegistrationPageViewModel : ValidationViewModel
     {
         // CONSTRUCTORS
         public RegistrationPageViewModel()
         {
-            // EVENT HANDLERS
-            CreateCommand = new Command(async () =>
+            User = new DropsUser();
+
+            SaveCommand = new Command(async () => await ExecuteSaveCommand());
+        }
+
+        // PROPERTIES (old content)
+
+        public DropsUser User { get; set; }
+
+        public ICommand SaveCommand { get; }
+
+        public event EventHandler SaveComplete;
+        
+        // METHODS
+        async Task ExecuteSaveCommand()
+        {
+            // Enforcces Unique usernames
+            foreach (DropsUser user in await CosmosDBService.GetUsers())
             {
-                // jeez I'm tired rn
+                if (user.Username == UsernameEntry)
+                {
+                    return;
+                }
+            }
 
-                await CosmosDBService.InsertUser(new DropsUser("id", // let's take a look at how todoitems handled ids
-                                                               UsernameEntry,
-                                                               PasswordEntry,
-                                                               "default",
-                                                               new Dictionary<string, string>()));
+            // Enforces a minimum password length of 8 characters
+            if(PasswordEntry.Length >= 8)
+            {
+                
 
+                User.Username = UsernameEntry;
 
-                //public DropsUser(string id,
-                //         string username,
-                //         string password,
-                //         string activeArea,
-                //         Dictionary<string, string> areas)
-                //{
-                //    ID = id;
+                User.Password = PasswordEntry;
 
-                //    Username = username;
+                User.ActiveAreaName = "default";
 
-                //    Password = password;
+                User.Areas = new Dictionary<string, string>();
 
-                //    ActiveArea = activeArea;
+                // first population
+                //PopulateUsersCommand.Execute(null);
 
-                //    Areas = areas;
-                //}
+                await CosmosDBService.InsertUser(User);
 
-                //
-            });
+                AllUsers.Users.Add(User);
+
+                SaveComplete?.Invoke(this, new EventArgs());
+
+                AllUsers.ActiveUser = User;
+
+               
+
+                System.Diagnostics.Debug.WriteLine($"IsValid is currently {IsValid}");
+            }
+
         }
-
-        // PROPERTIES
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public string UsernameEntry { get; set; }
-
-        public string PasswordEntry { get; set; }
-
-        public ICommand CreateCommand { get;  }
-
-        public ObservableCollection<DropsArea> Areas
-        {
-            get => AllAreas.Areas;
-
-            //set; // i don't think we actually need to set this value in this class
-        }
-
-        public ObservableCollection<DropsUser> Users
-        {
-            get => AllUsers.Users;
-
-            //set; we need to append valid new users here
-            // username and pasword will be checked for validity and a new and unique id will be generated
-        }
-
     }
 }
