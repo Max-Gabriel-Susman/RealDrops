@@ -20,10 +20,18 @@ namespace Drops.ViewModels
 
             AllAreas.GetSubscribedAreas(SubscribedAreas);
 
+            ActiveAreaName = AllAreas.ActiveArea.AreaName;
+
             CreateAreaCommand = new Command(() =>
             {
                 Application.Current.MainPage.Navigation.PushAsync(new AreaCreationDetailView());
             });
+
+            SelectCommand = new Command(OnActivateAreaButtonClicked);
+            //SelectCommand = new Command(() =>
+            //{
+            //    System.Diagnostics.Debug.WriteLine("Select command invoked");
+            //});
 
             GetCommand = new Command(() =>
             {
@@ -32,6 +40,11 @@ namespace Drops.ViewModels
                     System.Diagnostics.Debug.WriteLine(area.AreaName);
                 }
             });
+
+            foreach(DropsArea area in SubscribedAreas)
+            {
+                System.Diagnostics.Debug.WriteLine($"the area's name is {area.AreaName}");
+            }
         }
 
         // PROPERTIES
@@ -41,18 +54,34 @@ namespace Drops.ViewModels
 
         public ICommand GetCommand { get; }
 
+        public ICommand SelectCommand { get; }
+
+        public string ActiveAreaName { get; set; }
+
         // METHODS
-        
+
 
         public void OnActivateAreaButtonClicked(object obj)
         {
-            //DropsArea area = obj as DropsArea;
+            System.Diagnostics.Debug.WriteLine($"The active area is {AllAreas.ActiveArea.AreaName} before update");
 
-            //ActiveArea = area;
+            DropsArea area = obj as DropsArea;
 
-            //ActiveAreaName = $"{ActiveArea.Area} is the active area";
+            AllAreas.ActiveArea = area;
 
-            //System.Diagnostics.Debug.WriteLine($"{area.Area} is the new active area");
+            // AllAreas.ActiveAreaJSONPins.Clear();
+
+            // now populate it
+
+            AllUsers.ActiveUser.ActiveAreaName = area.AreaName;
+
+            AllUsers.UpdateActiveUser();
+
+            AllAreas.UpdateActiveArea(area);
+
+            System.Diagnostics.Debug.WriteLine($"The active area is {AllAreas.ActiveArea.AreaName} after update");
+
+            System.Diagnostics.Debug.WriteLine($"The active user's active area is {AllUsers.ActiveUser.ActiveAreaName} after update");
         }
     }
 }

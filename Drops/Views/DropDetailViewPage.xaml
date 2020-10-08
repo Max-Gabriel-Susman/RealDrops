@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Drops.ViewModels"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="Drops.Views.DropDetailViewPage">
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Button Command="{Binding SaveChangesCommand}"
+                    Text="Create Area"
+                    TextColor="Beige"
+                    BackgroundColor="Green" />
+
+            <Entry Placeholder="Enter a new Label: "
+                   x:Name="nameEntry"
+                   Text="{Binding NewLabelEntry}"/>
+
+            <maps:Map x:Name="map"
+                        MapType="Hybrid"
+                        MapClicked="OnMapClicked">
+                <x:Arguments>
+                    <maps:MapSpan>
+                        <x:Arguments>
+                            <maps:Position>
+                                <x:Arguments>
+                                    <x:Double>41.7377780</x:Double>
+                                    <x:Double>-111.8308330</x:Double>
+                                </x:Arguments>
+                            </maps:Position>
+                            <x:Double>0.01</x:Double>
+                            <x:Double>0.01</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
+            </maps:Map>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+    

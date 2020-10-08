@@ -34,7 +34,7 @@ namespace Drops.Views
 
                     Longitude = Longitude ?? 0.0,
 
-                    Pins = new Dictionary<string, Dictionary<string, string>>(),
+                    JSONPins = new Dictionary<string, Dictionary<string, string>>(),
 
                     Subscribers = new Dictionary<string, string>()
                     {

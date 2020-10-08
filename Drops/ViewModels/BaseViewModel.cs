@@ -7,9 +7,13 @@ using System.Collections.Generic;
 
 namespace Drops.ViewModels
 {
+    // when I start migrating logic to the mapcontrolviewmodel I will probably want to derive from this class
     public class BaseViewModel : INotifyPropertyChanged
     {
         // At a later point I need to evaluate the necessity of all the content in this class
+        // Also I think there's a lot of content I can abstract to here at a later point in time, but let's get things running first
+
+        // I don't thik I need this anymore
         string _title = "";
         public string Title
         {
@@ -17,6 +21,7 @@ namespace Drops.ViewModels
             set => SetProperty(ref _title, value);
         }
 
+        // and I don't think I need this either
         bool _isBusy = false;
         public bool IsBusy
         {
@@ -37,6 +42,7 @@ namespace Drops.ViewModels
             HandlePropertyChanged(propertyName);
         }
 
+        // not actually sure what's going on here, I need to grok this because my codebase currently relies on it
         protected void HandlePropertyChanged(string propertyName = "") =>
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 

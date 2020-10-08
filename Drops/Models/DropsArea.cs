@@ -119,17 +119,17 @@ namespace Drops.Models
         }
 
         // array of arrays of strings
-        Dictionary<string, Dictionary<string, string>> pins;
-        [JsonProperty("drops")]
-        public Dictionary<string, Dictionary<string, string>> Pins
+        Dictionary<string, Dictionary<string, string>> jsonPins;
+        [JsonProperty("pins")]
+        public Dictionary<string, Dictionary<string, string>> JSONPins 
         {
-            get => pins;
+            get => jsonPins;
             set
             {
-                if (pins == value)
+                if (jsonPins == value)
                     return;
 
-                pins = value;
+                jsonPins = value;
 
                 HandlePropertyChanged();
             }

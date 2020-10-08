@@ -115,16 +115,16 @@ namespace Drops.Services
 
 
         // UPDATE
-        //public async static Task UpdateToDoItem(ToDoItem item)
-        //{
-        //    if (!await Initialize())
-        //        return;
+        public async static Task UpdateUser(DropsUser user)
+        {
+            if (!await Initialize())
+                return;
 
-        //    var docUri = UriFactory.CreateDocumentUri(databaseName, collectionName, item.Id);
-        //    await docClient.ReplaceDocumentAsync(docUri, item);
-        //}
+            var docUri = UriFactory.CreateDocumentUri(databaseName, userCollectionName, user.ID);
+            await docClient.ReplaceDocumentAsync(docUri, user);
+        }
 
-
+        // I think that we could possibly create a single set of generic methods to encompass the two sets we currently have right here
 
 
         // AREA CONTAINER CRUD METHODS

@@ -18,7 +18,9 @@ namespace Drops.Models
         //public static ObservableCollection<DropsArea> subcribedAreas;
 
         // PROPERTIES
-        
+        public static string ActivePinKey { get; set; }
+
+        public static ObservableCollection<DropsArea> Areas = new ObservableCollection<DropsArea>(); // we need to assign this to the areas gotten from the db
 
         public static DropsArea ActiveArea = new DropsArea()
         {
@@ -30,10 +32,11 @@ namespace Drops.Models
 
             Subscribers = new Dictionary<string, string>(),
 
-            Pins = new Dictionary<string, Dictionary<string, string>>()
+            JSONPins = new Dictionary<string, Dictionary<string, string>>()
         };
 
-        public static ObservableCollection<Pin> AreaDrops = new ObservableCollection<Pin>();
+        //public static Dictionary<string, Dictionary<string, string>> ActiveAreaJSONPins = new Dictionary<string, Dictionary<string, string>>();
+        public static ObservableCollection<Pin> ActiveAreaJSONPins = new ObservableCollection<Pin>();
 
         public static Map ActiveMap { get; set; }
 
@@ -90,6 +93,32 @@ namespace Drops.Models
                     return;
                 }
             }
+        }
+
+        // Get an areas pins, pretty sure this is going to be dependant on the ability to know the active areas name
+        public static async void GetActiveAreaPins(string activeArea, ObservableCollection<Pin> pins)
+        {
+            foreach(DropsArea area in await CosmosDBService.GetAreas())
+            {
+                if(area.AreaName == activeArea)
+                {
+                    foreach(var pair in area.JSONPins)
+                    {
+                        // first let's make sure we can pass the activearea name to mapcontrol as opposed to the active username
+                    }
+                }
+            }
+        }
+
+        public static async void UpdateActiveArea()
+        {
+            // this means we should also prevent users from naming their areas as 'default' 
+            if(ActiveArea.AreaName != "default") { await CosmosDBService.UpdateArea(ActiveArea); }
+        }
+
+        public static async void UpdateActiveArea(DropsArea area)
+        {
+            await CosmosDBService.UpdateArea(area);
         }
     }
 }

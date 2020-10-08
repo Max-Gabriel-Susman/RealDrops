@@ -30,7 +30,7 @@ namespace Drops.Views
             // we'll handle the actual navigation here
             if (true)//(vm.IsValid)
             {
-                Navigation.InsertPageBefore(new MapPage(), this);
+                Navigation.InsertPageBefore(new MapControlPage(), this);
                 await Navigation.PopAsync();
             }
 

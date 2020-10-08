@@ -73,5 +73,10 @@ namespace Drops.Models
 
             return false;
         }
+
+        public static async void UpdateActiveUser()
+        {
+            await CosmosDBService.UpdateUser(ActiveUser);
+        }
     }
 }

@@ -10,16 +10,12 @@
         <local:DropListViewModel/>
     </ContentPage.BindingContext>
     <StackLayout Margin="30" Orientation="Vertical">
-        <Button Text="Create pin"
-                Command="{Binding CreateCommand}"/>
-        <Entry Text="{Binding LabelEntry}" Placeholder="Enter a label"/>
-        <Entry Text="{Binding LatitudeEntry}" Placeholder="Enter a latitude"/>
-        <Entry Text="{Binding LongitudeEntry}" Placeholder="Enter a longitude"/>
         <ListView x:Name="MyList"
                   SeparatorVisibility="None"
                   HasUnevenRows="True"
-                  ItemsSource="{Binding Pins}"
-                  Footer="">
+                  ItemsSource="{Binding ActiveAreaJSONPins}"
+                  Footer=""
+                  ItemSelected="OnDropSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                        <ViewCell>
