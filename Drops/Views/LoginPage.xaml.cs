@@ -35,10 +35,10 @@ namespace Drops.Views
             // we need to assign active user
             
             // we'll handle the actual navigation here
-            if (true) //(vm.IsValid)
+            if (AllUsers.ActiveUser != null) //(vm.IsValid)
             {
                 // Navigation.InsertPageBefore(new MapPage(), this); // MapPage decomissioned indefinitely
-                System.Diagnostics.Debug.WriteLine($"activeusername is {AllUsers.ActiveUser.Username}");
+                //System.Diagnostics.Debug.WriteLine($"activeusername is {AllUsers.ActiveUser.Username}");
                 // System.Diagnostics.Debug.WriteLine($"the active area name is {AllAreas.ActiveArea.AreaName}");
 
                 Navigation.InsertPageBefore(new MapControlPage(), this);
@@ -48,6 +48,15 @@ namespace Drops.Views
             else
             {
                 // Login failed
+
+                // upon failure we need the entries text properties to be set to empty and red placeholder text feedback
+
+                // maybe implementing a vm instance like i did here in droplistviewpage.xaml.cs will let me successfully pass the value of the key to the detailpage
+
+                vm.UsernameEntry = string.Empty;
+
+                vm.PasswordEntry = string.Empty;
+
                 System.Diagnostics.Debug.WriteLine("login failed");
             }
         }

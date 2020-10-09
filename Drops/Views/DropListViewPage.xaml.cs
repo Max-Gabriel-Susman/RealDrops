@@ -21,7 +21,7 @@ namespace Drops.Views
 
         void OnDropSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(sender);
+            // we'll come back to this later, currently the issue is that I can't figure out how to tell the editor which pin it's tasked with editing
 
             //var dropsPin = sender as DropsPin;
 

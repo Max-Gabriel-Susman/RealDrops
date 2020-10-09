@@ -15,6 +15,9 @@ namespace Drops.ViewModels
     // I need to verify if BaseViewModel is actually used later I don't want to  look foolish
     public class DropListViewModel : BaseViewModel, INotifyPropertyChanged // I think the verb is 'including' the interface, I should find out so I don't sound stupid
     {
+        // FIELDS
+        public event PropertyChangedEventHandler PropertyChanged;
+
         // CONSTRUCTORS
         public DropListViewModel()
         {
@@ -106,7 +109,7 @@ namespace Drops.ViewModels
         // PROPERTIES
 
         // because of way this was implemented in the base class it had to be overriden to facillitate my current practices
-        public event PropertyChangedEventHandler PropertyChanged; // would this event handler be considered a field, property, or something else entirely?
+         // would this event handler be considered a field, property, or something else entirely?
         // public new event PropertyChangedEventHandler PropertyChanged; // would this event handler be considered a field, property, or something else entirely?
 
         public ObservableCollection<DropsPin> Pins { get; set; }

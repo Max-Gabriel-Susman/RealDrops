@@ -49,6 +49,7 @@ namespace Drops.Models
             }
         }
 
+        // I think that we should migrate some of the logic from loginviewmodel logincommand to this method bcause it would be more performant
         public static bool Authentication(string username, string password)
         // Determines the validity of credential entry
         {

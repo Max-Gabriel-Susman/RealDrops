@@ -98,6 +98,13 @@ namespace Drops.Views
                 Application.Current.MainPage.Navigation.PushAsync(new PeopleListViewPage());
             });
 
+            LogoutCommand = new Command(() =>
+            {
+                Navigation.InsertPageBefore(new LoginPage(), this);
+
+                Navigation.PopAsync();
+            });
+
             BindingContext = this;
         }
 
@@ -109,6 +116,8 @@ namespace Drops.Views
         public ICommand AreaListCommand { get; }
 
         public ICommand PeopleListCommand { get; }
+
+        public ICommand LogoutCommand { get; }
 
         //public ICommand ActivateAreaCommand { get; }
 

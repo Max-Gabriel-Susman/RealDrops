@@ -28,6 +28,24 @@
                          HorizontalOptions="FillAndExpand"
                          Padding="0,15"
                          Spacing="10"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.075}">
+
+                <Button IsEnabled="True"
+                            Text="Logout"
+                            FontSize="36"
+                            TextColor="Pink"
+                            BackgroundColor="White"
+                            Command="{Binding LogoutCommand}"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand"
+                         Padding="0,15"
+                         Spacing="10"
                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.9}"
                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.075}">
