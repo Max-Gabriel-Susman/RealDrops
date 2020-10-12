@@ -1,14 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using System;
-using System.Data;
 using System.Diagnostics;
 using Microsoft.Azure.Documents.Linq;
-using Xamarin.Forms;
 using Drops.Helpers;
 using Drops.Models;
 
@@ -16,30 +12,30 @@ using Drops.Models;
 namespace Drops.Services
 {
     public class CosmosDBService
-    {
-        // could the logic be breaking down because docClient is no longer no(stale?)?      
+    {      
         static DocumentClient docClient = null;
 
+        // String constants for database interaction
         static readonly string databaseName = "Drops";
         static readonly string userCollectionName = "Users";
         static readonly string areaCollectionName = "Areas";
 
-        // when is initalize used?
         static async Task<bool> Initialize()
         {
+            // Returns method if docClient has already been initialized
             if (docClient != null)
                 return true;
 
+            // The rest of this Method is executed only once per session
             try
             {
+                // assigns a DocumentClient to a null docClient
                 docClient = new DocumentClient(new Uri(APIKeys.CosmosEndpointUrl), APIKeys.CosmosAuthKey);
 
-                // Create the database - this can also be done through the portal
+                // Instanttiates the database
                 await docClient.CreateDatabaseIfNotExistsAsync(new Database { Id = databaseName });
 
-                // Create the collection - make sure to specify the RUs - has pricing implications
-                // This can also be done through the portal
-
+                // Instanitates the Document Collection and Request options
                 await docClient.CreateDocumentCollectionIfNotExistsAsync(
                     UriFactory.CreateDatabaseUri(databaseName),
                     new DocumentCollection { Id = userCollectionName },
@@ -66,18 +62,21 @@ namespace Drops.Services
         {
             var users = new List<DropsUser>();
 
+            // Enforces initialization prior to the use of this methods functionality
             if (!await Initialize())
                 return users;
 
-            var todoQuery = docClient.CreateDocumentQuery<DropsUser>(
+            // assings the query to a var
+            var query = docClient.CreateDocumentQuery<DropsUser>(
                 UriFactory.CreateDocumentCollectionUri(databaseName, userCollectionName),
                 new FeedOptions { MaxItemCount = -1, EnableCrossPartitionQuery = true })
                 .AsDocumentQuery();
 
-            while (todoQuery.HasMoreResults)
+            // iterates over the query
+            while (query.HasMoreResults)
             {
-                System.Diagnostics.Debug.WriteLine("about to declare and assign query results");
-                var queryResults = await todoQuery.ExecuteNextAsync<DropsUser>();
+                // assigns an element from the query to queryResults
+                var queryResults = await query.ExecuteNextAsync<DropsUser>();
 
                 users.AddRange(queryResults);
             }
@@ -86,30 +85,25 @@ namespace Drops.Services
         }
 
         // CREATE
-        // first we have to make sure that DropsUser fields the right information to create a valid user on the backend as well
         public async static Task InsertUser(DropsUser user)
         {
+            // Enforces the Initialize method to be called prior to this one
             if (!await Initialize())
                 return;
-            // CreateDocumentAsync() :
+
+            // creates document and appends in to container
             await docClient.CreateDocumentAsync(
                 UriFactory.CreateDocumentCollectionUri(databaseName, userCollectionName),
                 user);
-            
-            //System.Diagnostics.Debug.WriteLine($"this is the user's {user.ID}");
-            //System.Diagnostics.Debug.WriteLine($"this is the user's {user.Username}");
-            //System.Diagnostics.Debug.WriteLine($"this is the user's {user.Password}");
-            //System.Diagnostics.Debug.WriteLine($"this is the user's {user.ActiveArea}");
-            //System.Diagnostics.Debug.WriteLine($"this is the user's {user.Areas}");
         }
 
-        // DELETE
-        //public async static Task DeleteToDoItem(ToDoItem item)
+        // DELETE - Not yet implemented
+        //public async static Task DeleteUser(DropsUser user)
         //{
         //    if (!await Initialize())
         //        return;
 
-        //    var docUri = UriFactory.CreateDocumentUri(databaseName, collectionName, item.Id);
+        //    var docUri = UriFactory.CreateDocumentUri(databaseName, userCollectionName, user.ID);
         //    await docClient.DeleteDocumentAsync(docUri);
         //}
 
@@ -117,9 +111,11 @@ namespace Drops.Services
         // UPDATE
         public async static Task UpdateUser(DropsUser user)
         {
+            // Enforces the Initialize method to be called prior to this one
             if (!await Initialize())
                 return;
 
+            // Creates a URI for accessing the Document in the Database
             var docUri = UriFactory.CreateDocumentUri(databaseName, userCollectionName, user.ID);
             await docClient.ReplaceDocumentAsync(docUri, user);
         }
@@ -128,25 +124,28 @@ namespace Drops.Services
 
 
         // AREA CONTAINER CRUD METHODS
+
+        // READ
         public async static Task<List<DropsArea>> GetAreas()
         {
             var areas = new List<DropsArea>();
 
+            // Enforces the Initialize method to be called prior to this one
             if (!await Initialize())
                 return areas;
 
-            var todoQuery = docClient.CreateDocumentQuery<DropsArea>(
+            // stores the results of the query in a var
+            var query = docClient.CreateDocumentQuery<DropsArea>(
                 UriFactory.CreateDocumentCollectionUri(databaseName, areaCollectionName),
                 new FeedOptions { MaxItemCount = -1, EnableCrossPartitionQuery = true })
                 .AsDocumentQuery();
 
-            while (todoQuery.HasMoreResults)
+            // iterates over query elements
+            while (query.HasMoreResults)
             {
-                // why does this become an issue all of the sudden, don't we use it to populate the areas list view?
-                var queryResults = await todoQuery.ExecuteNextAsync<DropsArea>();
-                // let's see if this actually works that didn't work either
-                // FeedResponse<DropsArea> queryResults = await todoQuery.ExecuteNextAsync<DropsArea>();
-
+                // stores next element of query in a var
+                var queryResults = await query.ExecuteNextAsync<DropsArea>();
+                
                 areas.AddRange(queryResults);
             }
 
@@ -157,32 +156,38 @@ namespace Drops.Services
         // CREATE
         public async static Task InsertArea(DropsArea area)
         {
+            // Enforces the Initialize method to be called prior to this one
             if (!await Initialize())
                 return;
 
+            // creates document and appends in to container
             await docClient.CreateDocumentAsync(
                 UriFactory.CreateDocumentCollectionUri(databaseName, areaCollectionName),
                 area);
         }
 
-        // DELETE
-        //public async static Task DeleteToDoItem(ToDoItem item)
+        // DELETE - Not Yet Implemented
+        //public async static Task DeleteArea(DropsArea area)
         //{
         //    if (!await Initialize())
         //        return;
 
-        //    var docUri = UriFactory.CreateDocumentUri(databaseName, collectionName, item.Id);
+        //    var docUri = UriFactory.CreateDocumentUri(databaseName, areaCollectionName, area.ID);
         //    await docClient.DeleteDocumentAsync(docUri);
         //}
 
 
-        // UPDATE - I think that should do the trick I'm gonna take a shit and then come back to this
+        // UPDATE 
         public async static Task UpdateArea(DropsArea area)
         {
+            // Enforces the Initialize method to be called prior to this one
             if (!await Initialize())
                 return;
 
-            var docUri = UriFactory.CreateDocumentUri(databaseName, areaCollectionName, area.ID); // stringToEscape is null wtf it's either in UriFactory or CreateDocumentUri
+            // Creates a URI for accessing the Document in the Database
+            var docUri = UriFactory.CreateDocumentUri(databaseName, areaCollectionName, area.ID);
+
+            // Replaces the data from the document specified by the uri with the area passed as an argument
             await docClient.ReplaceDocumentAsync(docUri, area);
         }
     }

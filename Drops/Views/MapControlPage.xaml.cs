@@ -4,23 +4,15 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
-using Drops.Services;
 using Drops.Static;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
-// If we have't moved this content to the view mdoel by the time we're showing this off we should move the disclaimer here
 
 namespace Drops.Views
 {
     public partial class MapControlPage : ContentPage, INotifyPropertyChanged
     {
-        // FIELDS
-        //DateTime dateTime; // this is the property being monitored
-        //public Dictionary<string, Dictionary<string, string>> jsonPins;
-        // public ObservableCollection<Pin> activeAreaJSONPins;
-        // let's switch back to the observablecollection paradigm becauase I actually had that working
-
         // CONSTRUCTORS
         public MapControlPage()
         {
@@ -39,49 +31,7 @@ namespace Drops.Views
 
             map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(41.7377780, -111.8308330), Distance.FromMiles(1.0)));
 
-            // ActiveAreaJSONPins = new Dictionary<string, Dictionary<string, string>>();
-            //ActiveAreaJSONPins = new ObservableCollection<Pin>();
-
-            //foreach (var pair in AllAreas.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
-            //{
-            //    // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
-            //    Dictionary<string, string> drop = pair.Value;
-
-            //    //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
-            //    // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
-            //    string label = drop["label"];
-
-            //    double latitude = Convert.ToDouble(drop["latitude"]);
-
-            //    double longitude = Convert.ToDouble(drop["longitude"]);
-
-            //    Pin pin = new Pin()
-            //    {
-            //        Label = label,
-
-            //        Position = new Position(latitude, longitude)
-            //    };
-
-            //    AllAreas.ActiveAreaJSONPins.Add(pin); // this guy's yelling because he needs a kv as opposed to an element
-            //}
-
-
-            // System.Diagnostics.Debug.WriteLine($"There are {ActiveAreaJSONPins.Count} pins in the active area ");
             System.Diagnostics.Debug.WriteLine($"There are {AllAreas.ActiveAreaJSONPins.Count} pins in the active area ");
-
-
-
-            // We're going to need at least some of this logic to populate the map with pins from the db
-
-
-            //this.DateTime = DateTime.Now; // property is assigned it's initial value
-
-            //// starts a recurring timer using the device's clock capabilities
-            //Device.StartTimer(TimeSpan.FromSeconds(1), () =>
-            //{
-            //    this.DateTime = DateTime.Now;
-            //    return true;
-            //});
 
             // EVENT HANDLERS
             DropListCommand = new Command(() =>
@@ -113,8 +63,6 @@ namespace Drops.Views
         }
 
         // PROPERTIES
-        //public string ActiveAreaName { get; set; }
-        
         public ICommand DropListCommand { get; }
 
         public ICommand AreaListCommand { get; }
@@ -123,29 +71,9 @@ namespace Drops.Views
 
         public ICommand LogoutCommand { get; }
 
-        //public ICommand ActivateAreaCommand { get; }
+        public event PropertyChangedEventHandler PropertyChanged; 
 
-        public event PropertyChangedEventHandler PropertyChanged; // this event handler
-
-        // are we actually using this one anymore?
-        public DropsArea ActiveArea
-        {
-            set
-            {
-                if (AllAreas.ActiveArea != value)
-                {
-                    AllAreas.ActiveArea = value;
-
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActiveArea"));
-                }
-            }
-            get => AllAreas.ActiveArea;
-        }
-
-        // we are going to need to convert between Dictionary<string, Dictionary<string, string>> and ObservableCollection<Pin>
-        // what are the naming conventions for static classes in c# and how can i better adhere to them?
-        // public Dictionary<string, Dictionary<string, string>> ActiveAreaJSONPins//ObservableCollection<Pin> Pins
-        public ObservableCollection<Pin> ActiveAreaJSONPins//ObservableCollection<Pin> Pins
+        public ObservableCollection<Pin> ActiveAreaJSONPins
         {
             set
             {
@@ -160,12 +88,10 @@ namespace Drops.Views
             get => AllAreas.ActiveAreaJSONPins;
         }
 
-        public void OnMapClicked(object sender, MapClickedEventArgs e)
         // Handles Map Clicks
+        public void OnMapClicked(object sender, MapClickedEventArgs e)
         {
-            //System.Diagnostics.Debug.WriteLine
-            // A pin is instantiated using the args from OnMapClicked
-            // what was the default keyword for again? stuff like switch statements right?
+            // Prevents 
             if(AllAreas.ActiveArea.AreaName != "default")
             {
                 var pin = new Pin()
@@ -175,11 +101,7 @@ namespace Drops.Views
                     Label = "Unknown"
                 };
 
-
-
                 // newKey and newValue are defined using values from pin's properties and OnMapClicked's args
-                AllAreas.ActiveArea.DropsCreated++;
-
                 string newKey = Convert.ToString(AllAreas.ActiveArea.DropsCreated);
 
                 System.Diagnostics.Debug.WriteLine(AllAreas.ActiveArea.DropsCreated);
@@ -193,17 +115,20 @@ namespace Drops.Views
                 { "longitude", Convert.ToString(pin.Position.Longitude) }
             };
 
-                // I also need to ammend this logic here
-
                 AllAreas.ActiveAreaJSONPins.Add(pin);
 
                 AllAreas.ActiveArea.JSONPins.Add(newKey, newValue);
 
+                AllAreas.ActiveArea.DropsCreated++;
+
                 AllAreas.UpdateActiveArea();
+
+
             }
             else
             {
-                
+                System.Diagnostics.Debug.WriteLine("You've attempted to add a pin to the default area, that's not an option.");
+                // Give the user some feed back when this occurs
             }
 
         }
@@ -214,12 +139,12 @@ namespace Drops.Views
 
             System.Diagnostics.Debug.WriteLine("you are now entering the map bitch");
 
-            // this works let's handle pins refreshing here
+            // Clears Pins to prevent Duplicate Pins after the Collection is Populated
             AllAreas.ActiveAreaJSONPins.Clear();
 
-            foreach (var pair in AllAreas.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
+            // Populates the collection with pins
+            foreach (var pair in AllAreas.ActiveArea.JSONPins) 
             {
-                // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
                 Dictionary<string, string> drop = pair.Value;
 
                 string key = pair.Key;
@@ -242,8 +167,6 @@ namespace Drops.Views
                 };
 
                 AllAreas.ActiveAreaJSONPins.Add(pin);
-
-                AllAreas.ActiveArea.DropsCreated++;
             }
         }
     }

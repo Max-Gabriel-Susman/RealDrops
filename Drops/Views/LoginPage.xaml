@@ -2,27 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Drops.ViewModels"
-             xmlns:images="clr-namespace:Drops.Images"
              x:Class="Drops.Views.LoginPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.BindingContext>
         <local:LoginPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
+
         <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
                      Orientation="Vertical"
                      Padding="20"
                      Spacing="8">
-
-           
             
             <Image Source="dropsglyph.pdf"
                    WidthRequest="{OnPlatform iOS=300, Android=250}"
                    HorizontalOptions="Center" />
-
-            
-            
 
             <Entry Placeholder="{Binding UsernamePlaceholder}"
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"
@@ -43,7 +38,7 @@
                     HeightRequest="35"
                     Clicked="OnLoginButtonClicked"/>
 
-            
+            <!-- Registration is currently under maitenance -->
 
             <!--<Button Text="Registration"
                     Margin="75,0,75,0"
@@ -60,9 +55,7 @@
                     HorizontalOptions="CenterAndExpand"
                     Margin="10,10,10,0"/>
                     
-            <!--<Button Text="Get Users and Areas"
-                    Command="{Binding GetCommand}"/>-->
         </StackLayout>
+
     </ContentPage.Content>
-        
 </ContentPage>

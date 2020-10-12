@@ -1,28 +1,27 @@
 # Drops
 
+## !HEADS_UP! : Regidstration functionality is currently down so Use these credentials to login Username: "Admin", Password: "Adminadmin" 
+
 ## Description
 
-Drops is an application where users may create and share areas with oneanother, each area encapsulates the data needed to render and perform work on a collection of pins, these pins are map markers that open windows of information when tapped. An area is intended to allow users to capture sets of geolocations for the purposes of storing locations and information associated with those locations and then sharing this data and allowing others to perform work against it. Potential applications include but are not limited to door to door sales rep teams, meter maids, event management, . The current version of Drops requires a network connection to push and pull data from an Azure Cosmos Database.
+RealDrops is an outdoor Sales Lead management application that allows users to represent potential leads and other entities with a pin(referred to as a drop) using their devices default maps API. Drops are persisted in collections that are members of area objects that have a pair of coordinates to center the map view upon rendering.
+Areas also have a collection of 'Subscribers' these are users  who are allowed to access the area and manage it's drops, the subscribers include the owner(the creator of the area) and all the users he has shared this area with. Data is persisted by an Azure Cosmos DB backend, tandem local persistence is still in the works so the application currently requires a network connection.
 
-## Planned Updates
 
-### Functionality
+## In the Works
 
-DB Transactions
+- Drop Editing
 
-Edit Pins - DropDetailViewPage
+- Area Editing
 
-Edit Areas - AreaCreationViewPage(Can we use this page for editing existing areas in addition to the creation of new areas? probably)
+- Custom Rendering for map pins and their popup windows
 
----
+- Third Party signin
 
-User Feedback
+- Account Recovery
 
-upon incorrect credential entry, user text entry in entries will be cleared, placholders will be restored with feedback content in red coloring as opposed to original coloring
+- Technical support
 
-This functionality is for the login and registration pages, once we have the logic worked out for this process we can derivve similiar logic for the dropdetail view page and the areacreationviewpage
----
- 
-### Appearance
+- Dynamic User Prompts
 
-absolute oodles of work to be done here, appearance is rather nasty as of right now
+

@@ -30,21 +30,16 @@ namespace Drops.Views
         {
             vm.SaveCommand.Execute(null);
 
-            //System.Diagnostics.Debug.WriteLine($"IsValid is {vm.IsValid}");
-
-
-            
-            // we'll handle the actual navigation here
-            if (AllUsers.ActiveUser != null)//(vm.IsValid)
+            if (AllUsers.ActiveUser != null)
             {
                 Application.Current.MainPage.Navigation.InsertPageBefore(new MapControlPage(), this);
                 await Application.Current.MainPage.Navigation.PopAsync();
             }
-
             else
             {
-                // Login failed
                 System.Diagnostics.Debug.WriteLine("registration failed, ACTIVE USER WAS NUll");
+
+                // Logic to alert the user that their login has failed
             }
         }
     }

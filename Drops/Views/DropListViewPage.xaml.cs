@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
-using Xamarin.Forms.Maps;
-using Drops.ViewModels;
-using Drops.Models;
-using Drops.Static;
+﻿using Xamarin.Forms;
 
 
 namespace Drops.Views
 {
-
+    // This functionality in this class is currently under maintenance as well
     public partial class DropListViewPage : ContentPage
     {
         // DropListViewModel vm;

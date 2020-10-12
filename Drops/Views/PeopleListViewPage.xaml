@@ -8,12 +8,14 @@
     <ContentPage.BindingContext>
         <local:PeopleListViewModel/>
     </ContentPage.BindingContext>
+
     <StackLayout>
         <ListView x:Name="MyList"
                   ItemsSource="{Binding OtherUsers}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+
                         <Grid Margin="10">
 
                             <Grid.ColumnDefinitions>
@@ -31,50 +33,11 @@
                                     BackgroundColor="Green"
                                     TextColor="White"/>
                         </Grid>
-                        <!--<Grid>
-                            
-                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Username}"/>
-                        </Grid>-->
+                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-    <!--<ContentPage.BindingContext>
-        <local:PeopleListViewModel/>
-    </ContentPage.BindingContext>
-    <ContentPage.Content>
-        <StackLayout>
-            <Entry Placeholder="Find People ..." />
-            <ListView ItemsSource="{Binding OtherUsers}"
-                      x:Name="MyList"
-                      SeparatorVisibility="None"
-                      HasUnevenRows="True"
-                      Footer="">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Margin="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions> 
-                                
-                                <Label VerticalOptions="CenterAndExpand" Text="{Binding Username}"/>
-                                <Button Command="{Binding Path=BindingContext.ShareAreaCommand, Source={x:Reference MyList}}"
-                                        CommandParameter="{Binding .}"
-                                        Grid.Column="1"
-                                        Padding="30,10"
-                                        Text="Share Areas"
-                                        HorizontalOptions="EndAndExpand"
-                                        BackgroundColor="Green"
-                                        TextColor="White"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>-->
-
+   
 </ContentPage>

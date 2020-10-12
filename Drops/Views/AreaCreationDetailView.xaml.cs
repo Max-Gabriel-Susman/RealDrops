@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
-using Drops.ViewModels;
 using Drops.Services;
 using Drops.Static;
 using Xamarin.Forms;
@@ -22,7 +20,7 @@ namespace Drops.Views
 
             AllAreas.GetSubscribedAreas(SubscribedAreas);
 
-            // Creates an area locally and inserts in in the DB
+            // Creates an area locally and inserts it into the DB
             CreateAreaCommand = new Command( async () =>
             {
                 System.Diagnostics.Debug.WriteLine("create are acommand invoked");
@@ -70,13 +68,7 @@ namespace Drops.Views
 
 
         // EVENT HANDLER
-        // it seems as thought the dissapearing elements only occurs on ios
-        // also the options button does not fit on android, wtf
-        // I tried to fix the issue by nesting the dissapearinng views in a stack view to no avail,
-        // when the map isn't present the elements don't dissapear, which makes me think they were never absent, they were just covered up or pushed out of the way
-        // going to try placing the elements above the map and see if that helps
         void OnMapClicked(object sender, MapClickedEventArgs e)
-        // Look into migrating this functionality to the view model, probably going to be a command with extra databinding for the pin
         {
             map.Pins.Clear();
 

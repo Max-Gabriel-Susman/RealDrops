@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Drops.Services;
 
 
 namespace Drops.Models
@@ -15,25 +11,6 @@ namespace Drops.Models
     {
         // PROPERTIES
         public event PropertyChangedEventHandler PropertyChanged;
-
-        //public DropsUser(string id,
-        //                 string username,
-        //                 string password,
-        //                 string activeArea,
-        //                 Dictionary<string, string> areas)
-        //{
-        //    ID = id;
-
-        //    Username = username;
-
-        //    Password = password;
-
-        //    ActiveArea = activeArea;
-
-        //    Areas = areas;
-        //}
-
-        //public List<int> Areas { get; set; }
 
         string id;
         [JsonProperty("id")]
@@ -99,7 +76,6 @@ namespace Drops.Models
             }
         }
 
-        // not really sure if this is actually the right way to do this
         Dictionary<string, string> areas;
         [JsonProperty("areas")]
         public Dictionary<string, string> Areas

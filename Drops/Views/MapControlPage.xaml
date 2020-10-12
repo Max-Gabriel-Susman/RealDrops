@@ -7,7 +7,6 @@
              x:Class="Drops.Views.MapControlPage"
              NavigationPage.HasNavigationBar="False"
              Title="Area">
-     
    
     <ContentPage.Content>
         
@@ -25,28 +24,6 @@
                     </DataTemplate>
                 </maps:Map.ItemTemplate>
             </maps:Map>
-
-            <!--<StackLayout Orientation="Horizontal"
-                         VerticalOptions="FillAndExpand"
-                         HorizontalOptions="FillAndExpand"
-                         BackgroundColor="default"
-                         Padding="0,0,0,0"
-                         Margin="10,0,10,0"
-                         Spacing="10"
-                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.05}"
-                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.125}">
-
-                <Button IsEnabled="True"
-                            BackgroundColor="WhiteSmoke"
-                            TextColor="Black"
-                            Text="Logout"
-                            FontSize="22"
-                            Margin="0,15,0,15"
-                            WidthRequest="70"
-                            Command="{Binding LogoutCommand}"/>
-
-            </StackLayout>-->
 
             <StackLayout Orientation="Horizontal"
                          VerticalOptions="FillAndExpand"
@@ -69,7 +46,6 @@
                             WidthRequest="70"
                             Command="{Binding LogoutCommand}"/>
 
-                <!-- MARGIN vals are : left, top, right, bottom -->
                 <Button IsEnabled="True"
                         Text="Areas"
                         FontSize="22"
@@ -96,15 +72,6 @@
                         TextColor="White"
                         BackgroundColor="DarkGray"
                         Command="{Binding DropListCommand}"/>
-
-
-
-                <!--<Button IsEnabled="True"
-                            Text="Options"
-                            FontSize="36"
-                            TextColor="Pink"
-                            BackgroundColor="White"
-                            Command="{Binding OptionListCommand}"/>-->
 
             </StackLayout>
 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using Drops.Services;
 using Drops.Models;
 
@@ -11,17 +8,18 @@ namespace Drops.Static
     public static class AllUsers
     {
         // PROPERTIES
-        public static ObservableCollection<DropsUser> Users = new ObservableCollection<DropsUser>(); // we need to assign this to the users gotten from the db
+        public static ObservableCollection<DropsUser> Users = new ObservableCollection<DropsUser>(); 
 
-        // Readonly Property that Returns a collection of all users excluding the ActiveUser
         public static ObservableCollection<DropsUser> OtherUsers
         {
             get
             {
                 ObservableCollection<DropsUser> otherUsers = new ObservableCollection<DropsUser>();
 
+                // Appends all users with the exception of the active ser to the otherUsers collection
                 foreach(DropsUser user in Users)
 
+                    // Excludes the Active usr from the new collection
                     if(user.Username != ActiveUser.Username)
                     {
                         otherUsers.Add(user);
@@ -32,39 +30,30 @@ namespace Drops.Static
             }
         }
 
-        public static DropsUser ActiveUser { get; set; } // is it set upon login?
+        public static DropsUser ActiveUser { get; set; } 
 
         public static DropsUser TargetUser { get; set; }
-
-        public static bool IsSafeToPopulateMapWithPins { get; set; } // might not need?
 
         // METHODS
         public static async void GetOtherUsers(ObservableCollection<DropsUser> users)
         {
+            // Iterates over the DropsUsers collection returned from database
             foreach (DropsUser user in await CosmosDBService.GetUsers())
             {
+                // Uses a conditional to exclude the active user from being appended to the argument collection
                 if(user.Username != ActiveUser.Username)
                 {
                     users.Add(user);
                 }
             }
         }
-
-        // I think that we should migrate some of the logic from loginviewmodel logincommand to this method bcause it would be more performant
+        
         public static bool Authentication(string username, string password)
-        // Determines the validity of credential entry
         {
-
+            // Iterates over the local 'Users' collection
             foreach (DropsUser user in Users)
             {
-                System.Diagnostics.Debug.WriteLine($"Authentictation checking {user.Username} against input");
-
-                System.Diagnostics.Debug.WriteLine(Equals(user.Username, username) && Equals(user.Password, password));
-
-                System.Diagnostics.Debug.WriteLine($"Username entry is {username}");
-
-                System.Diagnostics.Debug.WriteLine($"Username entry is {password}");
-
+                // checks the iterated users username and password properties against the corresponding arguments
                 if (user.Username == username && user.Password == password)
                 {
                     ActiveUser = user;
@@ -72,13 +61,13 @@ namespace Drops.Static
                     return true;
                 }
             }
-
             return false;
         }
 
         public static async void UpdateActiveUser()
         {
-            await CosmosDBService.UpdateUser(ActiveUser); // why did this get activated and why did it throw a null exception when area was selected?
+            // Updates the Active user
+            await CosmosDBService.UpdateUser(ActiveUser); 
         }
     }
 }

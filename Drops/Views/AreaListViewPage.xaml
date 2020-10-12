@@ -22,11 +22,6 @@
         <Label Text="{Binding ActiveAreaNameLabel}"
                VerticalOptions="CenterAndExpand"
                Margin="5"/>
-
-        <!-- I want to reimplement the logic behind this label when I get the chance -->
-        <!--<Label Text="{Binding OwnershipLabel}"
-               VerticalOptions="CenterAndExpand"
-               Margin="10"/>-->
         
         <Label Text="{Binding NumberOfSubscribersLabel}"
                VerticalOptions="CenterAndExpand"
@@ -34,12 +29,12 @@
         
 
         <ListView x:Name="MyList"
-                  
                   HasUnevenRows="True"
                   ItemsSource="{Binding SubscribedAreas}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+
                         <Grid Margin="10">
 
                             <Grid.ColumnDefinitions>
@@ -59,54 +54,11 @@
                                     
                                     TextColor="Beige"/>
                         </Grid>
-                        <!--<Grid>
-                            
-                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Username}"/>
-                        </Grid>-->
+                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
 
-    <!--<ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding ActiveAreaName}"
-                   TextColor="Black"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="CenterAndExpand"
-                   x:Name="activeAreaBanner"/>
-            <Button Text="Create Area"
-                    Command="{Binding CreateAreaCommand}"
-                    TextColor="White"
-                    BackgroundColor="Green"/>
-            <ListView ItemsSource="{Binding AllAreas}"
-                      x:Name="MyList"
-                      SeparatorVisibility="None"
-                      HasUnevenRows="True"
-                      Footer="">
-                <ListView.ItemTemplate>
-                        <DataTemplate>
-                           <ViewCell>
-                                  <Grid Margin="10">
-                                      <Grid.ColumnDefinitions>
-                                          <ColumnDefinition Width="Auto"/>
-                                          <ColumnDefinition Width="*"/>
-                                      </Grid.ColumnDefinitions>
-                                      <Label VerticalOptions="CenterAndExpand" Text="{Binding Name}"/>
-                                      <Button Command="{Binding Path=BindingContext.ActivateAreaCommand, Source={x:Reference MyList}}"
-                                              CommandParameter="{Binding .}"
-                                              Grid.Column="1"
-                                              Padding="30,10"
-                                              Text="Activate"
-                                              HorizontalOptions="EndAndExpand"
-                                              BackgroundColor="Blue"
-                                              TextColor="White"/>
-                                  </Grid>
-                           </ViewCell>
-                        </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>-->
 </ContentPage>

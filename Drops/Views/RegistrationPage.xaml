@@ -37,9 +37,6 @@
                     BackgroundColor="CadetBlue"
                     Text="Create Account" />
 
-            
-
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
