@@ -7,16 +7,38 @@
         <local:RegistrationPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Placeholder="Enter a new username here"
-                   Text="{Binding UsernameEntry}"/>
-            <Entry Placeholder="Enter a new password here"
-                   IsPassword="True"
-                   Text="{Binding PasswordEntry}"/>
+        <StackLayout
+            Orientation="Vertical"
+            Padding="20"
+            Spacing="8">
+
+            <Image Source="registrationglyph.pdf"
+                   WidthRequest="{OnPlatform iOS=200, Android=250}"
+                   HeightRequest="{OnPlatform iOS=200, Android=250}"
+                   HorizontalOptions="Center" />
+
+            <Entry Placeholder="{Binding UsernamePlaceholder}"
+                   Text="{Binding UsernameEntry}"
+                   PlaceholderColor="{Binding UsernamePlaceholderColor}"
+                   Margin="15,30,15,0"/>
+
+            <Entry IsPassword="True"
+                   Placeholder="{Binding PasswordPlaceholder}"
+                   PlaceholderColor="{Binding PasswordPlaceholderColor}"
+                   Text="{Binding PasswordEntry}"
+                   Margin="15,0,15,8"/>
+
             <Button Clicked="OnRegistrationButtonClicked"
-                    Text="Create Account"
-                    TextColor="White"
-                    BackgroundColor="Green" />
+                    Margin="45,0,45,0"
+                    HeightRequest="35"
+                    
+                    FontSize="20"
+                    BackgroundColor="CadetBlue"
+                    Text="Create Account" />
+
+            
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

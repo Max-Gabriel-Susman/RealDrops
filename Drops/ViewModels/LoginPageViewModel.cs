@@ -6,17 +6,24 @@ using System.Windows.Input;
 using System.Threading.Tasks;
 using Drops.Models;
 using Drops.Views;
+using Drops.Static;
 using Drops.Services;
 using Xamarin.Forms;
+
 
 
 namespace Drops.ViewModels
 {
     public class LoginPageViewModel : ValidationViewModel
     {
+        
+
         // CONSTRUCTORS
         public LoginPageViewModel()
         {
+            BackgroundColor = Color.FromHex("423f3b");
+
+            NavigationBackgroundColor = Color.FromHex("58a0ca");
             // we need to grok request units and then use that knowledge to implement a cheaper set of transactions that enable the current set of functionality
             LoginCommand = new Command(() =>
             {
@@ -48,6 +55,11 @@ namespace Drops.ViewModels
                 }
             });
 
+            CredentialRecoveryCommand = new Command(() =>
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new LostCredentialsViewPage());
+            });
+
             NavToRegistrationCommand = new Command(() =>
             {
                 Application.Current.MainPage.Navigation.PushAsync(new RegistrationPage());
@@ -59,8 +71,14 @@ namespace Drops.ViewModels
 
         public ICommand LoginCommand { get; }
 
-        // METHODS
-        public async void GetActiveArea(DropsUser user) // what if we did something like this for the getsubscribed areas method?
+        public ICommand CredentialRecoveryCommand { get; }
+
+        public Color BackgroundColor { get; set; }
+
+        public Color NavigationBackgroundColor { get; set; }
+        
+    // METHODS
+    public async void GetActiveArea(DropsUser user) // what if we did something like this for the getsubscribed areas method?
         {
             // foreach (DropsArea area in CosmosDBService.GetAreas().Result) // why the fuck is there a .Result?
             foreach (DropsArea area in await CosmosDBService.GetAreas()) // foreach cannot operate on variables of type Task<List<DropsArea>>

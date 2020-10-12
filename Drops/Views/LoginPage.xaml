@@ -2,27 +2,65 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Drops.ViewModels"
-             x:Class="Drops.Views.LoginPage">
+             xmlns:images="clr-namespace:Drops.Images"
+             x:Class="Drops.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.BindingContext>
         <local:LoginPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                     Orientation="Vertical"
+                     Padding="20"
+                     Spacing="8">
+
+           
+
+            <Image Source="dropsglyph.pdf"
+                   WidthRequest="{OnPlatform iOS=300, Android=250}"
+                   HorizontalOptions="Center" />
+
+            
+
+
             <Entry Placeholder="{Binding UsernamePlaceholder}"
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"
-                   Text="{Binding UsernameEntry}" />
+                   Text="{Binding UsernameEntry}"
+                   Margin="15,20,15,0"/>
+
             <Entry Placeholder="{Binding PasswordPlaceholder}"
                    PlaceholderColor="{Binding PasswordPlaceholderColor}"
                    IsPassword="True"
-                   Text="{Binding PasswordEntry}" />
+                   Text="{Binding PasswordEntry}"
+                   Margin="15,0,15,8"/>
+
             <Button Text="Login"
+                    FontSize="20"
+                    Margin="55,0,55,5"
+                    HeightRequest="35"
                     Clicked="OnLoginButtonClicked"/>
+
+            
+
             <Button Text="Registration"
+                    Margin="75,0,75,0"
+                    HeightRequest="25"
+                    BackgroundColor="CadetBlue"
                     Command="{Binding NavToRegistrationCommand}"/>
-            <Button Text="Having Trouble Logging in?"/>
+
+            <Button Text="Having Trouble Logging in?"
+                    Command="{Binding CredentialRecoveryCommand}"
+                    BackgroundColor="Transparent"
+                    FontSize="14"
+                    HeightRequest="25"
+                    TextColor="DarkBlue"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="10,10,10,0"/>
                     
             <!--<Button Text="Get Users and Areas"
                     Command="{Binding GetCommand}"/>-->
         </StackLayout>
     </ContentPage.Content>
+        
 </ContentPage>

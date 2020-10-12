@@ -4,8 +4,11 @@
              xmlns:local="clr-namespace:Drops.ViewModels"
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             x:Class="Drops.Views.MapControlPage">
-    
+             x:Class="Drops.Views.MapControlPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="Area">
+     
+   
     <ContentPage.Content>
         
         <RelativeLayout>
@@ -23,60 +26,85 @@
                 </maps:Map.ItemTemplate>
             </maps:Map>
 
-            <StackLayout Orientation="Horizontal"
+            <!--<StackLayout Orientation="Horizontal"
                          VerticalOptions="FillAndExpand"
                          HorizontalOptions="FillAndExpand"
-                         Padding="0,15"
+                         BackgroundColor="default"
+                         Padding="0,0,0,0"
+                         Margin="10,0,10,0"
                          Spacing="10"
-                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.1}"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.05}"
                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.075}">
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.125}">
 
                 <Button IsEnabled="True"
+                            BackgroundColor="WhiteSmoke"
+                            TextColor="Black"
                             Text="Logout"
-                            FontSize="36"
-                            TextColor="Pink"
-                            BackgroundColor="White"
+                            FontSize="22"
+                            Margin="0,15,0,15"
+                            WidthRequest="70"
                             Command="{Binding LogoutCommand}"/>
 
-            </StackLayout>
+            </StackLayout>-->
 
             <StackLayout Orientation="Horizontal"
                          VerticalOptions="FillAndExpand"
                          HorizontalOptions="FillAndExpand"
-                         Padding="0,15"
+                         BackgroundColor="default"
+                         Padding="0,0,0,0"
+                         Margin="5,0,0,0"
                          Spacing="10"
-                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.9}"
+                         
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=oneThird, Property=Height, Factor=0.89}"
                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.075}">
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.125 }">
 
                 <Button IsEnabled="True"
-                            Text="Areas"
-                            FontSize="36"
-                            TextColor="Pink"
-                            BackgroundColor="White"
-                            Command="{Binding AreaListCommand}"/>
+                            BackgroundColor="DarkGray"
+                            TextColor="White"
+                            Text="Logout"
+                            FontSize="22"
+                            Margin="0,15,0,15"
+                            WidthRequest="70"
+                            Command="{Binding LogoutCommand}"/>
+
+                <!-- MARGIN vals are : left, top, right, bottom -->
+                <Button IsEnabled="True"
+                        Text="Areas"
+                        FontSize="22"
+                        Margin="0,15,0,15"
+                        TextColor="White"
+                        WidthRequest="70"
+                        BackgroundColor="DarkGray"
+                        Command="{Binding AreaListCommand}"/>
 
                 <Button IsEnabled="True"
-                            Text="People"
-                            FontSize="36"
-                            TextColor="Pink"
-                            BackgroundColor="White"
-                            Command="{Binding PeopleListCommand}"/>
+                        Text="People"
+                        FontSize="22"
+                        Margin="0,15,0,15"
+                        TextColor="White"
+                        BackgroundColor="DarkGray"
+                        WidthRequest="70"
+                        Command="{Binding PeopleListCommand}"/>
 
                 <Button IsEnabled="True"
-                            Text="Drops"
-                            FontSize="36"
-                            TextColor="Pink"
-                            BackgroundColor="White"
-                            Command="{Binding DropListCommand}"/>
+                        Text="Drops"
+                        FontSize="22"
+                        Margin="0,15,0,15"
+                        WidthRequest="70"
+                        TextColor="White"
+                        BackgroundColor="DarkGray"
+                        Command="{Binding DropListCommand}"/>
 
-                <Button IsEnabled="True"
+
+
+                <!--<Button IsEnabled="True"
                             Text="Options"
                             FontSize="36"
                             TextColor="Pink"
                             BackgroundColor="White"
-                            Command="{Binding OptionListCommand}"/>
+                            Command="{Binding OptionListCommand}"/>-->
 
             </StackLayout>
 

@@ -36,7 +36,23 @@ namespace Drops.Models
 
         // PROPERTIES
         public event PropertyChangedEventHandler PropertyChanged;
-        
+
+        int dropsCreated;
+        [JsonProperty("dropsCount")]
+        public int DropsCreated
+        {
+            get => dropsCreated;
+            set
+            {
+                if (dropsCreated == value)
+                    return;
+
+                dropsCreated = value;
+
+                HandlePropertyChanged();
+            }
+        }
+
         string id;
         [JsonProperty("id")]
         public string ID

@@ -17,6 +17,10 @@ namespace Drops.Views
 
             vm = new RegistrationPageViewModel();
 
+            vm.UsernamePlaceholder = "Create a username";
+
+            vm.PasswordPlaceholder = "Create a Password";
+
             BindingContext = vm;
         }
 

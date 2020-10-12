@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using Drops.Models;
+using Drops.Static;
 using Xamarin.Forms;
 
 
@@ -13,10 +15,12 @@ namespace Drops.ViewModels
         {
             SaveChangesCommand = new Command(async () =>
             {
-                // we need to take in a label latitude, longitude a d key ammend the pin clientside and then update the area it belongs to in the db
-                //AllAreas.ActiveArea.JSONPins[PinKey];
+                // as long as the new logic prevents duplicate pin keys in pin collections we're god to use the key
+                //AllAreas.ActiveArea.JSONPins.Element
             });
         }
+
+        
 
         // PROPERTIES
         ICommand SaveChangesCommand { get; }

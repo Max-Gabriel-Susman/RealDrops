@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Drops.Models;
 using Drops.Views;
+using Drops.Static;
 using Drops.Services;
 using Xamarin.Forms;
 

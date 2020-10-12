@@ -5,16 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Drops.ViewModels"
              mc:Ignorable="d"
-             x:Class="Drops.Views.DropListViewPage">
+             x:Class="Drops.Views.DropListViewPage"
+             Title="area's Drops">
     <ContentPage.BindingContext>
         <local:DropListViewModel/>
     </ContentPage.BindingContext>
-    <StackLayout Margin="30" Orientation="Vertical">
+    <StackLayout>
         <ListView x:Name="MyList"
                   SeparatorVisibility="None"
                   HasUnevenRows="True"
-                  ItemsSource="{Binding ActiveAreaJSONPins}"
-                  Footer=""
+                  ItemsSource="{Binding ActiveAreaDropPins}"
                   ItemSelected="OnDropSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -32,7 +32,7 @@
                                           Padding="30,10"
                                           Text="Delete"
                                           HorizontalOptions="EndAndExpand"
-                                          BackgroundColor="Black"
+                                          BackgroundColor="DarkRed"
                                           TextColor="White"/>
                               </Grid>
                        </ViewCell>

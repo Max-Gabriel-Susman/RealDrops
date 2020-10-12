@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
 using Drops.ViewModels;
+using Drops.Static;
 using Xamarin.Forms;
 
 namespace Drops.Views

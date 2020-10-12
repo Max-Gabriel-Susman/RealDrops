@@ -6,6 +6,7 @@ using System.Windows.Input;
 using Drops.Models;
 using Drops.Views;
 using Drops.Services;
+using Drops.Static;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 

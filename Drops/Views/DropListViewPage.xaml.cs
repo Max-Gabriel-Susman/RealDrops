@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Drops.ViewModels;
 using Drops.Models;
+using Drops.Static;
 
 
 namespace Drops.Views
@@ -21,21 +22,11 @@ namespace Drops.Views
 
         void OnDropSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            // we'll come back to this later, currently the issue is that I can't figure out how to tell the editor which pin it's tasked with editing
+            System.Diagnostics.Debug.WriteLine($"The index of the drop you've selected is {e.SelectedItemIndex}");
 
-            //var dropsPin = sender as DropsPin;
+            // AllAreas.SelectedDropKey = e.SelectedItemIndex;
 
-            //AllAreas.ActivePinKey = dropsPin.Key;
-
-            //System.Diagnostics.Debug.WriteLine($"the pin key is {dropsPin.Key}");
-
-            //System.Diagnostics.Debug.WriteLine($"the static pin key is {AllAreas.ActivePinKey}");
-
-            //Application.Current.MainPage.Navigation.PushAsync(new DropDetailViewPage()
-            //{
-            //    //ModifiedJSONPinKey = dropsPin.Key // it almost looks like the issue here is that dropsPin.Key is null
-            //});
-
+            Application.Current.MainPage.Navigation.PushAsync(new DropDetailViewPage());
         }
     }
 

@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Drops.ViewModels"
-             x:Class="Drops.Views.AreaShareViewPage">
+             x:Class="Drops.Views.AreaShareViewPage"
+             Title="Your Areas">
     <ContentPage.BindingContext>
         <local:AreaShareViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Your owned areas"
-                   x:Name="MyList"/>
-            <ListView ItemsSource="{Binding OwnedAreas}"
+            
+            <ListView x:Name="MyList"
+                      ItemsSource="{Binding OwnedAreas}"
                       SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>

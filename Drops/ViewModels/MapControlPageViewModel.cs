@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Drops.Models;
+using Drops.Static;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 

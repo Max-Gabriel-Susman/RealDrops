@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Drops.Models;
+using Drops.Static;
 
 
 namespace Drops.ViewModels

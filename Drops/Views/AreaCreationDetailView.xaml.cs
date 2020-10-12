@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Drops.Models;
 using Drops.ViewModels;
 using Drops.Services;
+using Drops.Static;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -39,7 +40,9 @@ namespace Drops.Views
                     Subscribers = new Dictionary<string, string>()
                     {
                         {AllUsers.ActiveUser.Username, "owner"}
-                    }
+                    },
+
+                    DropsCreated = 0
                 };
 
                 await CosmosDBService.InsertArea(NewArea);

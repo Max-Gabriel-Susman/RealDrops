@@ -72,48 +72,54 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\dropslog.pdf.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\dropslog.pdf.imageset\dropslogo.pdf" />
+    <ImageAsset Include="Assets.xcassets\registrationglyph.pdf.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\dropsglyph.pdf" />
+    <ImageAsset Include="Assets.xcassets\registrationglyph.pdf.imageset\registrationglyph-1.pdf" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryAppUITests\TemporaryAppUITests.swift" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryAppUITests\Info.plist" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp.xcodeproj\project.pbxproj" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryAppTests\TemporaryAppTests.swift" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryAppTests\Info.plist" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp\TemporaryAppApp.swift" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp\ContentView.swift" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp\Info.plist" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp.xcodeproj\project.xcworkspace\contents.xcworkspacedata" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp.xcodeproj\project.xcworkspace\xcshareddata\IDEWorkspaceChecks.plist" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp\Preview Content\Preview Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp.xcodeproj\xcuserdata\MGS.xcuserdatad\xcschemes\xcschememanagement.plist" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.pdf.imageset\TemporaryApp\TemporaryApp.xcodeproj\project.xcworkspace\xcuserdata\MGS.xcuserdatad\UserInterfaceState.xcuserstate" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryAppUITests\TemporaryAppUITests.swift" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryAppUITests\Info.plist" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp.xcodeproj\project.pbxproj" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryAppTests\TemporaryAppTests.swift" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryAppTests\Info.plist" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp\TemporaryAppApp.swift" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp\ContentView.swift" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp\Info.plist" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp.xcodeproj\project.xcworkspace\contents.xcworkspacedata" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp.xcodeproj\project.xcworkspace\xcshareddata\IDEWorkspaceChecks.plist" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp\Preview Content\Preview Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp.xcodeproj\xcuserdata\MGS.xcuserdatad\xcschemes\xcschememanagement.plist" />
+    <ImageAsset Include="Assets.xcassets\TemporaryApp\TemporaryApp.xcodeproj\project.xcworkspace\xcuserdata\MGS.xcuserdatad\UserInterfaceState.xcuserstate" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -142,5 +148,13 @@
       <Project>{C66EC9EA-3C8C-40BE-B0E9-56140FB43D86}</Project>
       <Name>Drops</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\xamarinlogo.imageset\" />
+    <Folder Include="Assets.xcassets\dropslogo.pdf.imageset\" />
+    <Folder Include="Assets.xcassets\dropslogopdf.pdf.imageset\" />
+    <Folder Include="Assets.xcassets\dropslog.pdf.imageset\" />
+    <Folder Include="Assets.xcassets\registrationglyph.pdf.imageset\" />
+    <Folder Include="Assets.xcassets\dropsglyph.pdf.imageset\" />
   </ItemGroup>
 </Project>

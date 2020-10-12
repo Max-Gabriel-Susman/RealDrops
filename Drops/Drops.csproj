@@ -23,6 +23,8 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
+    <Folder Include="Images\" />
+    <Folder Include="Static\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\DropListViewPage.xaml.cs" />

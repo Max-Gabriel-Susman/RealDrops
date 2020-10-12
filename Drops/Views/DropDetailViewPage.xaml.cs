@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Drops.Models;
+using Drops.Static;
 using Drops.Services;
 
 namespace Drops.Views
@@ -41,11 +42,18 @@ namespace Drops.Views
                 await Application.Current.MainPage.Navigation.PopAsync();
             });
 
+            EditDropCommand = new Command(() =>
+            {
+
+            });
+
             BindingContext = this;
         }
 
         // PROPERTIES
         public ICommand SaveChangesCommand { get; }
+
+        public ICommand EditDropCommand { get; }
 
         public string NewLabelEntry { get; set; }
 

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Drops.Models;
 using Drops.Services;
+using Drops.Static;
 using Xamarin.Forms;
 
 
@@ -113,6 +114,7 @@ namespace Drops.ViewModels
 //    }
 //}
 
+// something about these custom accessors preented the app from launchingx
 
 //public string UsernamePlaceholder
 //{

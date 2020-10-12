@@ -2,18 +2,40 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Drops.ViewModels"
-             x:Class="Drops.Views.AreaListViewPage">
+             x:Class="Drops.Views.AreaListViewPage"
+             Title="Subscribed Areas">
     <ContentPage.BindingContext>
         <local:AreaListViewModel/>
     </ContentPage.BindingContext>
     <StackLayout>
-        <Label Text="{Binding ActiveAreaName} "/>
+
         <Button Text="Create New Area"
                 TextColor="Beige"
-                BackgroundColor="Green"
-                Command="{Binding CreateAreaCommand}"/>
+                BackgroundColor="CadetBlue"
+                Command="{Binding CreateAreaCommand}"
+                Margin="10,10,10,0"/>
+
+        <Label Text="Current Active Area"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               Margin="5"/>
+        <Label Text="{Binding ActiveAreaNameLabel}"
+               VerticalOptions="CenterAndExpand"
+               Margin="5"/>
+
+        <!-- I want to reimplement the logic behind this label when I get the chance -->
+        <!--<Label Text="{Binding OwnershipLabel}"
+               VerticalOptions="CenterAndExpand"
+               Margin="10"/>-->
+        
+        <Label Text="{Binding NumberOfSubscribersLabel}"
+               VerticalOptions="CenterAndExpand"
+               Margin="5"/>
+        
 
         <ListView x:Name="MyList"
+                  
+                  HasUnevenRows="True"
                   ItemsSource="{Binding SubscribedAreas}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -25,15 +47,17 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions> 
                                 
-                            <Label VerticalOptions="CenterAndExpand" Text="{Binding AreaName}"/>
+                            <Label VerticalOptions="CenterAndExpand"
+                                   Text="{Binding AreaName}"
+                                   FontSize="24"/>
                             <Button Command="{Binding Path=BindingContext.SelectCommand, Source={x:Reference MyList}}"
                                     CommandParameter="{Binding .}"
                                     Grid.Column="1"
                                     Padding="30,10"
                                     Text="Select Area"
                                     HorizontalOptions="EndAndExpand"
-                                    BackgroundColor="Green"
-                                    TextColor="White"/>
+                                    
+                                    TextColor="Beige"/>
                         </Grid>
                         <!--<Grid>
                             

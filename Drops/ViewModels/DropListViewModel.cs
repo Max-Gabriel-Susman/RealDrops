@@ -6,6 +6,7 @@ using System.Windows.Input;
 using Drops.Models;
 using Drops.Services;
 using Drops.Views;
+using Drops.Static;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -22,7 +23,7 @@ namespace Drops.ViewModels
         public DropListViewModel()
         {
             // Pins = new ObservableCollection<DropsPin>();
-            ActiveAreaJSONPins = new ObservableCollection<DropsPin>(); // for some reason the map stops rendering new pins after we've navigated away from it, is it just navigtion to this page or the others as well?
+            ActiveAreaDropPins = AllAreas.ActiveAreaDropPins; // for some reason the map stops rendering new pins after we've navigated away from it, is it just navigtion to this page or the others as well?
 
             //System.Diagnostics.Debug.WriteLine($"Hey there are {AllAreas.ActiveArea.JSONPins.Count} pins in the active area");
 
@@ -41,22 +42,23 @@ namespace Drops.ViewModels
                 // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
                 string label = JSONPin["label"];
 
-                double latitude = Convert.ToDouble(JSONPin["latitude"]);
+                string key = pair.Key;
 
-                double longitude = Convert.ToDouble(JSONPin["longitude"]);
+                string latitude = JSONPin["latitude"];
 
-                ActiveAreaJSONPins.Add(new DropsPin
+                string longitude = JSONPin["longitude"];
+
+                ActiveAreaDropPins.Add(new DropsPin
                 {
-                    Key = Convert.ToString(pair.Key),
+                    Key = key,
 
-                    Latitude = Convert.ToString(latitude),
+                    Latitude = latitude,
 
-                    Longitude = Convert.ToString(longitude),
+                    Longitude = longitude,
 
                     Label = label
                 });
 
-                
                 // in order to allow for global deletion we need to have the key of the item, so either we're going to have to use droppins to populate the listview or event args in the even handler
 
                 //DropsPin pin = new DropsPin()
@@ -77,33 +79,24 @@ namespace Drops.ViewModels
             //    ActiveAreaJSONPins.Add(pin);
             //}
 
-            System.Diagnostics.Debug.WriteLine($"Hey you ActiveAreaJSONPins.count is {ActiveAreaJSONPins.Count}");
+            System.Diagnostics.Debug.WriteLine($"Hey you ActiveAreaJSONPins.count is {ActiveAreaDropPins.Count}");
 
             DeleteCommand = new Command((OnDeleteButtonTapped));
 
-            EditCommand = new Command(async (object obj) =>
-            {
-                System.Diagnostics.Debug.WriteLine("Edit command invoked");
-
-                DropsPin dropsPin = obj as DropsPin;
-
-                AllAreas.ActivePinKey = dropsPin.Key;
-
-                await Application.Current.MainPage.Navigation.PushAsync(new DropDetailViewPage());
-            });
+           
         }
 
         // NESTED TYPES - could the issues I'm dealing with be due to the fact that this is a nested type?
-        public class DropsPin
-        {
-            public string Key { get; set; }
+        //public class DropsPin
+        //{
+        //    public string Key { get; set; }
 
-            public string Latitude { get; set; }
+        //    public string Latitude { get; set; }
 
-            public string Longitude { get; set; }
+        //    public string Longitude { get; set; }
 
-            public string Label { get; set; }
-        }
+        //    public string Label { get; set; }
+        //}
 
 
         // PROPERTIES
@@ -114,7 +107,7 @@ namespace Drops.ViewModels
 
         public ObservableCollection<DropsPin> Pins { get; set; }
 
-        public ObservableCollection<DropsPin> ActiveAreaJSONPins { get; set; }
+        public ObservableCollection<DropsPin> ActiveAreaDropPins { get; set; }
 
         //public ObservableCollection<Pin> ActiveAreaJSONPins
         //{
@@ -132,7 +125,7 @@ namespace Drops.ViewModels
 
         //    get => AllAreas.ActiveAreaJSONPins;
         //}
-        public ICommand EditCommand { get; }
+        
 
         public ICommand DeleteCommand { get; }
 
@@ -158,27 +151,31 @@ namespace Drops.ViewModels
 
             var dropsPin = obj as DropsPin;
 
-            double pinLatitude = Convert.ToDouble(dropsPin.Latitude);
+            //double pinLatitude = Convert.ToDouble(dropsPin.Latitude);
 
-            double pinLongitude = Convert.ToDouble(dropsPin.Longitude);
+            //double pinLongitude = Convert.ToDouble(dropsPin.Longitude);
 
-            Pin pin = new Pin()
-            {
-                Label = dropsPin.Label,
+            //Pin pin = new Pin()
+            //{
+            //    Label = dropsPin.Label,
 
-                Position = new Position(pinLatitude, pinLongitude)
-            };
+            //    Position = new Position(pinLatitude, pinLongitude)
+            //};
 
-            ActiveAreaJSONPins.Remove(dropsPin); // we gotta change the itemsource of the listview
+            // why the hell is there a triple redundancy?
+
+            ActiveAreaDropPins.Remove(dropsPin); // we gotta change the itemsource of the listview
             // maybe instead I can make a static method that ammends the static value and the  db simultaneously
             // first I think we should restore thee ability to place pins on map
             // we can place pins, buy once we delete a pin in droplist view they are either no longer placing or just not rendering
 
-            AllAreas.ActiveAreaJSONPins.Remove(pin);
+            
 
             AllAreas.ActiveArea.JSONPins.Remove(dropsPin.Key); // null reference thrown after i deleted a shit ton of pins?
 
             await CosmosDBService.UpdateArea(AllAreas.ActiveArea);
+
+            System.Diagnostics.Debug.WriteLine($"This area has {AllAreas.ActiveArea.DropsCreated} drops in it");
         }
     }
 }

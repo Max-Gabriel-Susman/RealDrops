@@ -3,6 +3,7 @@ using Xamarin.Forms.Xaml;
 // using Drops.Data;
 using Drops.Models; // prabably don't need
 using Drops.Views;
+using Drops.Static;
 using System.IO;
 using System;
 
@@ -13,18 +14,26 @@ namespace Drops
     {
         
 
-        // Constructor(s)
+        // CONSTRUCTORS
         public App()
         {
-
             InitializeComponent();
+
+            BackgroundColor = Color.FromHex("423f3b");
+
+            NavigationBackgroundColor = Color.FromHex("58a0ca");
 
             // MainPage = new NavigationPage(new MapPage());
             MainPage = new NavigationPage(new LoginPage());
             //MainPage = new LoginPage();
         }
 
-        // LifeCycle Methods
+        // PROPETIES
+        public Color BackgroundColor { get; set; }
+
+        public Color NavigationBackgroundColor { get; set; }
+        
+        // METHODS
         protected override void OnStart()
         {
 

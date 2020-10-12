@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
 using Drops.Services;
+using Drops.Static;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -106,6 +107,8 @@ namespace Drops.Views
             });
 
             BindingContext = this;
+
+            System.Diagnostics.Debug.WriteLine($"This area has {AllAreas.ActiveArea.DropsCreated} drops in it");
         }
 
         // PROPERTIES
@@ -168,7 +171,11 @@ namespace Drops.Views
             };
 
             // newKey and newValue are defined using values from pin's properties and OnMapClicked's args
-            string newKey = Convert.ToString(AllAreas.ActiveArea.JSONPins.Count);
+            AllAreas.ActiveArea.DropsCreated++;
+
+            string newKey = Convert.ToString(AllAreas.ActiveArea.DropsCreated);
+
+            System.Diagnostics.Debug.WriteLine(AllAreas.ActiveArea.DropsCreated);
 
             Dictionary<string, string> newValue = new Dictionary<string, string>()
             {
@@ -205,20 +212,41 @@ namespace Drops.Views
 
                 //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
                 // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
+                string key = pair.Key;
+
                 string label = drop["label"];
 
-                double latitude = Convert.ToDouble(drop["latitude"]);
+                string latitude = drop["latitude"];
 
-                double longitude = Convert.ToDouble(drop["longitude"]);
+                string longitude = drop["longitude"];
+
+                double doubleLatitude = Convert.ToDouble(drop["latitude"]);
+
+                double doubleLongitude = Convert.ToDouble(drop["longitude"]);
 
                 Pin pin = new Pin()
                 {
                     Label = label,
 
-                    Position = new Position(latitude, longitude)
+                    Position = new Position(doubleLatitude, doubleLongitude)
+                };
+
+                DropsPin dropsPin = new DropsPin()
+                {
+                    Key = key,
+
+                    Latitude = latitude,
+
+                    Longitude = longitude,
+
+                    Label = label
                 };
 
                 AllAreas.ActiveAreaJSONPins.Add(pin); // this guy's yelling because he needs a kv as opposed to an element
+
+                AllAreas.ActiveAreaDropPins.Add(dropsPin);
+
+                AllAreas.ActiveArea.DropsCreated++;
             }
         }
     }
