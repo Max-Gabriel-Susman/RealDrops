@@ -9,7 +9,7 @@
 
         <StackLayout>
 
-            <Button Command="{Binding SaveChangesCommand}"
+            <Button Command="{Binding EditDropCommand}"
                     Text="Create Area"
                     TextColor="Beige"
                     BackgroundColor="Green" />

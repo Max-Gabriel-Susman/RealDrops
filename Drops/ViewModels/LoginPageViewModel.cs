@@ -21,6 +21,20 @@ namespace Drops.ViewModels
         // CONSTRUCTORS
         public LoginPageViewModel()
         {
+            UsernamePlaceholder = "Username is : Admin";// "Enter your username here:";
+
+            PasswordPlaceholder = "Password is : Adminadmin";// "Enter your password here:";
+
+            UsernameEntry = "";
+
+            PasswordEntry = "";
+
+            AllUsers.ActiveUser = null;
+
+            AllUsers.IsSafeToPopulateMapWithPins = false;
+
+            // 
+
             BackgroundColor = Color.FromHex("423f3b");
 
             NavigationBackgroundColor = Color.FromHex("58a0ca");

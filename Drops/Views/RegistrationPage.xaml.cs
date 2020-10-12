@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Drops.ViewModels;
+using Drops.Static;
 using Xamarin.Forms;
 
 namespace Drops.Views
@@ -29,19 +30,21 @@ namespace Drops.Views
         {
             vm.SaveCommand.Execute(null);
 
-            System.Diagnostics.Debug.WriteLine($"IsValid is {vm.IsValid}");
+            //System.Diagnostics.Debug.WriteLine($"IsValid is {vm.IsValid}");
 
+
+            
             // we'll handle the actual navigation here
-            if (true)//(vm.IsValid)
+            if (AllUsers.ActiveUser != null)//(vm.IsValid)
             {
-                Navigation.InsertPageBefore(new MapControlPage(), this);
-                await Navigation.PopAsync();
+                Application.Current.MainPage.Navigation.InsertPageBefore(new MapControlPage(), this);
+                await Application.Current.MainPage.Navigation.PopAsync();
             }
 
             else
             {
                 // Login failed
-                System.Diagnostics.Debug.WriteLine("registration failed");
+                System.Diagnostics.Debug.WriteLine("registration failed, ACTIVE USER WAS NUll");
             }
         }
     }

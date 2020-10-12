@@ -29,17 +29,17 @@ namespace Drops.ViewModels
         // CONSTRUCTORS
         public ValidationViewModel() // we need to remove the unnecesary functionality, it's the gorilla holding the banana issue
         {
-            UsernamePlaceholder = "Enter your username here:";
+            //UsernamePlaceholder = "Enter your username here:";
 
-            PasswordPlaceholder = "Enter your password here:";
+            //PasswordPlaceholder = "Enter your password here:";
 
-            UsernameEntry = "";
+            //UsernameEntry = "";
 
-            PasswordEntry = "";
+            //PasswordEntry = "";
 
-            AllUsers.ActiveUser = null;
+            //AllUsers.ActiveUser = null;
 
-            AllUsers.IsSafeToPopulateMapWithPins = false;
+            //AllUsers.IsSafeToPopulateMapWithPins = false;
 
             // IsValid = false;
 

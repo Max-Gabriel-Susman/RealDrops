@@ -28,6 +28,7 @@ namespace Drops.Views
 
             foreach(DropsArea area in AllAreas.Areas) 
             {
+                // for Registration flow 'activeuser' is null
                 if(area.AreaName == AllUsers.ActiveUser.ActiveAreaName)
                 {
                     AllAreas.ActiveArea = area;
@@ -162,22 +163,28 @@ namespace Drops.Views
         public void OnMapClicked(object sender, MapClickedEventArgs e)
         // Handles Map Clicks
         {
+            //System.Diagnostics.Debug.WriteLine
             // A pin is instantiated using the args from OnMapClicked
-            var pin = new Pin()
+            // what was the default keyword for again? stuff like switch statements right?
+            if(AllAreas.ActiveArea.AreaName != "default")
             {
-                Position = new Position(e.Position.Latitude, e.Position.Longitude),
+                var pin = new Pin()
+                {
+                    Position = new Position(e.Position.Latitude, e.Position.Longitude),
 
-                Label = "Unknown"
-            };
+                    Label = "Unknown"
+                };
 
-            // newKey and newValue are defined using values from pin's properties and OnMapClicked's args
-            AllAreas.ActiveArea.DropsCreated++;
 
-            string newKey = Convert.ToString(AllAreas.ActiveArea.DropsCreated);
 
-            System.Diagnostics.Debug.WriteLine(AllAreas.ActiveArea.DropsCreated);
+                // newKey and newValue are defined using values from pin's properties and OnMapClicked's args
+                AllAreas.ActiveArea.DropsCreated++;
 
-            Dictionary<string, string> newValue = new Dictionary<string, string>()
+                string newKey = Convert.ToString(AllAreas.ActiveArea.DropsCreated);
+
+                System.Diagnostics.Debug.WriteLine(AllAreas.ActiveArea.DropsCreated);
+
+                Dictionary<string, string> newValue = new Dictionary<string, string>()
             {
                 { "label", pin.Label },
 
@@ -186,14 +193,19 @@ namespace Drops.Views
                 { "longitude", Convert.ToString(pin.Position.Longitude) }
             };
 
-            
-            AllAreas.ActiveAreaJSONPins.Add(pin);
+                // I also need to ammend this logic here
 
-            AllAreas.ActiveArea.JSONPins.Add(newKey, newValue);
+                AllAreas.ActiveAreaJSONPins.Add(pin);
 
-            AllAreas.UpdateActiveArea(); // this assumes that activeareaJsonpins is ultimately referenced to AllAreas.ActiveArea.Pins
+                AllAreas.ActiveArea.JSONPins.Add(newKey, newValue);
 
-            // System.Diagnostics.Debug.WriteLine("pin added to everything babe");
+                AllAreas.UpdateActiveArea();
+            }
+            else
+            {
+                
+            }
+
         }
 
         protected override void OnAppearing()
@@ -210,8 +222,6 @@ namespace Drops.Views
                 // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
                 Dictionary<string, string> drop = pair.Value;
 
-                //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
-                // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
                 string key = pair.Key;
 
                 string label = drop["label"];
@@ -231,20 +241,7 @@ namespace Drops.Views
                     Position = new Position(doubleLatitude, doubleLongitude)
                 };
 
-                DropsPin dropsPin = new DropsPin()
-                {
-                    Key = key,
-
-                    Latitude = latitude,
-
-                    Longitude = longitude,
-
-                    Label = label
-                };
-
-                AllAreas.ActiveAreaJSONPins.Add(pin); // this guy's yelling because he needs a kv as opposed to an element
-
-                AllAreas.ActiveAreaDropPins.Add(dropsPin);
+                AllAreas.ActiveAreaJSONPins.Add(pin);
 
                 AllAreas.ActiveArea.DropsCreated++;
             }

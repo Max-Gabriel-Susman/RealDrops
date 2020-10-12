@@ -16,35 +16,83 @@ namespace Drops.Views
         {
             InitializeComponent();
 
+
+
+            // I don't think I'll need this command anymore
             SaveChangesCommand = new Command(async () =>
             {
-                System.Diagnostics.Debug.WriteLine("savechangescommand invoked");
+                //System.Diagnostics.Debug.WriteLine("savechangescommand invoked");
 
-                string modifiedJSONPinLabel = NewLabelEntry;
+                //string modifiedJSONPinLabel = NewLabelEntry;
 
-                string modifiedJSONPinLatitude = Convert.ToString(Latitude);
+                //string modifiedJSONPinLatitude = Convert.ToString(Latitude);
 
-                string modifiedJSONPinLongitude = Convert.ToString(Longitude);
+                //string modifiedJSONPinLongitude = Convert.ToString(Longitude);
 
-                Dictionary<string, string> modifiedJSONPinValue = new Dictionary<string, string>()
-                {
-                    { "label", modifiedJSONPinLabel },
+                //Dictionary<string, string> modifiedJSONPinValue = new Dictionary<string, string>()
+                //{
+                //    { "label", modifiedJSONPinLabel },
 
-                    { "latitude", modifiedJSONPinLatitude },
+                //    { "latitude", modifiedJSONPinLatitude },
 
-                    { "longitude", modifiedJSONPinLongitude }
-                };
+                //    { "longitude", modifiedJSONPinLongitude }
+                //};
 
-                AllAreas.ActiveArea.JSONPins[ModifiedJSONPinKey] = modifiedJSONPinValue;
+                //AllAreas.ActiveArea.JSONPins[ModifiedJSONPinKey] = modifiedJSONPinValue;
 
-                await CosmosDBService.UpdateArea(AllAreas.ActiveArea);
+                //await CosmosDBService.UpdateArea(AllAreas.ActiveArea);
 
-                await Application.Current.MainPage.Navigation.PopAsync();
+                //await Application.Current.MainPage.Navigation.PopAsync();
             });
 
-            EditDropCommand = new Command(() =>
+            EditDropCommand = new Command( async () =>
             {
+                System.Diagnostics.Debug.WriteLine("EDITDROPCOMMAND INVOKED");
 
+                
+
+                if (ModifiedPin != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("MODIFIED PIN WAS NOT NULL");
+
+                    string label = ModifiedPin.Label;
+
+                    string latitude = $"{ModifiedPin.Position.Latitude}";
+
+                    string longitude = $"{ModifiedPin.Position.Longitude}";
+
+                    Pin pin = new Pin()
+                    {
+                        Label = label,
+
+                        Position = new Position(ModifiedPin.Position.Latitude, ModifiedPin.Position.Longitude)
+                    };
+
+                    AllAreas.SelectedDrop.Latitude = latitude;
+
+                    AllAreas.SelectedDrop.Longitude = longitude;
+
+                    AllAreas.SelectedDrop.Label = label;
+
+                    AllAreas.ActiveAreaDropPins.Add(AllAreas.SelectedDrop);
+
+                    //AllAreas.ActiveAreaJSONPins.Add(pin); // Might no longer be necessary?
+
+                    AllAreas.ActiveArea.JSONPins[AllAreas.SelectedDrop.Key] = new Dictionary<string, string>()
+                    {
+                        { "label", label },
+
+                        { "latitude", latitude },
+
+                        { "longitude", longitude }
+                    };
+
+                    await CosmosDBService.UpdateArea(AllAreas.ActiveArea);
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("MODIFIED PIN WAS NULL");
+                }
             });
 
             BindingContext = this;
@@ -57,7 +105,7 @@ namespace Drops.Views
 
         public string NewLabelEntry { get; set; }
 
-        public string ModifiedJSONPinKey { get; set; }
+        public Pin ModifiedPin { get; set; }
 
         public double? Latitude { get; set; }
 
@@ -79,7 +127,12 @@ namespace Drops.Views
 
                 Label = "New Drop Location!"
             };
+
+            ModifiedPin = pin;
+
             map.Pins.Add(pin);
+
+            
         }
     }
 }

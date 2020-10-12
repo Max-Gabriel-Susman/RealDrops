@@ -63,9 +63,10 @@ namespace Drops.Views
         }
 
         // LIFECYCLE METHODS
+        // what does protected keyword do again?
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+            base.OnAppearing(); // not only is this statements functionality requisite but this implementation must be performed against a contentpage
 
             vm.PopulateUsersCommand.Execute(null); // this is where the users are populated
             vm.PopulateAreasCommand.Execute(null); // let's try and populate all users right here and see if that resolves the latency issues I've been dealing with

@@ -1,23 +1,32 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/MapControlPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Static/AllUsers.cs">
     <Files>
       <File FileName="Drops/Views/LoginPage.xaml" Line="22" Column="49" />
       <File FileName="Drops.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" />
-      <File FileName="Drops/Views/LoginPage.xaml.cs" />
-      <File FileName="Drops/Views/RegistrationPage.xaml" Line="28" Column="50" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="36" Column="16" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="28" Column="10" />
+      <File FileName="Drops/Views/RegistrationPage.xaml" Line="24" Column="1" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="52" Column="51" />
       <File FileName="../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/iOS/Xamarin.iOS.Common.targets" Line="1308" Column="3" />
-      <File FileName="Drops/Views/DropDetailViewPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/DropDetailViewPage.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Models/DropsPin.cs" Line="8" Column="22" />
-      <File FileName="Drops/ViewModels/DropListViewModel.cs" Line="147" Column="59" />
-      <File FileName="Drops/Static/AllAreas.cs" Line="24" Column="72" />
-      <File FileName="Drops/Views/DropListViewPage.xaml" Line="17" Column="59" />
+      <File FileName="Drops/Views/DropDetailViewPage.xaml.cs" Line="90" Column="27" />
+      <File FileName="Drops/Views/DropDetailViewPage.xaml" Line="28" Column="46" />
+      <File FileName="Drops/Models/DropsPin.cs" Line="15" Column="42" />
+      <File FileName="Drops/ViewModels/DropListViewModel.cs" Line="106" Column="1" />
+      <File FileName="Drops/Static/AllAreas.cs" Line="53" Column="18" />
+      <File FileName="Drops/Views/DropListViewPage.xaml" Line="14" Column="35" />
       <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/DropListViewPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/MapControlPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/DropListViewPage.xaml.cs" Line="21" Column="12" />
+      <File FileName="Drops/Views/MapControlPage.xaml.cs" Line="95" Column="1" />
+      <File FileName="Drops/Helpers/APIKeys.cs" Line="14" Column="144" />
+      <File FileName="Drops/ViewModels/DropDetailViewModel.cs" Line="22" Column="9" />
+      <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="38" Column="1" />
+      <File FileName="Drops/ViewModels/ValidationViewModel.cs" Line="42" Column="60" />
+      <File FileName="Drops/Services/CosmosDBService.cs" Line="154" Column="1" />
+      <File FileName="Drops/Views/AreaListViewPage.xaml.cs" Line="13" Column="1" />
+      <File FileName="Drops/ViewModels/AreaListViewModel.cs" Line="22" Column="1" />
+      <File FileName="Drops/ViewModels/BaseViewModel.cs" Line="25" Column="1" />
+      <File FileName="Drops/Static/AllUsers.cs" Line="84" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,7 +40,9 @@
               <Node name="Images" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="Static" expanded="True" />
+              <Node name="Static" expanded="True">
+                <Node name="AllUsers.cs" selected="True" />
+              </Node>
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="AreaCreationDetailView.xaml" expanded="True" />
@@ -41,9 +52,7 @@
                 <Node name="DropListViewPage.xaml" expanded="True" />
                 <Node name="LoginPage.xaml" expanded="True" />
                 <Node name="LostCredentialsViewPage.xaml" expanded="True" />
-                <Node name="MapControlPage.xaml" expanded="True">
-                  <Node name="MapControlPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="MapControlPage.xaml" expanded="True" />
                 <Node name="PeopleListViewPage.xaml" expanded="True" />
                 <Node name="RegistrationPage.xaml" expanded="True" />
               </Node>

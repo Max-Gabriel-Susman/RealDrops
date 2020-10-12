@@ -10,24 +10,15 @@ namespace Drops.ViewModels
 {
     public class DropDetailViewModel
     {
+        // once I get things running in x.xaml.cs I'll start migrating functionality to this class
+
         // CONSTRUCTORS
         public DropDetailViewModel()
         {
-            SaveChangesCommand = new Command(async () =>
-            {
-                // as long as the new logic prevents duplicate pin keys in pin collections we're god to use the key
-                //AllAreas.ActiveArea.JSONPins.Element
-            });
+            
         }
 
-        
-
         // PROPERTIES
-        ICommand SaveChangesCommand { get; }
-
-        string PinKey;
-
-        string NewLabelEntry { get; set; }
-
+        
     }
 }

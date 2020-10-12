@@ -19,7 +19,7 @@ namespace Drops.Static
         //public static ObservableCollection<DropsArea> subcribedAreas;
 
         // PROPERTIES
-        public static string SelectedDropKey { get; set; }
+        public static DropsPin SelectedDrop { get; set; }
 
         public static ObservableCollection<DropsPin> ActiveAreaDropPins = new ObservableCollection<DropsPin>();
 

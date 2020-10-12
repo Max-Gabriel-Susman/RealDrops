@@ -78,7 +78,7 @@ namespace Drops.Static
 
         public static async void UpdateActiveUser()
         {
-            await CosmosDBService.UpdateUser(ActiveUser);
+            await CosmosDBService.UpdateUser(ActiveUser); // why did this get activated and why did it throw a null exception when area was selected?
         }
     }
 }

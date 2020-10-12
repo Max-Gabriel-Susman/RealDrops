@@ -16,116 +16,69 @@ namespace Drops.ViewModels
     // I need to verify if BaseViewModel is actually used later I don't want to  look foolish
     public class DropListViewModel : BaseViewModel, INotifyPropertyChanged // I think the verb is 'including' the interface, I should find out so I don't sound stupid
     {
+        // I should probably stop misusing commands and swap them for methods where appropriate
+
         // FIELDS
         public event PropertyChangedEventHandler PropertyChanged;
 
         // CONSTRUCTORS
         public DropListViewModel()
         {
-            // Pins = new ObservableCollection<DropsPin>();
-            ActiveAreaDropPins = AllAreas.ActiveAreaDropPins; // for some reason the map stops rendering new pins after we've navigated away from it, is it just navigtion to this page or the others as well?
+            // all this functionality needs to be reintegrated
+            AllAreas.ActiveAreaDropPins.Clear(); // I think we'll handle clearing and instantiating in one move instead
 
-            //System.Diagnostics.Debug.WriteLine($"Hey there are {AllAreas.ActiveArea.JSONPins.Count} pins in the active area");
+            ActiveAreaDropPins = AllAreas.ActiveAreaDropPins;
 
-            // populates the local pin collection with jsonpins
-            // foreach (var pair in AllAreas.ActiveArea.JSONPins)
-            System.Diagnostics.Debug.WriteLine($"Hey you AllArea.ActiveAreaJSONPins.count is {AllAreas.ActiveAreaJSONPins.Count}");
+            // vm.PopulateItemSource();
 
-            //int key = 0;
+            // System.Diagnostics.Debug.WriteLine($"The length of ACTIVEAREADROPPINS is {vm.ActiveAreaDropPins.Count} AS seen in droplistviewpage");
 
-            foreach (var pair in AllAreas.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
-            {
-                // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
-                Dictionary<string, string> JSONPin = pair.Value;
+            System.Diagnostics.Debug.WriteLine("POPULATEITEMSOURCE INVOKED");
 
-                //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
-                // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
-                string label = JSONPin["label"];
-
-                string key = pair.Key;
-
-                string latitude = JSONPin["latitude"];
-
-                string longitude = JSONPin["longitude"];
-
-                ActiveAreaDropPins.Add(new DropsPin
-                {
-                    Key = key,
-
-                    Latitude = latitude,
-
-                    Longitude = longitude,
-
-                    Label = label
-                });
-
-                // in order to allow for global deletion we need to have the key of the item, so either we're going to have to use droppins to populate the listview or event args in the even handler
-
-                //DropsPin pin = new DropsPin()
-                //{
-                //    Label = label,
-
-                //    Position = new Position(latitude, longitude)
-                //};
-
-                // AllAreas.ActiveAreaJSONPins.Add(pin); // this guy's yelling because he needs a kv as opposed to an element
-                //ActiveAreaJSONPins.Add(pin); // this guy's yelling because he needs a kv as opposed to an element
-            }
-
-            //foreach (Pin pin in AllAreas.ActiveAreaJSONPins)
+            //if(ActiveAreaDropPins.Count == 0)
             //{
-            //    // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
-            //    // Pins.Add(new DropsPin(pair.Value["label"], pair.Key));
-            //    ActiveAreaJSONPins.Add(pin);
-            //}
+                foreach (var pair in AllAreas.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
+                {
+                    System.Diagnostics.Debug.WriteLine("ADDING DROPIN NOW");
 
-            System.Diagnostics.Debug.WriteLine($"Hey you ActiveAreaJSONPins.count is {ActiveAreaDropPins.Count}");
+                    // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
+                    Dictionary<string, string> JSONPin = pair.Value;
 
-            DeleteCommand = new Command((OnDeleteButtonTapped));
+                    //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
+                    // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
+                    string label = JSONPin["label"];
 
-           
+                    string key = pair.Key;
+
+                    string latitude = JSONPin["latitude"];
+
+                    string longitude = JSONPin["longitude"];
+
+                    ActiveAreaDropPins.Add(new DropsPin
+                    {
+                        Key = key,
+
+                        Latitude = latitude,
+
+                        Longitude = longitude,
+
+                        Label = label
+                    });
+                }
+            // }
+
+
+            // has List.Length been deprecated? why was it in the codecademy tutorial?
+            System.Diagnostics.Debug.WriteLine($"The length of ACTIVEAREADROPPINS is {ActiveAreaDropPins.Count}");
+            // when to use debug statements as opposed to breakpoints as opposed to Trace statments
+
+            DeleteCommand = new Command((OnDeleteButtonTapped));  
         }
 
-        // NESTED TYPES - could the issues I'm dealing with be due to the fact that this is a nested type?
-        //public class DropsPin
-        //{
-        //    public string Key { get; set; }
-
-        //    public string Latitude { get; set; }
-
-        //    public string Longitude { get; set; }
-
-        //    public string Label { get; set; }
-        //}
-
-
         // PROPERTIES
-
-        // because of way this was implemented in the base class it had to be overriden to facillitate my current practices
-         // would this event handler be considered a field, property, or something else entirely?
-        // public new event PropertyChangedEventHandler PropertyChanged; // would this event handler be considered a field, property, or something else entirely?
-
         public ObservableCollection<DropsPin> Pins { get; set; }
 
         public ObservableCollection<DropsPin> ActiveAreaDropPins { get; set; }
-
-        //public ObservableCollection<Pin> ActiveAreaJSONPins
-        //{
-        //    set
-        //    {
-        //        // checks if the underlying value is equivalent to 'set's 'value'
-        //        if (AllAreas.ActiveAreaJSONPins != value)
-        //        {
-        //            AllAreas.ActiveAreaJSONPins = value;
-
-        //            // I honestly have no idea how this works, I need to better understand it since it's so ubiquitous
-        //            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActiveAreaJSONPins"));
-        //        }
-        //    }
-
-        //    get => AllAreas.ActiveAreaJSONPins;
-        //}
-        
 
         public ICommand DeleteCommand { get; }
 
@@ -140,42 +93,59 @@ namespace Drops.ViewModels
         public double Longitude { get; set; }
 
         // METHODS
-        //void OnDropSelected(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    Application.Current.MainPage.Navigation.PushAsync(new DropDetailViewPage());
-        //}
-
         public async void OnDeleteButtonTapped(object obj)
         {
             System.Diagnostics.Debug.WriteLine("delete button tapped");
 
             var dropsPin = obj as DropsPin;
 
-            //double pinLatitude = Convert.ToDouble(dropsPin.Latitude);
+            ActiveAreaDropPins.Remove(dropsPin);
 
-            //double pinLongitude = Convert.ToDouble(dropsPin.Longitude);
-
-            //Pin pin = new Pin()
-            //{
-            //    Label = dropsPin.Label,
-
-            //    Position = new Position(pinLatitude, pinLongitude)
-            //};
-
-            // why the hell is there a triple redundancy?
-
-            ActiveAreaDropPins.Remove(dropsPin); // we gotta change the itemsource of the listview
-            // maybe instead I can make a static method that ammends the static value and the  db simultaneously
-            // first I think we should restore thee ability to place pins on map
-            // we can place pins, buy once we delete a pin in droplist view they are either no longer placing or just not rendering
-
-            
-
-            AllAreas.ActiveArea.JSONPins.Remove(dropsPin.Key); // null reference thrown after i deleted a shit ton of pins?
+            AllAreas.ActiveArea.JSONPins.Remove(dropsPin.Key); 
 
             await CosmosDBService.UpdateArea(AllAreas.ActiveArea);
 
             System.Diagnostics.Debug.WriteLine($"This area has {AllAreas.ActiveArea.DropsCreated} drops in it");
         }
+
+        //public void PopulateItemSource()
+        //{
+        //    System.Diagnostics.Debug.WriteLine("POPULATEITEMSOURCE INVOKED");
+
+        //    foreach (var pair in AllAreas.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
+        //    {
+        //        System.Diagnostics.Debug.WriteLine("ADDING DROPIN NOW");
+
+        //        // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
+        //        Dictionary<string, string> JSONPin = pair.Value;
+
+        //        //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
+        //        // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
+        //        string label = JSONPin["label"];
+
+        //        string key = pair.Key;
+
+        //        string latitude = JSONPin["latitude"];
+
+        //        string longitude = JSONPin["longitude"];
+
+        //        ActiveAreaDropPins.Add(new DropsPin
+        //        {
+        //            Key = key,
+
+        //            Latitude = latitude,
+
+        //            Longitude = longitude,
+
+        //            Label = label
+        //        });
+        //    }
+            
+
+        //    // has List.Length been deprecated? why was it in the codecademy tutorial?
+        //    System.Diagnostics.Debug.WriteLine($"The length of ACTIVEAREADROPPINS is {ActiveAreaDropPins.Count}");
+        //    // when to use debug statements as opposed to breakpoints as opposed to Trace statments
+        //}
+
     }
 }

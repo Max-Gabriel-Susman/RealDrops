@@ -7,9 +7,12 @@
              mc:Ignorable="d"
              x:Class="Drops.Views.DropListViewPage"
              Title="area's Drops">
+
+    <!-- trying a different implementation -->
     <ContentPage.BindingContext>
         <local:DropListViewModel/>
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext> 
+
     <StackLayout>
         <ListView x:Name="MyList"
                   SeparatorVisibility="None"

@@ -23,6 +23,7 @@
                    Margin="15,30,15,0"/>
 
             <Entry IsPassword="True"
+                 
                    Placeholder="{Binding PasswordPlaceholder}"
                    PlaceholderColor="{Binding PasswordPlaceholderColor}"
                    Text="{Binding PasswordEntry}"

@@ -20,7 +20,68 @@ namespace Drops.ViewModels
         {
             User = new DropsUser();
 
-            SaveCommand = new Command(async () => await ExecuteSaveCommand());
+            SaveCommand = new Command(async () =>
+            {
+                
+                System.Diagnostics.Debug.WriteLine("EXECUTESAVECOMMAND INVOKED");
+                // Enforcces Unique usernames
+                foreach (DropsUser user in await CosmosDBService.GetUsers())
+                {
+                    System.Diagnostics.Debug.WriteLine("Checking against existing user");
+
+                    if (user.Username == UsernameEntry)
+                    {
+                        System.Diagnostics.Debug.WriteLine("USERNAME DOPPLEGANGER FOUND, METHOD RETURNED");
+                        return;
+                    }
+                }
+
+
+                System.Diagnostics.Debug.WriteLine($"The length of passwordentry is {PasswordEntry}");
+                System.Diagnostics.Debug.WriteLine($"The length of passwordentry is {PasswordEntry.Length}");
+
+                // Enforces a minimum password length of 8 characters
+                if (PasswordEntry.Length >= 8)
+                {
+
+
+                    User.Username = UsernameEntry;
+
+                    User.Password = PasswordEntry;
+
+                    User.ActiveAreaName = "default"; // need to change this to the areas name
+
+                    User.Areas = new Dictionary<string, string>();
+
+                    // first population
+                    //PopulateUsersCommand.Execute(null);
+
+                    await CosmosDBService.InsertUser(User);
+
+                    AllUsers.Users.Add(User);
+
+                    //SaveComplete?.Invoke(this, new EventArgs());
+
+                    AllUsers.ActiveUser = User;
+
+                    if (AllUsers.ActiveUser == null)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"ACTIVE USER IS NULL AT THE ENDE OF REGISTRATION");
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine($"ACTIVE USER IS NOT NULL AT THE ENDE OF REGISTRATION");
+
+
+                    }
+
+
+
+                    System.Diagnostics.Debug.WriteLine($"IsValid is currently {IsValid}");
+                }
+
+                
+            });
         }
 
         // PROPERTIES (old content)
@@ -32,46 +93,64 @@ namespace Drops.ViewModels
         public event EventHandler SaveComplete;
         
         // METHODS
-        async Task ExecuteSaveCommand()
-        {
-            // Enforcces Unique usernames
-            foreach (DropsUser user in await CosmosDBService.GetUsers())
-            {
-                if (user.Username == UsernameEntry)
-                {
-                    return;
-                }
-            }
+        //async Task ExecuteSaveCommand()
+        //{
+        //    System.Diagnostics.Debug.WriteLine("EXECUTESAVECOMMAND INVOKED");
+        //    // Enforcces Unique usernames
+        //    foreach (DropsUser user in await CosmosDBService.GetUsers())
+        //    {
+        //        System.Diagnostics.Debug.WriteLine("Checking against existing user");
 
-            // Enforces a minimum password length of 8 characters
-            if(PasswordEntry.Length >= 8)
-            {
+        //        if (user.Username == UsernameEntry)
+        //        {
+        //            System.Diagnostics.Debug.WriteLine("USERNAME DOPPLEGANGER FOUND, METHOD RETURNED");
+        //            return;
+        //        }
+        //    }
+
+        //    System.Diagnostics.Debug.WriteLine($"The length of passwordentry is {PasswordEntry}");
+        //    System.Diagnostics.Debug.WriteLine($"The length of passwordentry is {PasswordEntry.Length}");
+
+        //    // Enforces a minimum password length of 8 characters
+        //    if (PasswordEntry.Length >= 8)
+        //    {
                 
 
-                User.Username = UsernameEntry;
+        //        User.Username = UsernameEntry;
 
-                User.Password = PasswordEntry;
+        //        User.Password = PasswordEntry;
 
-                User.ActiveAreaName = "default";
+        //        User.ActiveAreaName = "default";
 
-                User.Areas = new Dictionary<string, string>();
+        //        User.Areas = new Dictionary<string, string>();
 
-                // first population
-                //PopulateUsersCommand.Execute(null);
+        //        // first population
+        //        //PopulateUsersCommand.Execute(null);
 
-                await CosmosDBService.InsertUser(User);
+        //        await CosmosDBService.InsertUser(User);
 
-                AllUsers.Users.Add(User);
+        //        AllUsers.Users.Add(User);
 
-                SaveComplete?.Invoke(this, new EventArgs());
+        //        SaveComplete?.Invoke(this, new EventArgs());
 
-                AllUsers.ActiveUser = User;
+        //        AllUsers.ActiveUser = User;
 
-               
+        //        if(AllUsers.ActiveUser == null)
+        //        {
+        //            System.Diagnostics.Debug.WriteLine($"ACTIVE USER IS NULL AT THE ENDE OF REGISTRATION");
+        //        }
+        //        else
+        //        {
+        //            System.Diagnostics.Debug.WriteLine($"ACTIVE USER IS NOT NULL AT THE ENDE OF REGISTRATION");
 
-                System.Diagnostics.Debug.WriteLine($"IsValid is currently {IsValid}");
-            }
+                   
+        //        }
 
-        }
+
+
+        //        System.Diagnostics.Debug.WriteLine($"IsValid is currently {IsValid}");
+        //    }
+
+        //}
     }
 }
