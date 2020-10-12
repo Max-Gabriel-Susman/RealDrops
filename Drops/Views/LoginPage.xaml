@@ -26,11 +26,13 @@
 
             <Entry Placeholder="{Binding UsernamePlaceholder}"
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"
+                   FontSize="14"
                    Text="{Binding UsernameEntry}"
                    Margin="15,20,15,0"/>
 
             <Entry Placeholder="{Binding PasswordPlaceholder}"
                    PlaceholderColor="{Binding PasswordPlaceholderColor}"
+                   FontSize="14"
                    IsPassword="True"
                    Text="{Binding PasswordEntry}"
                    Margin="15,0,15,8"/>

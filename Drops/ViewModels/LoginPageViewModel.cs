@@ -21,9 +21,9 @@ namespace Drops.ViewModels
         // CONSTRUCTORS
         public LoginPageViewModel()
         {
-            UsernamePlaceholder = "Username is : Admin";// "Enter your username here:";
+            UsernamePlaceholder = "See Github README for Username";// "Enter your username here:";
 
-            PasswordPlaceholder = "Password is : Adminadmin";// "Enter your password here:";
+            PasswordPlaceholder = "See Github README for Password";// "Enter your password here:";
 
             UsernameEntry = "";
 
