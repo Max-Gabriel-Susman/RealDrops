@@ -1,6 +1,5 @@
 # Drops
 
-## !HEADS_UP! : Regidstration functionality is currently down so Use these credentials to login Username: "Admin", Password: "Adminadmin" 
 
 ## Description
 
