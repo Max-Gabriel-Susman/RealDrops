@@ -24,13 +24,17 @@ namespace Drops.Views
 
         // EVENT HANDLERS
         async void OnLoginButtonClicked(object sender, EventArgs e)
+        // Is there a way to reference this page object from the viewmodel? if so I  can migrate this functionality to the view model
         {
-            vm.LoginCommand.Execute(null); 
-            
-            if (AllUsers.ActiveUser != null) 
+            //vm.LoginCommand.Execute(null);
+
+            bool loginSuccess = vm.LoginValidation(vm.UsernameEntry, vm.PasswordEntry);
+
+
+            if (loginSuccess) // why is active user not getting assigned?
             {
                 Navigation.InsertPageBefore(new MapControlPage(), this);
-               
+
                 await Navigation.PopAsync();
             }
             else
@@ -43,7 +47,7 @@ namespace Drops.Views
             }
         }
 
-        // LIFECYCLE METHODS
+        // LIFECYCLE METHODS - I should move these to app.xaml.cs
         protected override void OnAppearing()
         {
             base.OnAppearing(); 

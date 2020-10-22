@@ -3,6 +3,7 @@ using System.Windows.Input;
 using Drops.Models;
 using Drops.Services;
 using Drops.Static;
+using Drops.Views;
 using Xamarin.Forms;
 
 
@@ -13,28 +14,15 @@ namespace Drops.ViewModels
         // FIELDS
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string usernamePlaceholder;
-
-        public string passwordPlaceholder;
-
-        public string usernamePlaceholderColor;
-
-        public string passwordPlaceholderColor;
-
-        public string usernameEntry;
-
-        public string passwordEntry;
-
         // CONSTRUCTORS
         public ValidationViewModel() 
         {
-            // COMMANDS
             PopulateUsersCommand = new Command(async () =>
             {
                 // Populates the static user collection with all the users from the DB
                 foreach (DropsUser user in await CosmosDBService.GetUsers())
                 {
-                    AllUsers.Users.Add(user);
+                    UsersMeta.Users.Add(user);
                 }
             });
 
@@ -43,7 +31,7 @@ namespace Drops.ViewModels
                 
                 foreach (DropsArea area in await CosmosDBService.GetAreas())
                 {
-                    AllAreas.Areas.Add(area);
+                    AreasMeta.Areas.Add(area);
                 }
             });
         }
@@ -61,11 +49,38 @@ namespace Drops.ViewModels
 
         public string PasswordEntry { get; set; }
 
-        public bool IsValid { get; set; }
-
         public ICommand PopulateAreasCommand { get; }
 
         public ICommand PopulateUsersCommand { get; }
+
+        // METHODS
+        public void ConfigureValidationEntries(string usernamePlaceholder, string passwordPlaceholder)
+        {
+            UsernamePlaceholder = usernamePlaceholder;
+
+            PasswordPlaceholder = passwordPlaceholder;
+
+            UsernameEntry = "";
+
+            PasswordEntry = "";
+
+            UsersMeta.ActiveUser = null;
+        }
+
+        public bool ExistenceCheck(string username)
+        {
+            foreach (DropsUser user in UsersMeta.Users)
+            {
+                if (user.Username == username)
+                {
+                    UsersMeta.ActiveUser = user; 
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }
 

@@ -19,7 +19,7 @@ namespace Drops.ViewModels
         {
             SubscribedAreas = new ObservableCollection<DropsArea>();
 
-            AllAreas.GetSubscribedAreas(SubscribedAreas);
+            AreasMeta.GetSubscribedAreas(SubscribedAreas);
 
             //bool ownership = false;
 
@@ -39,12 +39,12 @@ namespace Drops.ViewModels
             //    }
             //}
 
-            ActiveAreaNameLabel = $"The active area is {AllAreas.ActiveArea.AreaName}"; //AllAreas.ActiveArea.AreaName;
+            ActiveAreaNameLabel = $"The active area is {AreasMeta.ActiveArea.AreaName}"; //AllAreas.ActiveArea.AreaName;
 
             // rename to ownership label
             // OwnershipLabel = (ownership) ? "Ownership: You own this area": $"Ownership: This is {owner}'s area" ; // if user is owner ? this is your area : other user's area
 
-            NumberOfSubscribersLabel = $"This area has {AllAreas.ActiveArea.Subscribers.Count}"; // area subscribers collection count
+            NumberOfSubscribersLabel = $"This area has {AreasMeta.ActiveArea.Subscribers.Count}"; // area subscribers collection count
 
             CreateAreaCommand = new Command(() =>
             {
@@ -99,25 +99,25 @@ namespace Drops.ViewModels
         // METHODS
         public void OnActivateAreaButtonClicked(object obj)
         {
-            System.Diagnostics.Debug.WriteLine($"The active area is {AllAreas.ActiveArea.AreaName} before update");
+            System.Diagnostics.Debug.WriteLine($"The active area is {AreasMeta.ActiveArea.AreaName} before update");
 
             DropsArea area = obj as DropsArea;
 
-            AllAreas.ActiveArea = area;
+            AreasMeta.ActiveArea = area;
 
             // AllAreas.ActiveAreaJSONPins.Clear();
 
             // now populate it
 
-            AllUsers.ActiveUser.ActiveAreaName = area.AreaName;
+            UsersMeta.ActiveUser.ActiveAreaName = area.AreaName;
 
-            AllUsers.UpdateActiveUser();
+            UsersMeta.UpdateActiveUser();
 
-            AllAreas.UpdateActiveArea(area);
+            AreasMeta.UpdateActiveArea(area);
 
-            System.Diagnostics.Debug.WriteLine($"The active area is {AllAreas.ActiveArea.AreaName} after update");
+            System.Diagnostics.Debug.WriteLine($"The active area is {AreasMeta.ActiveArea.AreaName} after update");
 
-            System.Diagnostics.Debug.WriteLine($"The active user's active area is {AllUsers.ActiveUser.ActiveAreaName} after update");
+            System.Diagnostics.Debug.WriteLine($"The active user's active area is {UsersMeta.ActiveUser.ActiveAreaName} after update");
 
             Application.Current.MainPage.Navigation.PopAsync();
         }

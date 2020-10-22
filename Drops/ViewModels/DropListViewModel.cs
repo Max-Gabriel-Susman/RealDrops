@@ -25,9 +25,9 @@ namespace Drops.ViewModels
         public DropListViewModel()
         {
             // all this functionality needs to be reintegrated
-            AllAreas.ActiveAreaDropPins.Clear(); // I think we'll handle clearing and instantiating in one move instead
+            AreasMeta.ActiveAreaDropPins.Clear(); // I think we'll handle clearing and instantiating in one move instead
 
-            ActiveAreaDropPins = AllAreas.ActiveAreaDropPins;
+            ActiveAreaDropPins = AreasMeta.ActiveAreaDropPins;
 
             // vm.PopulateItemSource();
 
@@ -37,7 +37,7 @@ namespace Drops.ViewModels
 
             //if(ActiveAreaDropPins.Count == 0)
             //{
-                foreach (var pair in AllAreas.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
+                foreach (var pair in AreasMeta.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
                 {
                     System.Diagnostics.Debug.WriteLine("ADDING DROPIN NOW");
 
@@ -101,11 +101,11 @@ namespace Drops.ViewModels
 
             ActiveAreaDropPins.Remove(dropsPin);
 
-            AllAreas.ActiveArea.JSONPins.Remove(dropsPin.Key); 
+            AreasMeta.ActiveArea.JSONPins.Remove(dropsPin.Key); 
 
-            await CosmosDBService.UpdateArea(AllAreas.ActiveArea);
+            await CosmosDBService.UpdateArea(AreasMeta.ActiveArea);
 
-            System.Diagnostics.Debug.WriteLine($"This area has {AllAreas.ActiveArea.DropsCreated} drops in it");
+            System.Diagnostics.Debug.WriteLine($"This area has {AreasMeta.ActiveArea.DropsCreated} drops in it");
         }
 
         //public void PopulateItemSource()

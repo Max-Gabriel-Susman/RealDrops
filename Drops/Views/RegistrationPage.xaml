@@ -16,12 +16,16 @@
                    WidthRequest="{OnPlatform iOS=200, Android=250}"
                    HeightRequest="{OnPlatform iOS=200, Android=250}"
                    HorizontalOptions="Center" />
-
+            <Label Text="Username must be at least 8 characters long"
+                   FontSize="10"
+                   Margin="15,30,15,0"/>
             <Entry Placeholder="{Binding UsernamePlaceholder}"
                    Text="{Binding UsernameEntry}"
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"
-                   Margin="15,30,15,0"/>
-
+                   Margin="15,5,15,0"/>
+            <Label Text="Password must be at least 8 characters long"
+                   FontSize="10"
+                   Margin="15,0,15,0"/>
             <Entry IsPassword="True"
                  
                    Placeholder="{Binding PasswordPlaceholder}"

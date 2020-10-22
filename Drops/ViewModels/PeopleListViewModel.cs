@@ -19,7 +19,7 @@ namespace Drops.ViewModels
         {
             OtherUsers = new ObservableCollection<DropsUser>();
 
-            AllUsers.GetOtherUsers(OtherUsers);
+            UsersMeta.GetOtherUsers(OtherUsers);
 
             ShareAreaCommand = new Command(OnShareTapped);
         }
@@ -34,7 +34,7 @@ namespace Drops.ViewModels
         {
             var user = obj as DropsUser;
 
-            AllUsers.TargetUser = user;
+            UsersMeta.TargetUser = user;
 
             Application.Current.MainPage.Navigation.PushAsync(new AreaShareViewPage
             {

@@ -14,36 +14,7 @@ namespace Drops.ViewModels
         // CONSTRUCTORS
         public LoginPageViewModel()
         {
-            UsernamePlaceholder = "See Github README for Username";// "Enter your username here:";
-
-            PasswordPlaceholder = "See Github README for Password";// "Enter your password here:";
-
-            UsernameEntry = "";
-
-            PasswordEntry = "";
-
-            AllUsers.ActiveUser = null;
-            
-            LoginCommand = new Command(() =>
-            {
-                if (AllUsers.Authentication(UsernameEntry, PasswordEntry))
-                {
-                    // Assigns AllUsers.ActiveUser to the User Object whose credentials were used for authentication
-                    foreach (DropsUser user in AllUsers.Users) 
-                    {
-                        if (user.Username == UsernameEntry) 
-                        {
-                            
-                            AllUsers.ActiveUser = user;
-                        }
-                    }
-
-                    
-                    if (AllUsers.ActiveUser == null) { return; }
-
-                    AllAreas.GetActiveArea(AllAreas.ActiveArea); 
-                }
-            });
+            ConfigureValidationEntries("See GitHub README for Username", "See GitHub README for Password");
 
             CredentialRecoveryCommand = new Command(() =>
             {
@@ -59,23 +30,21 @@ namespace Drops.ViewModels
         // PROPERTIES
         public ICommand NavToRegistrationCommand { get; }
 
-        public ICommand LoginCommand { get; }
-
         public ICommand CredentialRecoveryCommand { get; }
-        
-    // METHODS
-    public async void GetActiveArea(DropsUser user) 
-        {
-            
-            foreach (DropsArea area in await CosmosDBService.GetAreas()) 
-            {
-                if (area.AreaName == user.ActiveAreaName)
-                {
-                    AllAreas.ActiveArea = area;
 
-                    return;
-                }
+        // METHODS
+        // Handles Validation against The Users Collection
+        public bool LoginValidation(string username, string password)
+        {
+            // checks if username entry is currently in use
+            bool usernameTaken = ExistenceCheck(username);
+
+            if (usernameTaken && UsersMeta.ActiveUser.Password == password)
+            {
+                return true;
             }
+
+            return false;
         }
     }
 }

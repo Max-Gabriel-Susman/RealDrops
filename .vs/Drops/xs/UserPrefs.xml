@@ -1,14 +1,26 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Helpers/APIKeys.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/AreaCreationDetailView.xaml.cs">
     <Files>
-      <File FileName="Drops/Static/AllUsers.cs" Line="22" Column="71" />
-      <File FileName="Drops/Static/AllAreas.cs" Line="32" Column="102" />
-      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="25" Column="40" />
+      <File FileName="Drops/Static/AllUsers.cs" Line="93" Column="39" />
+      <File FileName="Drops/Static/AllAreas.cs" Line="10" Column="34" />
+      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="17" Column="108" />
       <File FileName="Drops.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Drops/Services/CosmosDBService.cs" Line="29" Column="73" />
-      <File FileName="Drops/Models/DropsUser.cs" Line="78" Column="1" />
-      <File FileName="Drops/Helpers/APIKeys.cs" Line="1" Column="1" />
+      <File FileName="Drops/Services/CosmosDBService.cs" Line="95" Column="1" />
+      <File FileName="Drops/Models/DropsUser.cs" Line="10" Column="18" />
+      <File FileName="Drops/Helpers/APIKeys.cs" />
+      <File FileName="Drops/ViewModels/ValidationViewModel.cs" Line="71" Column="1" />
+      <File FileName="Drops/App.xaml.cs" Line="17" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="31" Column="1" />
+      <File FileName="Drops/Models/DropsArea.cs" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="33" Column="47" />
+      <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="44" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml" />
+      <File FileName="Drops/ViewModels/AreaCreationViewModel.cs" />
+      <File FileName="Drops/Views/RegistrationPage.xaml" />
+      <File FileName="Drops/Views/MapControlPage.xaml.cs" Line="22" Column="1" />
+      <File FileName="Drops.iOS/AppDelegate.cs" Line="30" Column="1" />
+      <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,15 +30,15 @@
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Helpers" expanded="True">
-                <Node name="APIKeys.cs" selected="True" />
-              </Node>
+              <Node name="Helpers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="Static" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="AreaCreationDetailView.xaml" expanded="True" />
+                <Node name="AreaCreationDetailView.xaml" expanded="True">
+                  <Node name="AreaCreationDetailView.xaml.cs" selected="True" />
+                </Node>
                 <Node name="AreaListViewPage.xaml" expanded="True" />
                 <Node name="AreaShareViewPage.xaml" expanded="True" />
                 <Node name="DropDetailViewPage.xaml" expanded="True" />
@@ -56,7 +68,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/MGS/Projects/Drops/Drops/ViewModels/AreaListViewModel.cs" relfile="Drops/ViewModels/AreaListViewModel.cs" line="101" column="1" />
+      <Breakpoint enabled="false" file="/Users/MGS/Projects/Drops/Drops/Views/MapControlPage.xaml.cs" relfile="Drops/Views/MapControlPage.xaml.cs" line="22" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

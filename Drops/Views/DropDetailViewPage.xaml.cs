@@ -35,15 +35,15 @@ namespace Drops.Views
                         Position = new Position(ModifiedPin.Position.Latitude, ModifiedPin.Position.Longitude)
                     };
 
-                    AllAreas.SelectedDrop.Latitude = latitude;
+                    AreasMeta.SelectedDrop.Latitude = latitude;
 
-                    AllAreas.SelectedDrop.Longitude = longitude;
+                    AreasMeta.SelectedDrop.Longitude = longitude;
 
-                    AllAreas.SelectedDrop.Label = label;
+                    AreasMeta.SelectedDrop.Label = label;
 
-                    AllAreas.ActiveAreaDropPins.Add(AllAreas.SelectedDrop);
+                    AreasMeta.ActiveAreaDropPins.Add(AreasMeta.SelectedDrop);
 
-                    AllAreas.ActiveArea.JSONPins[AllAreas.SelectedDrop.Key] = new Dictionary<string, string>()
+                    AreasMeta.ActiveArea.JSONPins[AreasMeta.SelectedDrop.Key] = new Dictionary<string, string>()
                     {
                         { "label", label },
 
@@ -52,7 +52,7 @@ namespace Drops.Views
                         { "longitude", longitude }
                     };
 
-                    await CosmosDBService.UpdateArea(AllAreas.ActiveArea);
+                    await CosmosDBService.UpdateArea(AreasMeta.ActiveArea);
                 }
                 else
                 {

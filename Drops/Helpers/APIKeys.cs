@@ -9,5 +9,4 @@
         public static readonly string CosmosAuthKey = "VKMrFITAKoA4M7jp5ruIpW9V4KrQqKCKEZnbQBlweTRItJ01sg7sAGkVsJAdKyTVMg3lS7NWWJJBtzyZnITfew==";
 
     }
-
 }

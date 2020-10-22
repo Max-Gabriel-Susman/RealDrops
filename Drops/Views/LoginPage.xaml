@@ -38,13 +38,13 @@
                     HeightRequest="35"
                     Clicked="OnLoginButtonClicked"/>
 
-            <!-- Registration is currently under maitenance -->
+            <!-- Registration is currently under testing -->
 
-            <!--<Button Text="Registration"
+            <Button Text="Registration"
                     Margin="75,0,75,0"
                     HeightRequest="25"
                     BackgroundColor="CadetBlue"
-                    Command="{Binding NavToRegistrationCommand}"/>-->
+                    Command="{Binding NavToRegistrationCommand}"/>
 
             <Button Text="Having Trouble Logging in?"
                     Command="{Binding CredentialRecoveryCommand}"

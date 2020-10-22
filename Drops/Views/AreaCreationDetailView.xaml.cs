@@ -18,7 +18,7 @@ namespace Drops.Views
 
             SubscribedAreas = new ObservableCollection<DropsArea>();
 
-            AllAreas.GetSubscribedAreas(SubscribedAreas);
+            AreasMeta.GetSubscribedAreas(SubscribedAreas);
 
             // Creates an area locally and inserts it into the DB
             CreateAreaCommand = new Command( async () =>
@@ -37,7 +37,7 @@ namespace Drops.Views
 
                     Subscribers = new Dictionary<string, string>()
                     {
-                        {AllUsers.ActiveUser.Username, "owner"}
+                        {UsersMeta.ActiveUser.Username, "owner"}
                     },
 
                     DropsCreated = 0

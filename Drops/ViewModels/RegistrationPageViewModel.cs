@@ -14,50 +14,42 @@ namespace Drops.ViewModels
         // CONSTRUCTORS
         public RegistrationPageViewModel()
         {
-            User = new DropsUser();
-
-            SaveCommand = new Command(async () =>
-            {
-                // Enforcces Unique usernames
-                foreach (DropsUser user in await CosmosDBService.GetUsers())
-                {
-                    if (user.Username == UsernameEntry)
-                    {
-                        return;
-                    }
-                }
-
-                // Enforces a minimum password length of 8 characters
-                if (PasswordEntry.Length >= 8)
-                {
-                    User.Username = UsernameEntry;
-
-                    User.Password = PasswordEntry;
-
-                    User.ActiveAreaName = "default"; 
-
-                    User.Areas = new Dictionary<string, string>();
-
-                    await CosmosDBService.InsertUser(User);
-
-                    AllUsers.Users.Add(User);
-
-                    //SaveComplete?.Invoke(this, new EventArgs());
-
-                    AllUsers.ActiveUser = User;
-
-                    System.Diagnostics.Debug.WriteLine($"IsValid is currently {IsValid}");
-                }
-
-                
-            });
+            ConfigureValidationEntries("Create a new username", "Create a new password");
         }
 
-        // PROPERTIES 
-        public DropsUser User { get; set; }
+        // METHODS
+        public string RegistrationValidation(string username, string password)
+        {
+            // checks if username entry is currently in use
+            bool usernameTaken = ExistenceCheck(username);
 
-        public ICommand SaveCommand { get; }
+            System.Diagnostics.Debug.WriteLine(username);
 
-        public event EventHandler SaveComplete;
+            System.Diagnostics.Debug.WriteLine(password);
+
+            // Validates Registration Attempts
+            if (!usernameTaken)
+            {
+                if (username.Length >= 8)
+                {
+                    if (password.Length >= 8)
+                    {
+                        UsersMeta.Registration(username, password);
+
+                        return "REGISTER";
+                    }
+                    else
+                    {
+                        return "PASSWORD_SHORT";
+                    }
+                }
+                else
+                {
+                    return "USERNAME_SHORT";
+                }
+            }
+
+            return "INVALID";
+        }
     }
 }

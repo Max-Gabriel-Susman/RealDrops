@@ -16,11 +16,9 @@ namespace Drops.Views
         {
             InitializeComponent();
 
+            System.Diagnostics.Debug.WriteLine("People list code behind constructed");
+
             vm = new RegistrationPageViewModel();
-
-            vm.UsernamePlaceholder = "Create a username";
-
-            vm.PasswordPlaceholder = "Create a Password";
 
             BindingContext = vm;
         }
@@ -28,18 +26,24 @@ namespace Drops.Views
         // EVENT HANDLERS
         async void OnRegistrationButtonClicked(object sender, EventArgs e)
         {
-            vm.SaveCommand.Execute(null);
+            string registrationSuccess = vm.RegistrationValidation(vm.UsernameEntry, vm.PasswordEntry);
 
-            if (AllUsers.ActiveUser != null)
+
+            System.Diagnostics.Debug.WriteLine(registrationSuccess);
+
+            if(registrationSuccess == "REGISTER")
             {
-                Application.Current.MainPage.Navigation.InsertPageBefore(new MapControlPage(), this);
-                await Application.Current.MainPage.Navigation.PopAsync();
+                Navigation.InsertPageBefore(new MapControlPage(), this);
+
+                await Navigation.PopAsync();
             }
             else
             {
-                System.Diagnostics.Debug.WriteLine("registration failed, ACTIVE USER WAS NUll");
+                vm.UsernameEntry = string.Empty;
 
-                // Logic to alert the user that their login has failed
+                vm.PasswordEntry = string.Empty;
+
+                System.Diagnostics.Debug.WriteLine("registration failed");
             }
         }
     }

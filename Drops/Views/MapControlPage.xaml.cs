@@ -18,12 +18,12 @@ namespace Drops.Views
         {
             InitializeComponent();
 
-            foreach(DropsArea area in AllAreas.Areas) 
+            foreach(DropsArea area in AreasMeta.Areas) 
             {
-                // for Registration flow 'activeuser' is null
-                if(area.AreaName == AllUsers.ActiveUser.ActiveAreaName)
+                // for Registration flow 'activeuser' is null, I think it's null again
+                if(area.AreaName == UsersMeta.ActiveUser.ActiveAreaName)
                 {
-                    AllAreas.ActiveArea = area;
+                    AreasMeta.ActiveArea = area;
 
                     System.Diagnostics.Debug.WriteLine("and active area was assigned");
                 }
@@ -31,7 +31,7 @@ namespace Drops.Views
 
             map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(41.7377780, -111.8308330), Distance.FromMiles(1.0)));
 
-            System.Diagnostics.Debug.WriteLine($"There are {AllAreas.ActiveAreaJSONPins.Count} pins in the active area ");
+            System.Diagnostics.Debug.WriteLine($"There are {AreasMeta.ActiveAreaJSONPins.Count} pins in the active area ");
 
             // EVENT HANDLERS
             DropListCommand = new Command(() =>
@@ -54,12 +54,16 @@ namespace Drops.Views
             {
                 Navigation.InsertPageBefore(new LoginPage(), this);
 
+                UsersMeta.ClearUserMetaData();
+
+                AreasMeta.ClearAreaMetaData();
+
                 Navigation.PopAsync();
             });
 
             BindingContext = this;
 
-            System.Diagnostics.Debug.WriteLine($"This area has {AllAreas.ActiveArea.DropsCreated} drops in it");
+            System.Diagnostics.Debug.WriteLine($"This area has {AreasMeta.ActiveArea.DropsCreated} drops in it");
         }
 
         // PROPERTIES
@@ -78,21 +82,21 @@ namespace Drops.Views
             set
             {
                 
-                if (AllAreas.ActiveAreaJSONPins != value)
+                if (AreasMeta.ActiveAreaJSONPins != value)
                 {
-                    AllAreas.ActiveAreaJSONPins = value;
+                    AreasMeta.ActiveAreaJSONPins = value;
 
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActiveAreaJSONPins"));
                 }
             }
-            get => AllAreas.ActiveAreaJSONPins;
+            get => AreasMeta.ActiveAreaJSONPins;
         }
 
         // Handles Map Clicks
         public void OnMapClicked(object sender, MapClickedEventArgs e)
         {
             // Prevents 
-            if(AllAreas.ActiveArea.AreaName != "default")
+            if(AreasMeta.ActiveArea.AreaName != "default")
             {
                 var pin = new Pin()
                 {
@@ -102,9 +106,9 @@ namespace Drops.Views
                 };
 
                 // newKey and newValue are defined using values from pin's properties and OnMapClicked's args
-                string newKey = Convert.ToString(AllAreas.ActiveArea.DropsCreated);
+                string newKey = Convert.ToString(AreasMeta.ActiveArea.DropsCreated);
 
-                System.Diagnostics.Debug.WriteLine(AllAreas.ActiveArea.DropsCreated);
+                System.Diagnostics.Debug.WriteLine(AreasMeta.ActiveArea.DropsCreated);
 
                 Dictionary<string, string> newValue = new Dictionary<string, string>()
             {
@@ -115,13 +119,13 @@ namespace Drops.Views
                 { "longitude", Convert.ToString(pin.Position.Longitude) }
             };
 
-                AllAreas.ActiveAreaJSONPins.Add(pin);
+                AreasMeta.ActiveAreaJSONPins.Add(pin);
 
-                AllAreas.ActiveArea.JSONPins.Add(newKey, newValue);
+                AreasMeta.ActiveArea.JSONPins.Add(newKey, newValue);
 
-                AllAreas.ActiveArea.DropsCreated++;
+                AreasMeta.ActiveArea.DropsCreated++;
 
-                AllAreas.UpdateActiveArea();
+                AreasMeta.UpdateActiveArea();
 
 
             }
@@ -140,10 +144,10 @@ namespace Drops.Views
             System.Diagnostics.Debug.WriteLine("you are now entering the map bitch");
 
             // Clears Pins to prevent Duplicate Pins after the Collection is Populated
-            AllAreas.ActiveAreaJSONPins.Clear();
+            AreasMeta.ActiveAreaJSONPins.Clear();
 
             // Populates the collection with pins
-            foreach (var pair in AllAreas.ActiveArea.JSONPins) 
+            foreach (var pair in AreasMeta.ActiveArea.JSONPins) 
             {
                 Dictionary<string, string> drop = pair.Value;
 
@@ -166,7 +170,7 @@ namespace Drops.Views
                     Position = new Position(doubleLatitude, doubleLongitude)
                 };
 
-                AllAreas.ActiveAreaJSONPins.Add(pin);
+                AreasMeta.ActiveAreaJSONPins.Add(pin);
             }
         }
     }

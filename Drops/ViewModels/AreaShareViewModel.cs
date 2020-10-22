@@ -18,7 +18,7 @@ namespace Drops.ViewModels
         {
             OwnedAreas = new ObservableCollection<DropsArea>();
 
-            AllAreas.GetOwnedAreas(OwnedAreas);
+            AreasMeta.GetOwnedAreas(OwnedAreas);
 
             ShareAreaCommand = new Command(OnShareAreaButtonClicked);
 
@@ -36,14 +36,14 @@ namespace Drops.ViewModels
 
             foreach(var pair in area.Subscribers)
             {
-                if(pair.Key == AllUsers.TargetUser.Username)
+                if(pair.Key == UsersMeta.TargetUser.Username)
                 {
                     System.Diagnostics.Debug.WriteLine("user has already been added to db");
                     return;
                 }
             }
 
-            area.Subscribers.Add(AllUsers.TargetUser.Username , "recipient");
+            area.Subscribers.Add(UsersMeta.TargetUser.Username , "recipient");
 
             await CosmosDBService.UpdateArea(area);
         }
