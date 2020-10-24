@@ -30,13 +30,6 @@ namespace Drops.Views
 
                     string longitude = (NewLocationPin != null) ? $"{NewLocationPin.Position.Longitude}" : AreasMeta.SelectedDrop.Longitude;
 
-                    //Pin pin = new Pin()
-                    //{
-                    //    Label = label,
-
-                    //    Position = new Position(NewLocationPin.Position.Latitude, NewLocationPin.Position.Longitude)
-                    //};
-
                     AreasMeta.SelectedDrop.Latitude = latitude;
 
                     AreasMeta.SelectedDrop.Longitude = longitude;
@@ -51,12 +44,16 @@ namespace Drops.Views
 
                         { "latitude", latitude },
 
-                        { "longitude", longitude }
+                        { "longitude", longitude }  
                     };
 
                     await CosmosDBService.UpdateArea(AreasMeta.ActiveArea);
 
+                    Navigation.InsertPageBefore(new DropListViewPage(), this);
+
                     await Navigation.PopAsync();
+
+
                 }
                 else
                 {

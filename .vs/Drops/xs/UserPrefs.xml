@@ -1,6 +1,6 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/DropDetailViewPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Static/PagesMeta.cs">
     <Files>
       <File FileName="Drops/Static/AllUsers.cs" Line="45" Column="58" />
       <File FileName="Drops/Static/AllAreas.cs" Line="54" Column="15" />
@@ -11,7 +11,7 @@
       <File FileName="Drops/Helpers/APIKeys.cs" />
       <File FileName="Drops/ViewModels/ValidationViewModel.cs" Line="34" Column="1" />
       <File FileName="Drops/App.xaml.cs" Line="17" Column="1" />
-      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="31" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="38" Column="45" />
       <File FileName="Drops/Models/DropsArea.cs" />
       <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="28" Column="58" />
       <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="32" Column="69" />
@@ -21,10 +21,15 @@
       <File FileName="Drops/Views/MapControlPage.xaml.cs" Line="66" Column="1" />
       <File FileName="Drops.iOS/AppDelegate.cs" Line="30" Column="1" />
       <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" Line="48" Column="101" />
-      <File FileName="Drops/Views/DropListViewPage.xaml.cs" Line="28" Column="47" />
-      <File FileName="Drops/Views/DropDetailViewPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/DropListViewPage.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Views/DropDetailViewPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Views/DropListViewPage.xaml.cs" Line="37" Column="35" />
+      <File FileName="Drops/Views/DropDetailViewPage.xaml.cs" Line="52" Column="69" />
+      <File FileName="Drops/Views/DropListViewPage.xaml" Line="31" Column="94" />
+      <File FileName="Drops/Views/DropDetailViewPage.xaml" Line="17" Column="54" />
+      <File FileName="Drops/ViewModels/DropListViewModel.cs" Line="60" Column="1" />
+      <File FileName="Drops/Views/AreaListViewPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Views/AreaListViewPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/AreaListViewModel.cs" Line="53" Column="121" />
+      <File FileName="Drops/Static/PagesMeta.cs" Line="4" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,15 +42,15 @@
               <Node name="Helpers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="Static" expanded="True" />
+              <Node name="Static" expanded="True">
+                <Node name="PagesMeta.cs" selected="True" />
+              </Node>
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="AreaCreationDetailView.xaml" expanded="True" />
                 <Node name="AreaListViewPage.xaml" expanded="True" />
                 <Node name="AreaShareViewPage.xaml" expanded="True" />
-                <Node name="DropDetailViewPage.xaml" expanded="True">
-                  <Node name="DropDetailViewPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="DropDetailViewPage.xaml" expanded="True" />
                 <Node name="DropListViewPage.xaml" expanded="True" />
                 <Node name="LoginPage.xaml" expanded="True" />
                 <Node name="LostCredentialsViewPage.xaml" expanded="True" />

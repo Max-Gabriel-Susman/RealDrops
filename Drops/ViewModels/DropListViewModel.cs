@@ -37,34 +37,34 @@ namespace Drops.ViewModels
 
             //if(ActiveAreaDropPins.Count == 0)
             //{
-                foreach (var pair in AreasMeta.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
+            foreach (var pair in AreasMeta.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
+            {
+                System.Diagnostics.Debug.WriteLine("ADDING DROPIN NOW");
+
+                // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
+                Dictionary<string, string> JSONPin = pair.Value;
+
+                //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
+                // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
+                string label = JSONPin["label"];
+
+                string key = pair.Key;
+
+                string latitude = JSONPin["latitude"];
+
+                string longitude = JSONPin["longitude"];
+
+                ActiveAreaDropPins.Add(new DropsPin
                 {
-                    System.Diagnostics.Debug.WriteLine("ADDING DROPIN NOW");
+                    Key = key,
 
-                    // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
-                    Dictionary<string, string> JSONPin = pair.Value;
+                    Latitude = latitude,
 
-                    //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
-                    // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
-                    string label = JSONPin["label"];
+                    Longitude = longitude,
 
-                    string key = pair.Key;
-
-                    string latitude = JSONPin["latitude"];
-
-                    string longitude = JSONPin["longitude"];
-
-                    ActiveAreaDropPins.Add(new DropsPin
-                    {
-                        Key = key,
-
-                        Latitude = latitude,
-
-                        Longitude = longitude,
-
-                        Label = label
-                    });
-                }
+                    Label = label
+                });
+            }
             // }
 
 

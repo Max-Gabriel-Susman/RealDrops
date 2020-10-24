@@ -48,7 +48,12 @@ namespace Drops.ViewModels
 
             CreateAreaCommand = new Command(() =>
             {
-                Application.Current.MainPage.Navigation.PushAsync(new AreaCreationDetailView());
+                // Application.Current.MainPage.Navigation.PushAsync(new AreaCreationDetailView());
+
+                // I need to figure out how to InsertPageBefore in the vm so as to adhere to MVVM. Static Page Property!
+                Application.Current.MainPage.Navigation.InsertPageBefore(new AreaCreationDetailView(), PagesMeta.ThisPage);
+
+                Application.Current.MainPage.Navigation.PopAsync();
             });
 
             SelectCommand = new Command(OnActivateAreaButtonClicked);

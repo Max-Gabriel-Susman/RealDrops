@@ -7,7 +7,8 @@ namespace Drops.Views
     // This functionality in this class is currently under maintenance as well
     public partial class DropListViewPage : ContentPage
     {
-        // DropListViewModel vm;
+        // FIELDS
+        //DropListViewModel vm;
 
         // CONSTRUCTORS
         public DropListViewPage()
@@ -23,11 +24,17 @@ namespace Drops.Views
 
         void OnDropSelected(object sender, SelectedItemChangedEventArgs e)
         {
+
+
             System.Diagnostics.Debug.WriteLine($"The index of the drop you've selected is {e.SelectedItemIndex}");
 
             AreasMeta.SelectedDrop = AreasMeta.ActiveAreaDropPins[e.SelectedItemIndex];
 
-            Application.Current.MainPage.Navigation.PushAsync(new DropDetailViewPage());
+            // Application.Current.MainPage.Navigation.PushAsync(new DropDetailViewPage());
+
+            Navigation.InsertPageBefore(new DropDetailViewPage(), this);
+
+            Navigation.PopAsync();
         }
 
         // going to attempt to migrate to the vm, not sure why the fuck this isn't working, I'm just going to move back to the way it was to get shit working

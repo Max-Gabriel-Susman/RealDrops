@@ -10,9 +10,11 @@
         <StackLayout>
 
             <Button Command="{Binding EditDropCommand}"
-                    Text="Create Area"
+                    Text="Save Changes"
                     TextColor="Beige"
                     BackgroundColor="Green" />
+
+            <!-- I should add a cancel button right? -->
 
             <Entry Placeholder="Enter a new Label: "
                    x:Name="nameEntry"

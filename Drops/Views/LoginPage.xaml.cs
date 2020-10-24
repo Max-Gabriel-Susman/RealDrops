@@ -52,6 +52,7 @@ namespace Drops.Views
         {
             base.OnAppearing(); 
 
+            // I should turn these into regular methods put them in theiir respective metadata classes and invoke them from app.xaml.cs
             vm.PopulateUsersCommand.Execute(null); 
             vm.PopulateAreasCommand.Execute(null); 
         }
