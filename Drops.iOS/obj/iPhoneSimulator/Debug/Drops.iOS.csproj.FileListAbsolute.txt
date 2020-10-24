@@ -71,3 +71,4 @@
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csproj.CopyComplete
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.exe
 /Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.pdb
+/Users/MGS/Projects/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csprojAssemblyReference.cache

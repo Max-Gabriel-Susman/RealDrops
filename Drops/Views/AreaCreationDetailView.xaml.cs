@@ -45,6 +45,7 @@ namespace Drops.Views
 
                 await CosmosDBService.InsertArea(NewArea);
 
+                // if I can navigate back to the mappage with the new area it should fix the problem
                 await Application.Current.MainPage.Navigation.PopAsync();
             });
 

@@ -14,26 +14,28 @@ namespace Drops.Views
         {
             InitializeComponent();
 
+            NewLabelEntry = "";
+
             EditDropCommand = new Command( async () =>
             {
                 System.Diagnostics.Debug.WriteLine("EDITDROPCOMMAND INVOKED");
 
-                if (ModifiedPin != null)
+                if (NewLocationPin != null || NewLabelEntry != "") // I need to change this logic because the user should be able to change data without changing the location
                 {
                     System.Diagnostics.Debug.WriteLine("MODIFIED PIN WAS NOT NULL");
 
-                    string label = ModifiedPin.Label;
+                    string label = (NewLabelEntry != "") ? NewLabelEntry : AreasMeta.SelectedDrop.Label;
 
-                    string latitude = $"{ModifiedPin.Position.Latitude}";
+                    string latitude = (NewLocationPin != null) ? $"{NewLocationPin.Position.Latitude}" : AreasMeta.SelectedDrop.Latitude;
 
-                    string longitude = $"{ModifiedPin.Position.Longitude}";
+                    string longitude = (NewLocationPin != null) ? $"{NewLocationPin.Position.Longitude}" : AreasMeta.SelectedDrop.Longitude;
 
-                    Pin pin = new Pin()
-                    {
-                        Label = label,
+                    //Pin pin = new Pin()
+                    //{
+                    //    Label = label,
 
-                        Position = new Position(ModifiedPin.Position.Latitude, ModifiedPin.Position.Longitude)
-                    };
+                    //    Position = new Position(NewLocationPin.Position.Latitude, NewLocationPin.Position.Longitude)
+                    //};
 
                     AreasMeta.SelectedDrop.Latitude = latitude;
 
@@ -53,6 +55,8 @@ namespace Drops.Views
                     };
 
                     await CosmosDBService.UpdateArea(AreasMeta.ActiveArea);
+
+                    await Navigation.PopAsync();
                 }
                 else
                 {
@@ -70,7 +74,7 @@ namespace Drops.Views
 
         public string NewLabelEntry { get; set; }
 
-        public Pin ModifiedPin { get; set; }
+        public Pin NewLocationPin { get; set; }
 
         public double? Latitude { get; set; }
 
@@ -92,7 +96,7 @@ namespace Drops.Views
                 Label = "New Drop Location!"
             };
 
-            ModifiedPin = pin;
+            NewLocationPin = pin;
 
             map.Pins.Add(pin);
 
