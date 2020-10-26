@@ -12,40 +12,22 @@ using Xamarin.Forms.Maps;
 
 namespace Drops.ViewModels
 {
-    // what the fuck I literally had it working
-    // I need to verify if BaseViewModel is actually used later I don't want to  look foolish
-    public class DropListViewModel : BaseViewModel, INotifyPropertyChanged // I think the verb is 'including' the interface, I should find out so I don't sound stupid
+    public class DropListViewModel : BaseViewModel, INotifyPropertyChanged
     {
-        // I should probably stop misusing commands and swap them for methods where appropriate
-
         // FIELDS
         public event PropertyChangedEventHandler PropertyChanged;
 
         // CONSTRUCTORS
         public DropListViewModel()
         {
-            // all this functionality needs to be reintegrated
-            AreasMeta.ActiveAreaDropPins.Clear(); // I think we'll handle clearing and instantiating in one move instead
+            AreasMeta.ActiveAreaDropPins.Clear(); 
 
             ActiveAreaDropPins = AreasMeta.ActiveAreaDropPins;
 
-            // vm.PopulateItemSource();
-
-            // System.Diagnostics.Debug.WriteLine($"The length of ACTIVEAREADROPPINS is {vm.ActiveAreaDropPins.Count} AS seen in droplistviewpage");
-
-            System.Diagnostics.Debug.WriteLine("POPULATEITEMSOURCE INVOKED");
-
-            //if(ActiveAreaDropPins.Count == 0)
-            //{
-            foreach (var pair in AreasMeta.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
+            foreach (var pair in AreasMeta.ActiveArea.JSONPins) 
             {
-                System.Diagnostics.Debug.WriteLine("ADDING DROPIN NOW");
-
-                // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
                 Dictionary<string, string> JSONPin = pair.Value;
 
-                //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
-                // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
                 string label = JSONPin["label"];
 
                 string key = pair.Key;
@@ -65,16 +47,8 @@ namespace Drops.ViewModels
                     Label = label
                 });
             }
-            // }
-
-
-            // has List.Length been deprecated? why was it in the codecademy tutorial?
-            System.Diagnostics.Debug.WriteLine($"The length of ACTIVEAREADROPPINS is {ActiveAreaDropPins.Count}");
-            // when to use debug statements as opposed to breakpoints as opposed to Trace statments
 
             DeleteCommand = new Command(OnDeleteButtonTapped);
-
-            // SelectDropCommand = new Command(OnDropSelected);
         }
 
         // PROPERTIES
@@ -83,8 +57,6 @@ namespace Drops.ViewModels
         public ObservableCollection<DropsPin> ActiveAreaDropPins { get; set; }
 
         public ICommand DeleteCommand { get; }
-
-        public ICommand SelectDropCommand { get; }
 
         public string LabelEntry { get; set; }
 
@@ -96,11 +68,9 @@ namespace Drops.ViewModels
 
         public double Longitude { get; set; }
 
-        // METHODS
+        // EVENT HANDLERS
         public async void OnDeleteButtonTapped(object obj)
         {
-            System.Diagnostics.Debug.WriteLine("delete button tapped");
-
             var dropsPin = obj as DropsPin;
 
             ActiveAreaDropPins.Remove(dropsPin);
@@ -108,8 +78,6 @@ namespace Drops.ViewModels
             AreasMeta.ActiveArea.JSONPins.Remove(dropsPin.Key); 
 
             await CosmosDBService.UpdateArea(AreasMeta.ActiveArea);
-
-            System.Diagnostics.Debug.WriteLine($"This area has {AreasMeta.ActiveArea.DropsCreated} drops in it");
         }
 
         // I Think we're actually going to have to have this method signature in the xaml.cs file but we can keep logic here

@@ -27,7 +27,6 @@
                                       <ColumnDefinition Width="*"/>
                                   </Grid.ColumnDefinitions>
                                   <Label VerticalOptions="CenterAndExpand" Text="{Binding Label}"/>
-                                  <!-- what was MyList? -->
                                   <Button Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference MyList}}"
                                           CommandParameter="{Binding .}"
                                           Grid.Column="1"

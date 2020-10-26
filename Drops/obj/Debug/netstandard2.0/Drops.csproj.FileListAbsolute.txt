@@ -1,3 +1,10 @@
+/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Microsoft.Azure.Documents.ServiceInterop.dll
+/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Cosmos.CRTCompat.dll
+/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Drops.deps.json
+/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Drops.dll
+/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/ref/Drops.dll
+/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Drops.pdb
+/Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/Drops.csprojAssemblyReference.cache
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/Views/AreaCreationDetailView.xaml.g.cs
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/Views/AreaListViewPage.xaml.g.cs
@@ -12,13 +19,7 @@
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/Drops.AssemblyInfoInputs.cache
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/Drops.AssemblyInfo.cs
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/Drops.csproj.CoreCompileInputs.cache
+/Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/XamlC.stamp
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/Drops.dll
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/ref/Drops.dll
 /Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/Drops.pdb
-/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Microsoft.Azure.Documents.ServiceInterop.dll
-/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Cosmos.CRTCompat.dll
-/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Drops.deps.json
-/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Drops.dll
-/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/ref/Drops.dll
-/Users/MGS/Projects/Drops/Drops/bin/Debug/netstandard2.0/Drops.pdb
-/Users/MGS/Projects/Drops/Drops/obj/Debug/netstandard2.0/XamlC.stamp
