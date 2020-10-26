@@ -72,7 +72,9 @@ namespace Drops.ViewModels
             System.Diagnostics.Debug.WriteLine($"The length of ACTIVEAREADROPPINS is {ActiveAreaDropPins.Count}");
             // when to use debug statements as opposed to breakpoints as opposed to Trace statments
 
-            DeleteCommand = new Command((OnDeleteButtonTapped));  
+            DeleteCommand = new Command(OnDeleteButtonTapped);
+
+            // SelectDropCommand = new Command(OnDropSelected);
         }
 
         // PROPERTIES
@@ -81,6 +83,8 @@ namespace Drops.ViewModels
         public ObservableCollection<DropsPin> ActiveAreaDropPins { get; set; }
 
         public ICommand DeleteCommand { get; }
+
+        public ICommand SelectDropCommand { get; }
 
         public string LabelEntry { get; set; }
 
@@ -108,44 +112,18 @@ namespace Drops.ViewModels
             System.Diagnostics.Debug.WriteLine($"This area has {AreasMeta.ActiveArea.DropsCreated} drops in it");
         }
 
-        //public void PopulateItemSource()
+        // I Think we're actually going to have to have this method signature in the xaml.cs file but we can keep logic here
+        //void OnDropSelected(object obj)
         //{
-        //    System.Diagnostics.Debug.WriteLine("POPULATEITEMSOURCE INVOKED");
+        //    // System.Diagnostics.Debug.WriteLine($"The index of the drop you've selected is {e.SelectedItemIndex}");
 
-        //    foreach (var pair in AllAreas.ActiveArea.JSONPins) // maybe I can try and use this logic in droplistviewpage
-        //    {
-        //        System.Diagnostics.Debug.WriteLine("ADDING DROPIN NOW");
+        //    DropsPin drop = obj as DropsPin;
 
-        //        // within value in the dictionary is another set of key value pairs containing strings representing a pins properties
-        //        Dictionary<string, string> JSONPin = pair.Value;
+        //    // AreasMeta.SelectedDrop = AreasMeta.ActiveAreaDropPins[];
 
-        //        //System.Diagnostics.Debug.WriteLine("Adding pin NOW!!!");
-        //        // the properties are captured and converted if necessary so they may be used to instantiate the pin they represent
-        //        string label = JSONPin["label"];
+        //    Application.Current.MainPage.Navigation.InsertPageBefore(new DropDetailViewPage(), PagesMeta.ThisPage);
 
-        //        string key = pair.Key;
-
-        //        string latitude = JSONPin["latitude"];
-
-        //        string longitude = JSONPin["longitude"];
-
-        //        ActiveAreaDropPins.Add(new DropsPin
-        //        {
-        //            Key = key,
-
-        //            Latitude = latitude,
-
-        //            Longitude = longitude,
-
-        //            Label = label
-        //        });
-        //    }
-            
-
-        //    // has List.Length been deprecated? why was it in the codecademy tutorial?
-        //    System.Diagnostics.Debug.WriteLine($"The length of ACTIVEAREADROPPINS is {ActiveAreaDropPins.Count}");
-        //    // when to use debug statements as opposed to breakpoints as opposed to Trace statments
+        //    Application.Current.MainPage.Navigation.PopAsync();
         //}
-
     }
 }
