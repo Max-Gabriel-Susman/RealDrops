@@ -1,10 +1,6 @@
-﻿using System;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
-using Drops.Views;
 using Drops.Static;
 using Drops.Services;
 using Xamarin.Forms;
@@ -14,6 +10,7 @@ namespace Drops.ViewModels
 {
     public class AreaShareViewModel 
     {
+        // CONSTRUCTORS
         public AreaShareViewModel()
         {
             OwnedAreas = new ObservableCollection<DropsArea>();
@@ -21,7 +18,6 @@ namespace Drops.ViewModels
             AreasMeta.GetOwnedAreas(OwnedAreas);
 
             ShareAreaCommand = new Command(OnShareAreaButtonClicked);
-
         }
 
         // PROPERTIES
@@ -36,9 +32,9 @@ namespace Drops.ViewModels
 
             foreach(var pair in area.Subscribers)
             {
+                // Checks the area's subscriber against the current user by username to prevent redundant subscriptions
                 if(pair.Key == UsersMeta.TargetUser.Username)
                 {
-                    System.Diagnostics.Debug.WriteLine("user has already been added to db");
                     return;
                 }
             }

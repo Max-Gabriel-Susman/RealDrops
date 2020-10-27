@@ -10,15 +10,10 @@ namespace Drops.ViewModels
 {
     public class DropDetailViewModel
     {
-        // once I get things running in x.xaml.cs I'll start migrating functionality to this class
-
         // CONSTRUCTORS
         public DropDetailViewModel()
         {
             
         }
-
-        // PROPERTIES
-        
     }
 }
