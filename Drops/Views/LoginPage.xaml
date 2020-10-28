@@ -14,10 +14,16 @@
                      Orientation="Vertical"
                      Padding="20"
                      Spacing="8">
-            
+
+            <!-- I'm going to assign Source to a Property via data binding that is in turn dynamically assinged based on device os and idiom -->
             <Image Source="dropsglyph.pdf"
                    WidthRequest="{OnPlatform iOS=300, Android=250}"
                    HorizontalOptions="Center" />
+
+            <!-- I'm temporarily going to use a raster Source until I can fix rendering problem on android -->
+            <!-- <Image Source="dropsglyph.png"
+                   WidthRequest="{OnPlatform iOS=300, Android=250}"
+                   HorizontalOptions="Center" /> -->
 
             <Entry Placeholder="{Binding UsernamePlaceholder}"
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"

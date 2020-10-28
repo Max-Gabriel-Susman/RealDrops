@@ -583,3 +583,4 @@
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/stamp/_GenerateJavaStubs.stamp
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/stamp/_GeneratePackageManagerJava.stamp
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/stamp/_ResolveLibraryProjectImports.stamp
+/Users/MGS/Projects/Drops/Drops.Android/obj/Debug/res/drawable/dropsglyph.png

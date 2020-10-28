@@ -120,6 +120,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\dropsglyph.png.imageset\dropsglyph.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -156,5 +158,6 @@
     <Folder Include="Assets.xcassets\dropslog.pdf.imageset\" />
     <Folder Include="Assets.xcassets\registrationglyph.pdf.imageset\" />
     <Folder Include="Assets.xcassets\dropsglyph.pdf.imageset\" />
+    <Folder Include="Assets.xcassets\dropsglyph.png.imageset\" />
   </ItemGroup>
 </Project>

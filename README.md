@@ -1,5 +1,5 @@
 # Drops
-
+## !LoginPage Vector Graphics failing to Render on android!
 
 ## Description
 

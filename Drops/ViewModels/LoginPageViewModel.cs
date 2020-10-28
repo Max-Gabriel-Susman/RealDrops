@@ -25,6 +25,33 @@ namespace Drops.ViewModels
             {
                 Application.Current.MainPage.Navigation.PushAsync(new RegistrationPage());
             });
+
+            // I'm going to implement this in the future to make the code adaptive
+            //switch (Device.RuntimePlatform)
+            //{
+            //    case Device.iOS:
+            //        // dropsglyph.pdf assing this to the 
+            //        break;
+            //    case Device.Android:
+
+            //        break;
+            //    default:
+                    
+            //        break;
+            //}
+
+            //switch (Device.Idiom)
+            //{
+            //    case TargetIdiom.Desktop:
+
+            //        break;
+            //    case TargetIdiom.Phone:
+            //        break;
+            //    case TargetIdiom.Tablet:
+            //        break;
+            //    case TargetIdiom.TV:
+            //        break;
+            //}
         }
 
         // PROPERTIES

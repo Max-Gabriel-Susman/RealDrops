@@ -27,7 +27,7 @@
 
             <StackLayout Orientation="Horizontal"
                          VerticalOptions="FillAndExpand"
-                         HorizontalOptions="FillAndExpand"
+                         HorizontalOptions="CenterAndExpand"
                          BackgroundColor="default"
                          Padding="0,0,0,0"
                          Margin="5,0,0,0"
@@ -38,13 +38,13 @@
                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.125 }">
 
                 <Button IsEnabled="True"
-                            BackgroundColor="DarkGray"
-                            TextColor="White"
-                            Text="Logout"
-                            FontSize="22"
-                            Margin="0,15,0,15"
-                            WidthRequest="70"
-                            Command="{Binding LogoutCommand}"/>
+                        BackgroundColor="DarkGray"
+                        TextColor="White"
+                        Text="Logout"
+                        FontSize="22"
+                        Margin="0,15,0,15"
+                        WidthRequest="70"
+                        Command="{Binding LogoutCommand}"/>
 
                 <Button IsEnabled="True"
                         Text="Areas"

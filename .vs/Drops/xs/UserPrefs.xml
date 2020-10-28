@@ -1,39 +1,39 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/PeopleListViewPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="17" Column="108" />
+      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="57" Column="22" />
       <File FileName="Drops.iOS/Main.cs" />
       <File FileName="Drops/Services/CosmosDBService.cs" />
       <File FileName="Drops/Models/DropsUser.cs" />
       <File FileName="Drops/Helpers/APIKeys.cs" />
-      <File FileName="Drops/ViewModels/ValidationViewModel.cs" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/ValidationViewModel.cs" />
       <File FileName="Drops/App.xaml.cs" />
       <File FileName="Drops/Views/LoginPage.xaml.cs" />
       <File FileName="Drops/Models/DropsArea.cs" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
       <File FileName="Drops/Views/RegistrationPage.xaml.cs" />
-      <File FileName="Drops/Views/LoginPage.xaml" />
+      <File FileName="Drops/Views/LoginPage.xaml" Line="31" Column="50" />
       <File FileName="Drops/ViewModels/AreaCreationViewModel.cs" />
       <File FileName="Drops/Views/RegistrationPage.xaml" />
-      <File FileName="Drops/Views/MapControlPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/MapControlPage.xaml.cs" />
       <File FileName="Drops.iOS/AppDelegate.cs" />
       <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" />
       <File FileName="Drops/Views/DropListViewPage.xaml.cs" />
       <File FileName="Drops/Views/DropDetailViewPage.xaml.cs" />
       <File FileName="Drops/Views/DropListViewPage.xaml" />
       <File FileName="Drops/Views/DropDetailViewPage.xaml" />
-      <File FileName="Drops/ViewModels/DropListViewModel.cs" Line="59" Column="47" />
+      <File FileName="Drops/ViewModels/DropListViewModel.cs" />
       <File FileName="Drops/Views/AreaListViewPage.xaml" />
       <File FileName="Drops/Views/AreaListViewPage.xaml.cs" />
       <File FileName="Drops/ViewModels/AreaListViewModel.cs" />
       <File FileName="Drops/Static/PagesMeta.cs" />
       <File FileName="Drops/ViewModels/AreaShareViewModel.cs" />
-      <File FileName="Drops/ViewModels/BaseViewModel.cs" Line="12" Column="28" />
-      <File FileName="Drops/ViewModels/DropDetailViewModel.cs" Line="12" Column="6" />
-      <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="Drops/ViewModels/PeopleListViewModel.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/MapControlPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/BaseViewModel.cs" />
+      <File FileName="Drops/ViewModels/DropDetailViewModel.cs" />
+      <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" />
+      <File FileName="Drops/ViewModels/PeopleListViewModel.cs" />
+      <File FileName="Drops/Views/MapControlPage.xaml" Line="40" Column="41" />
       <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
@@ -55,18 +55,18 @@
                 <Node name="AreaShareViewPage.xaml" expanded="True" />
                 <Node name="DropDetailViewPage.xaml" expanded="True" />
                 <Node name="DropListViewPage.xaml" expanded="True" />
-                <Node name="LoginPage.xaml" expanded="True" />
+                <Node name="LoginPage.xaml" expanded="True" selected="True" />
                 <Node name="LostCredentialsViewPage.xaml" expanded="True" />
                 <Node name="MapControlPage.xaml" expanded="True" />
-                <Node name="PeopleListViewPage.xaml" expanded="True">
-                  <Node name="PeopleListViewPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="PeopleListViewPage.xaml" expanded="True" />
                 <Node name="RegistrationPage.xaml" expanded="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
             <Node name="Drops.Android" expanded="True">
-              <Node name="Assets" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
             </Node>
             <Node name="Drops.iOS" expanded="True">
               <Node name="Properties" expanded="True" />
