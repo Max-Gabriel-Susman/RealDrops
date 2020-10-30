@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Drops.SmallDevicesStyle.xaml", "SmallDevicesStyle.xaml", typeof(global::Drops.SmallDevicesStyle))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Drops.MainPage.xaml", "MainPage.xaml", typeof(global::Drops.MainPage))]
 
 namespace Drops {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("SmallDevicesStyle.xaml")]
-    public partial class SmallDevicesStyle : global::Xamarin.Forms.ResourceDictionary {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MainPage.xaml")]
+    public partial class MainPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SmallDevicesStyle));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainPage));
         }
     }
 }

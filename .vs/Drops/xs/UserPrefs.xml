@@ -1,6 +1,6 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/GeneralDevicesStyle.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/MainPage.xaml">
     <Files>
       <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="57" Column="22" />
       <File FileName="Drops.iOS/Main.cs" />
@@ -8,12 +8,12 @@
       <File FileName="Drops/Models/DropsUser.cs" />
       <File FileName="Drops/Helpers/APIKeys.cs" />
       <File FileName="Drops/ViewModels/ValidationViewModel.cs" />
-      <File FileName="Drops/App.xaml.cs" Line="12" Column="18" />
+      <File FileName="Drops/App.xaml.cs" Line="32" Column="10" />
       <File FileName="Drops/Views/LoginPage.xaml.cs" />
       <File FileName="Drops/Models/DropsArea.cs" />
       <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
       <File FileName="Drops/Views/RegistrationPage.xaml.cs" />
-      <File FileName="Drops/Views/LoginPage.xaml" Line="31" Column="50" />
+      <File FileName="Drops/Views/LoginPage.xaml" />
       <File FileName="Drops/ViewModels/AreaCreationViewModel.cs" />
       <File FileName="Drops/Views/RegistrationPage.xaml" />
       <File FileName="Drops/Views/MapControlPage.xaml.cs" />
@@ -35,10 +35,13 @@
       <File FileName="Drops/ViewModels/PeopleListViewModel.cs" />
       <File FileName="Drops/Views/MapControlPage.xaml" />
       <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" />
-      <File FileName="Drops/SmallDevicesStyle.xaml" Line="1" Column="1" />
-      <File FileName="Drops/SmallDevicesStyle.xaml.cs" Line="7" Column="105" />
-      <File FileName="Drops/GeneralDevicesStyle.xaml" Line="1" Column="1" />
-      <File FileName="Drops/GeneralDevicesStyle.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/SmallDevicesStyle.xaml" Line="9" Column="5" />
+      <File FileName="Drops/SmallDevicesStyle.xaml.cs" Line="17" Column="1" />
+      <File FileName="Drops/GeneralDevicesStyle.xaml" Line="16" Column="23" />
+      <File FileName="Drops/GeneralDevicesStyle.xaml.cs" Line="17" Column="1" />
+      <File FileName="Drops/App.xaml" Line="9" Column="51" />
+      <File FileName="Drops/MainPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/MainPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -46,9 +49,8 @@
           <Node name="Drops" expanded="True">
             <Node name="Drops" expanded="True">
               <Node name="App.xaml" expanded="True" />
-              <Node name="GeneralDevicesStyle.xaml" expanded="True">
-                <Node name="GeneralDevicesStyle.xaml.cs" selected="True" />
-              </Node>
+              <Node name="GeneralDevicesStyle.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" selected="True" />
               <Node name="SmallDevicesStyle.xaml" expanded="True" />
             </Node>
           </Node>

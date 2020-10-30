@@ -12,6 +12,10 @@ Areas also have a collection of 'Subscribers' these are users  who are allowed t
 
 ## In the Works
 
+- adaptive UI styling for desktop and tablet idoms upon launch
+
+- uwp support
+
 - Drop Editing
 
 - Area Editing
