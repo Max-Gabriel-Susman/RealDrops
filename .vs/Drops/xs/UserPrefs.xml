@@ -1,6 +1,6 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/LoginPage.xaml">
     <Files>
       <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="57" Column="22" />
       <File FileName="Drops.iOS/Main.cs" />
@@ -33,8 +33,8 @@
       <File FileName="Drops/ViewModels/DropDetailViewModel.cs" />
       <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" />
       <File FileName="Drops/ViewModels/PeopleListViewModel.cs" />
-      <File FileName="Drops/Views/MapControlPage.xaml" Line="40" Column="41" />
-      <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/MapControlPage.xaml" />
+      <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
