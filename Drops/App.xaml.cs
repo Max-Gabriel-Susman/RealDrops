@@ -15,21 +15,13 @@ namespace Drops
         const int smallHeightResolution = 1280;
 
         // CONSTRUCTORS
-        //public App()
-        //{
-        //    InitializeComponent();
-
-        //    MainPage = new NavigationPage(new LoginPage());
-
-        //}
-
-        // test constructor for LoadStyles logic
         public App()
         {
             InitializeComponent();
+
             LoadStyles();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         // METHODS
@@ -39,15 +31,13 @@ namespace Drops
             GetRuntimePlatform();
 
             // Optimizes for users Display dimensions
-            GetDisplaySize();
+            //GetDisplaySize();
 
             // Optimizes for users Device Idiom
             GetDeviceIdiom();
         }
 
-        // Contains the logic that categorizes the users device by it's diplay dimensions, currently idiom agnostic
-        // public static bool GetDisplaySize() // I don't think this needs to be static
-        // public bool GetDisplaySize()
+        // Contains the logic that categorizes the users device by it's diplay dimensions
         public void GetDisplaySize()
         {
             // Get Metrics
@@ -64,13 +54,13 @@ namespace Drops
 
             if (isSmall)
             {
-                dictionary.MergedDictionaries.Add(SmallDevicesStyle.SharedInstance);
+                //dictionary.MergedDictionaries.Add(SmallDevicesStyle.SharedInstance);
 
                 System.Diagnostics.Debug.WriteLine("this is a small device");
             }
             else
             {
-                dictionary.MergedDictionaries.Add(GeneralDevicesStyle.SharedInstance);
+                //dictionary.MergedDictionaries.Add(GeneralDevicesStyle.SharedInstance);
 
                 System.Diagnostics.Debug.WriteLine("this is not a small device");
             }
