@@ -20,11 +20,11 @@ Drops
 
 		Static : MetaData for Object manipulation and DB interaction
 
-		ViewModels : Value
+		ViewModels : Value conversion
 
 		Views : ContentPages w/ XAML
 
-		Resources : I haven't made this one yet but I want it to contain all of the Resource files 
+		Resources : It's content currently resides in it's parent directory 
 
 	Drops.Android
 
@@ -34,9 +34,17 @@ Drops
 
 		...
 
+	Drops.UWP (not setup yet)
+	
+		...
+
 ## Compatible Environments
 
 - iOS
+
+- Android
+
+- Coming Soon: UWP
 
 ## In the Works
 

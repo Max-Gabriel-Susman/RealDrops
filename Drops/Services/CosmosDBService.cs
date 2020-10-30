@@ -11,7 +11,7 @@ using Drops.Models;
 
 namespace Drops.Services
 {
-    public class CosmosDBService
+    public static class CosmosDBService
     {      
         static DocumentClient docClient = null;
 

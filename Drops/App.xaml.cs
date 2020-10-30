@@ -21,8 +21,9 @@ namespace Drops
 
         //    MainPage = new NavigationPage(new LoginPage());
 
-
         //}
+
+        // test constructor for LoadStyles logic
         public App()
         {
             InitializeComponent();
@@ -32,9 +33,80 @@ namespace Drops
         }
 
         // METHODS
-        void LoadStyles()
+        void LoadStyles() // I should probably modularize the logic this methods bloated AF
         {
-            // I need to create logic that implements styles dependent upon platform
+            // Optimizes for users RuntimePlatform
+            GetRuntimePlatform();
+
+            // Optimizes for users Display dimensions
+            GetDisplaySize();
+
+            // Optimizes for users Device Idiom
+            GetDeviceIdiom();
+        }
+
+        // Contains the logic that categorizes the users device by it's diplay dimensions, currently idiom agnostic
+        // public static bool GetDisplaySize() // I don't think this needs to be static
+        // public bool GetDisplaySize()
+        public void GetDisplaySize()
+        {
+            // Get Metrics
+            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+
+            // Width (in pixels)
+            var width = mainDisplayInfo.Width;
+
+            // Height (in pixels)
+            var height = mainDisplayInfo.Height;
+
+            //return (width <= smallWightResolution && height <= smallHeightResolution);
+            bool isSmall = (width <= smallWightResolution && height <= smallHeightResolution);
+
+            if (isSmall)
+            {
+                dictionary.MergedDictionaries.Add(SmallDevicesStyle.SharedInstance);
+
+                System.Diagnostics.Debug.WriteLine("this is a small device");
+            }
+            else
+            {
+                dictionary.MergedDictionaries.Add(GeneralDevicesStyle.SharedInstance);
+
+                System.Diagnostics.Debug.WriteLine("this is not a small device");
+            }
+        }
+
+        // Optimizes for users Device Idiom
+        public void GetDeviceIdiom()
+        {
+            switch (Device.Idiom)
+            {
+                case TargetIdiom.Desktop:
+
+                    System.Diagnostics.Debug.WriteLine("you're on desktop");
+
+                    break;
+                case TargetIdiom.Phone:
+
+                    System.Diagnostics.Debug.WriteLine("you're on your phone");
+
+                    break;
+                case TargetIdiom.Tablet:
+
+                    System.Diagnostics.Debug.WriteLine("you're on your tablet");
+
+                    break;
+                case TargetIdiom.TV:
+
+                    System.Diagnostics.Debug.WriteLine("you're on a smart tv");
+
+                    break;
+            }
+        }
+
+        // Optimizes for users runtime platform
+        public void GetRuntimePlatform()
+        {
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
@@ -58,57 +130,6 @@ namespace Drops
 
                     break;
             }
-
-            // This logic will be implemented later for tablet and desktop support
-            if (IsASmallDevice())
-            {
-                dictionary.MergedDictionaries.Add(SmallDevicesStyle.SharedInstance);
-            }
-            else
-            {
-                dictionary.MergedDictionaries.Add(GeneralDevicesStyle.SharedInstance);
-            }
-        }
-
-        // I'm going to implement this in the future to make the code adaptive
-        //switch (Device.RuntimePlatform)
-        //{
-        //    case Device.iOS:
-        //        // dropsglyph.pdf assing this to the 
-        //        break;
-        //    case Device.Android:
-
-        //        break;
-        //    default:
-
-        //        break;
-        //}
-
-        //switch (Device.Idiom)
-        //{
-        //    case TargetIdiom.Desktop:
-
-        //        break;
-        //    case TargetIdiom.Phone:
-        //        break;
-        //    case TargetIdiom.Tablet:
-        //        break;
-        //    case TargetIdiom.TV:
-        //        break;
-        //}
-
-
-        public static bool IsASmallDevice()
-        {
-            // Get Metrics
-            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
-
-            // Width (in pixels)
-            var width = mainDisplayInfo.Width;
-
-            // Height (in pixels)
-            var height = mainDisplayInfo.Height;
-            return (width <= smallWightResolution && height <= smallHeightResolution);
         }
     }
 }

@@ -24,6 +24,7 @@
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
     <Folder Include="Static\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\DropListViewPage.xaml.cs" />
