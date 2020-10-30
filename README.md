@@ -12,11 +12,11 @@ Drops
 
 	Drops
 
-		Helpers : I also want to move this content to static to consolidate ../ members
+		Helpers : Contains api key constants, I also want to move this content to static to consolidate ../ members
 
 		Models : Object Models
 
-		Services : I think I'm going to move this Dirs content to Static
+		Services : Contains logic for interacting with Cosmos DB, I think I'm going to move this Dirs content to Static
 
 		Static : MetaData for Object manipulation and DB interaction
 
@@ -24,7 +24,7 @@ Drops
 
 		Views : ContentPages w/ XAML
 
-		Resources : It's content currently resides in it's parent directory 
+		Resources : Contains the Resource files for adaptive styling 
 
 	Drops.Android
 
