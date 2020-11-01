@@ -58,7 +58,7 @@ Drops
 
 - uwp support
 
-- Drop Editing
+-  ~~Drop Editing~~
 
 - Area Editing
 
