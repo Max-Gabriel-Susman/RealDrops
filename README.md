@@ -46,6 +46,12 @@ Drops
 
 - Coming Soon: UWP
 
+## Compatible Idioms
+
+- Moblie
+
+- Coming Soon: Tablet and Desktop
+
 ## In the Works
 
 - adaptive UI styling for desktop and tablet idoms upon launch
@@ -66,4 +72,3 @@ Drops
 
 - Dynamic User Prompts
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
