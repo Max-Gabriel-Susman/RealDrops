@@ -38,7 +38,7 @@ Drops
 	
 		...
 
-## Compatible Environments
+## Compatible Platforms
 
 - iOS
 
