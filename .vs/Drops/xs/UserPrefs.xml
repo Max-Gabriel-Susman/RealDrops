@@ -1,15 +1,21 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/PeopleListViewPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/MapControlPage.xaml">
     <Files>
       <File FileName="Drops/Resources/SmallDevicesStyle.xaml" Line="8" Column="90" />
-      <File FileName="Drops/App.xaml" Line="42" Column="64" />
+      <File FileName="Drops/App.xaml" Line="44" Column="76" />
       <File FileName="Drops/Views/LoginPage.xaml.cs" />
-      <File FileName="Drops/Views/LoginPage.xaml" Line="30" Column="58" />
+      <File FileName="Drops/Views/LoginPage.xaml" Line="29" Column="39" />
       <File FileName="Drops/Views/RegistrationPage.xaml" Line="15" Column="65" />
-      <File FileName="Drops/Views/DropListViewPage.xaml" Line="43" Column="56" />
+      <File FileName="Drops/Views/DropListViewPage.xaml" Line="38" Column="60" />
       <File FileName="Drops.Android/Resources/values/styles.xml" Line="4" Column="9" />
-      <File FileName="Drops/Views/PeopleListViewPage.xaml" Line="29" Column="1" />
+      <File FileName="Drops/Views/PeopleListViewPage.xaml" Line="38" Column="53" />
+      <File FileName="Drops/Views/AreaShareViewPage.xaml" Line="27" Column="73" />
+      <File FileName="Drops/Views/AreaListViewPage.xaml" Line="53" Column="69" />
+      <File FileName="Drops/Views/AreaCreationDetailView.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Views/DropDetailViewPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Views/LostCredentialsViewPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Views/MapControlPage.xaml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +28,7 @@
               <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="LoginPage.xaml" expanded="True" />
-                <Node name="PeopleListViewPage.xaml" selected="True" />
+                <Node name="MapControlPage.xaml" selected="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>

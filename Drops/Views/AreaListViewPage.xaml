@@ -13,7 +13,8 @@
                 TextColor="Beige"
                 BackgroundColor="CadetBlue"
                 Command="{Binding CreateAreaCommand}"
-                Margin="10,10,10,0"/>
+                Margin="10,10,10,0"
+                CornerRadius="{OnPlatform Android=5}"/>
 
         <Label Text="Current Active Area"
                HorizontalOptions="CenterAndExpand"
@@ -48,10 +49,8 @@
                             <Button Command="{Binding Path=BindingContext.SelectCommand, Source={x:Reference MyList}}"
                                     CommandParameter="{Binding .}"
                                     Grid.Column="1"
-                                    Padding="30,10"
                                     Text="Select Area"
                                     HorizontalOptions="EndAndExpand"
-                                    
                                     TextColor="Beige"/>
                         </Grid>
                         

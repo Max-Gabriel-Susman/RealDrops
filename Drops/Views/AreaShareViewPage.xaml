@@ -25,10 +25,11 @@
                                 <Button Command="{Binding Path=BindingContext.ShareAreaCommand, Source={x:Reference MyList}}"
                                         CommandParameter="{Binding .}"
                                         HorizontalOptions="EndAndExpand"
-                                        Padding="30,10"
                                         Text="Share"
                                         BackgroundColor="Green"
                                         TextColor="White"
+                                        HeightRequest="{OnPlatform Android=50}"
+                                        WidthRequest="{OnPlatform Android=125}"
                                         Grid.Column="1"/>
                             </Grid>
                         </ViewCell>

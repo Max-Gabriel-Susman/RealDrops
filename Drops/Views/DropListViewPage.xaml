@@ -32,12 +32,10 @@
                                   <Button Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference MyList}}"
                                           CommandParameter="{Binding .}"
                                           Grid.Column="1"
-                                          Padding="30,10"
                                           Text="Delete"
                                           HorizontalOptions="EndAndExpand"
                                           BackgroundColor="DarkRed"
                                           TextColor="White"
-                                          CornerRadius="5"
                                           HeightRequest="{OnPlatform Android=50}"
                                           WidthRequest="{OnPlatform Android=125}"
                                           FontFamily=""/>

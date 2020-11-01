@@ -40,6 +40,8 @@
                 <Setter Property="TextColor" Value="Beige"/>
                 <Setter Property="BackgroundColor" Value="SteelBlue"/>
                 <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="CornerRadius" Value="{OnPlatform Android=5}"/>
+                <Setter Property="Padding" Value="{OnPlatform Android=0}"/>
             </Style>
 
             <Style TargetType="StackLayout">

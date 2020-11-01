@@ -26,8 +26,7 @@
             <Label Text="Password must be at least 8 characters long"
                    FontSize="10"
                    Margin="15,0,15,0"/>
-            <Entry IsPassword="True"
-                 
+            <Entry IsPassword="True"                 
                    Placeholder="{Binding PasswordPlaceholder}"
                    PlaceholderColor="{Binding PasswordPlaceholderColor}"
                    Text="{Binding PasswordEntry}"
@@ -35,9 +34,7 @@
 
             <Button Clicked="OnRegistrationButtonClicked"
                     Margin="45,15,45,0"
-                    Padding="{OnPlatform Android=0}"
                     HeightRequest="{OnPlatform Android=45, iOS=35}"
-                    CornerRadius="{OnPlatform Android=5}"
                     FontSize="20"
                     BackgroundColor="CadetBlue"
                     Text="Create Account" />
