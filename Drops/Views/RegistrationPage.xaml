@@ -12,7 +12,7 @@
             Padding="20"
             Spacing="8">
 
-            <Image Source="registrationglyph.pdf"
+            <Image Source="{OnPlatform iOS=registrationglyph.pdf}"
                    WidthRequest="{OnPlatform iOS=200, Android=250}"
                    HeightRequest="{OnPlatform iOS=200, Android=250}"
                    HorizontalOptions="Center" />
@@ -34,9 +34,10 @@
                    Margin="15,0,15,8"/>
 
             <Button Clicked="OnRegistrationButtonClicked"
-                    Margin="45,0,45,0"
-                    HeightRequest="35"
-                    
+                    Margin="45,15,45,0"
+                    Padding="{OnPlatform Android=0}"
+                    HeightRequest="{OnPlatform Android=45, iOS=35}"
+                    CornerRadius="{OnPlatform Android=5}"
                     FontSize="20"
                     BackgroundColor="CadetBlue"
                     Text="Create Account" />

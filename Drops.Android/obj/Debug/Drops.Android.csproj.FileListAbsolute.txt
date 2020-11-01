@@ -44,6 +44,7 @@
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/res/mipmap-xxxhdpi/launcher_foreground.png
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/res/drawable/registrationglyph.pdf
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/res/drawable/dropsglyph.pdf
+/Users/MGS/Projects/Drops/Drops.Android/obj/Debug/res/drawable/dropsglyph.png
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/uploadflags.txt
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/resolvedassemblies.hash
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/android/assets/Drops.Android.dll
@@ -583,4 +584,3 @@
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/stamp/_GenerateJavaStubs.stamp
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/stamp/_GeneratePackageManagerJava.stamp
 /Users/MGS/Projects/Drops/Drops.Android/obj/Debug/stamp/_ResolveLibraryProjectImports.stamp
-/Users/MGS/Projects/Drops/Drops.Android/obj/Debug/res/drawable/dropsglyph.png

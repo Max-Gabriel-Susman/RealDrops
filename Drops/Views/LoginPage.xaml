@@ -7,7 +7,12 @@
     <ContentPage.BindingContext>
         <local:LoginPageViewModel/>
     </ContentPage.BindingContext>
+
+
     <ContentPage.Content>
+    
+        
+        
 
         <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
@@ -21,7 +26,7 @@
                    HorizontalOptions="Center" />-->
 
             <!-- I'm temporarily going to use a raster Source until I can fix rendering problem on android -->
-            <Image Source="dropsglyph.png"
+            <Image Source="{OnPlatform iOS=dropsglyph.pdf}"
                    WidthRequest="{OnPlatform iOS=300, Android=250}"
                    HorizontalOptions="Center" /> 
 
@@ -40,17 +45,24 @@
 
             <Button Text="Login"
                     FontSize="20"
+                    VerticalOptions="Fill"
+                    BorderColor="Pink"
+                    Padding="{OnPlatform Android=0}"
                     Margin="55,0,55,5"
-                    HeightRequest="35"
-                    Clicked="OnLoginButtonClicked"/>
+                    HeightRequest="{OnPlatform Android=45, iOS=35}"
+                    Clicked="OnLoginButtonClicked"
+                    BackgroundColor="{OnPlatform Android=Purple, iOS=Orange}"
+                    CornerRadius="{OnPlatform Android=5}"/>
 
             <!-- Registration is currently under testing -->
 
             <Button Text="Registration"
                     Margin="75,0,75,0"
-                    HeightRequest="25"
+                    Padding="{OnPlatform Android=0}"
+                    HeightRequest="{OnPlatform Android=35, iOS=25}"
                     BackgroundColor="CadetBlue"
-                    Command="{Binding NavToRegistrationCommand}"/>
+                    Command="{Binding NavToRegistrationCommand}"
+                    CornerRadius="{OnPlatform Android=5}"/>
 
             <Button Text="Having Trouble Logging in?"
                     Command="{Binding CredentialRecoveryCommand}"
@@ -59,7 +71,8 @@
                     HeightRequest="25"
                     TextColor="DarkBlue"
                     HorizontalOptions="CenterAndExpand"
-                    Margin="10,10,10,0"/>
+                    Margin="10,10,10,0"
+                    Padding="{OnPlatform Android=0}"/>
                     
         </StackLayout>
 

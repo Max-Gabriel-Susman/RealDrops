@@ -29,6 +29,7 @@ foreground;obj/Debug/res/mipmap-anydpi-v26/icon.xml
 foreground;obj/Debug/res/mipmap-anydpi-v26/icon_round.xml
 FrameLayout;/Users/MGS/Projects/Drops/Drops.Android/obj/Debug/lp/40/jl/res/layout/bottomtablayout.xml
 item;/Users/MGS/Projects/Drops/Drops.Android/obj/Debug/lp/40/jl/res/values/styles.xml
+item;obj/Debug/res/values/styles.xml
 LinearLayout;/Users/MGS/Projects/Drops/Drops.Android/obj/Debug/lp/40/jl/res/layout/bottomtablayout.xml
 paths;/Users/MGS/Projects/Drops/Drops.Android/obj/Debug/lp/38/jl/res/xml/xamarin_essentials_fileprovider_file_paths.xml
 resources;/Users/MGS/Projects/Drops/Drops.Android/obj/Debug/lp/40/jl/res/values/attrs.xml

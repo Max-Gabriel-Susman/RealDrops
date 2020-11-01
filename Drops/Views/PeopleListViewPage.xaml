@@ -11,7 +11,8 @@
 
     <StackLayout>
         <ListView x:Name="MyList"
-                  ItemsSource="{Binding OtherUsers}">
+                  ItemsSource="{Binding OtherUsers}"
+                  HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -26,10 +27,11 @@
                             <Label VerticalOptions="CenterAndExpand" Text="{Binding Username}"/>
                             <Button Command="{Binding Path=BindingContext.ShareAreaCommand, Source={x:Reference MyList}}"
                                     CommandParameter="{Binding .}"
+                                    Padding="{OnPlatform Android=0}"
                                     Grid.Column="1"
-                                    Padding="30,10"
                                     Text="Share Areas"
                                     HorizontalOptions="EndAndExpand"
+                                    HeightRequest="{OnPlatform Android=50}"
                                     BackgroundColor="Green"
                                     TextColor="White"/>
                         </Grid>
