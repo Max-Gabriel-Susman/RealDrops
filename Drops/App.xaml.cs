@@ -2,6 +2,7 @@
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using Drops.Views;
+using Drops.Static;
 
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)] 
@@ -20,6 +21,10 @@ namespace Drops
             InitializeComponent();
 
             LoadStyles();
+
+            UsersMeta.PopulateUsers();
+
+            AreasMeta.PopulateAreas();
 
             MainPage = new NavigationPage(new LoginPage());
         }

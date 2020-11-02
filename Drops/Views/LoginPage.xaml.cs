@@ -40,15 +40,5 @@ namespace Drops.Views
                 System.Diagnostics.Debug.WriteLine("login failed");
             }
         }
-
-        // LIFECYCLE METHODS - I should move these to app.xaml.cs
-        protected override void OnAppearing()
-        {
-            base.OnAppearing(); 
-
-            // I should refactor these into regular methods put them in theiir respective metadata classes and invoke them from app.xaml.cs
-            vm.PopulateUsersCommand.Execute(null); 
-            vm.PopulateAreasCommand.Execute(null); 
-        }
     }
 }

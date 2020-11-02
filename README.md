@@ -1,5 +1,8 @@
 # Drops
-## !LoginPage Vector Graphics failing to Render on android!
+
+## !Unresolved issue with area creation, login with 'username: Demodemo , password: Demodemo' to play around with some prebuilt areas.!
+
+## !LoginPage logo is currenly not present on android because I need to make a vectorDrawable of it!
 
 ## Description
 

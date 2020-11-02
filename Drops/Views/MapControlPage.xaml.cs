@@ -33,10 +33,9 @@ namespace Drops.Views
 
             System.Diagnostics.Debug.WriteLine($"There are {AreasMeta.ActiveAreaJSONPins.Count} pins in the active area ");
 
-            // EVENT HANDLERS
+            // COMMANDS
             DropListCommand = new Command(() =>
             {
-                // Application.Current.MainPage.Navigation.PushAsync(new DropListViewPage());
                 Application.Current.MainPage.Navigation.PushAsync(new DropListViewPage());
             });
 
@@ -125,8 +124,8 @@ namespace Drops.Views
 
                 AreasMeta.ActiveArea.DropsCreated++;
 
-                AreasMeta.UpdateActiveArea();
-
+                //AreasMeta.UpdateActiveArea();
+                AreasMeta.UpdateArea(AreasMeta.ActiveArea);
 
             }
             else
@@ -140,8 +139,6 @@ namespace Drops.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            System.Diagnostics.Debug.WriteLine("you are now entering the map bitch");
 
             // Clears Pins to prevent Duplicate Pins after the Collection is Populated
             AreasMeta.ActiveAreaJSONPins.Clear();

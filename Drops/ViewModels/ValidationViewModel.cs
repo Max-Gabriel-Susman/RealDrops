@@ -15,26 +15,7 @@ namespace Drops.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         // CONSTRUCTORS
-        public ValidationViewModel() 
-        {
-            PopulateUsersCommand = new Command(async () =>
-            {
-                // Populates the static user collection with all the users from the DB
-                foreach (DropsUser user in await CosmosDBService.GetUsers())
-                {
-                    UsersMeta.Users.Add(user);
-                }
-            });
-
-            PopulateAreasCommand = new Command(async () =>
-            {
-                
-                foreach (DropsArea area in await CosmosDBService.GetAreas())
-                {
-                    AreasMeta.Areas.Add(area);
-                }
-            });
-        }
+        public ValidationViewModel() {}
 
         // PROPERTIES
         public string UsernamePlaceholder { get; set; }
@@ -48,10 +29,6 @@ namespace Drops.ViewModels
         public string UsernameEntry { get; set; }
 
         public string PasswordEntry { get; set; }
-
-        public ICommand PopulateAreasCommand { get; }
-
-        public ICommand PopulateUsersCommand { get; }
 
         // METHODS
         public void ConfigureValidationEntries(string usernamePlaceholder, string passwordPlaceholder)

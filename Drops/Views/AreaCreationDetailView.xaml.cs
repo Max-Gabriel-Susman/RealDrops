@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Drops.Models;
 using Drops.Services;
 using Drops.Static;
+using Drops.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -25,7 +26,7 @@ namespace Drops.Views
             {
                 System.Diagnostics.Debug.WriteLine("create are acommand invoked");
 
-            if(Latitude != null && Longitude != null && AreaNameEntry != null)
+                if(Latitude != null && Longitude != null && AreaNameEntry != null)
                 {
                     NewArea = new DropsArea()
                     {
@@ -45,13 +46,57 @@ namespace Drops.Views
                         DropsCreated = 0
                     };
 
-                    AreasMeta.Areas.Add(NewArea);
+                    // Original
 
                     AreasMeta.ActiveArea = NewArea;
 
+                    UsersMeta.ActiveUser.ActiveAreaName = NewArea.AreaName;
+
+                    UsersMeta.UpdateActiveUser();
+
                     await CosmosDBService.InsertArea(NewArea);
 
+                    //AreasMeta.PopulateAreas(); // maybe?
+
+                    //DropsArea newAreaWithID = new DropsArea();
+
+                    //foreach(DropsArea area in AreasMeta.Areas)
+                    //{
+                    //    if(area.AreaName == NewArea.AreaName)
+                    //    {
+                    //        System.Diagnostics.Debug.WriteLine("newAreaWithID was assigned");
+                    //        newAreaWithID = area;
+                    //    }
+                    //}
+
+                    //AreasMeta.ActiveArea = newAreaWithID;
+
+                    //AreasMeta.ActiveArea.JSONPins = newAreaWithID.JSONPins;
+
+                    //UsersMeta.ActiveUser.ActiveAreaName = newAreaWithID.AreaName;
+
+                    
+
+                    // Pallete cleanser
+
+                    //DropsArea PublicArea = AreasMeta.PublicArea;
+
+                    //AreasMeta.ActiveArea = PublicArea;
+
+                    //UsersMeta.ActiveUser.ActiveAreaName = PublicArea.AreaName;
+
+                    //UsersMeta.UpdateActiveUser();
+
+                    //// return of the king                   
+                    //AreasMeta.ActiveArea = NewArea;
+
+                    //UsersMeta.ActiveUser.ActiveAreaName = NewArea.AreaName;
+
+                    //UsersMeta.UpdateActiveUser();
+
+
                     await Application.Current.MainPage.Navigation.PopAsync();
+
                 }
                 else
                 {
@@ -95,6 +140,7 @@ namespace Drops.Views
 
                 Label = "Undeclared"
             };
+
             map.Pins.Add(pin);
         }
 

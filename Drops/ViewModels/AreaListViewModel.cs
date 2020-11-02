@@ -24,9 +24,11 @@ namespace Drops.ViewModels
             // COMMANDS
             CreateAreaCommand = new Command(() =>
             {
-                Application.Current.MainPage.Navigation.InsertPageBefore(new AreaCreationDetailView(), PagesMeta.ThisPage);
+                //Application.Current.MainPage.Navigation.InsertPageBefore(new AreaCreationDetailView(), PagesMeta.ThisPage);
 
-                Application.Current.MainPage.Navigation.PopAsync();
+                //Application.Current.MainPage.Navigation.PopAsync();
+
+                Application.Current.MainPage.Navigation.PushAsync(new AreaCreationOutOfOrderPage());
             });
 
             SelectCommand = new Command(OnActivateAreaButtonClicked);
@@ -54,13 +56,7 @@ namespace Drops.ViewModels
 
             UsersMeta.ActiveUser.ActiveAreaName = area.AreaName;
 
-            // this is it
-
-
-
             UsersMeta.UpdateActiveUser();
-
-            AreasMeta.UpdateActiveArea(area);
 
             Application.Current.MainPage.Navigation.PopAsync();
         }

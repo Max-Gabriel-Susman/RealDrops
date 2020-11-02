@@ -23,10 +23,6 @@ namespace Drops.ViewModels
             // checks if username entry is currently in use
             bool usernameTaken = ExistenceCheck(username);
 
-            System.Diagnostics.Debug.WriteLine(username);
-
-            System.Diagnostics.Debug.WriteLine(password);
-
             // Validates Registration Attempts
             if (!usernameTaken)
             {
@@ -36,7 +32,9 @@ namespace Drops.ViewModels
                     {
                         UsersMeta.Registration(username, password);
 
-                        // we shouldn't need this // UsersMeta.ActiveUser = 
+                        AreasMeta.PublicArea.Subscribers.Add(username, "recipient");
+
+                        AreasMeta.UpdateArea(AreasMeta.PublicArea);
 
                         return "REGISTER";
                     }

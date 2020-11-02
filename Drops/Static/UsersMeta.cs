@@ -36,6 +36,16 @@ namespace Drops.Static
         public static DropsUser TargetUser { get; set; }
 
         // METHODS
+        public static async void PopulateUsers()
+        {
+            Users.Clear();
+
+            foreach(DropsUser user in await CosmosDBService.GetUsers())
+            {
+                Users.Add(user);
+            }
+        }
+
         public static void ClearUserMetaData()
         {
             ActiveUser = null;
@@ -94,10 +104,6 @@ namespace Drops.Static
             Users.Add(newUser);
 
             await CosmosDBService.InsertUser(newUser);
-
-            
-
-            //
         }
 
         public static async void UpdateActiveUser()
