@@ -12,28 +12,6 @@ namespace Drops.Models
 {
     public class DropsArea
     {
-        // Probably going to get rid of it because I don't think we need it in this paradigm
-        //// CONSTRUCTORS
-        //public DropsArea(string id,
-        //                 string area,
-        //                 double latitude,
-        //                 double longitude,
-        //                 Dictionary<string, string> subscribers,
-        //                 Dictionary<string, Dictionary<string, string>> pins)
-        //{
-        //    ID = id;
-
-        //    Owner = owner;
-
-        //    Area = area;
-
-        //    Latitude = latitude;
-
-        //    Longitude = longitude;
-
-        //    Pins = pins;
-        //}
-
         // PROPERTIES
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -101,7 +79,6 @@ namespace Drops.Models
             }
         }
 
-        // perhaps the fact that subscribers is in fact a dictionary<string, string> and not an observable collection is what's impeding it's accessiblilty 
         Dictionary<string, string> subscribers;
         [JsonProperty("subscribers")]
         public Dictionary<string, string> Subscribers

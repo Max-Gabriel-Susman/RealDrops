@@ -91,6 +91,8 @@ namespace Drops.Static
 
             ActiveUser = newUser;
 
+            Users.Add(newUser);
+
             await CosmosDBService.InsertUser(newUser);
 
             
@@ -101,7 +103,7 @@ namespace Drops.Static
         public static async void UpdateActiveUser()
         {
             // Updates the Active user
-            await CosmosDBService.UpdateUser(ActiveUser); 
+            await CosmosDBService.UpdateUser(ActiveUser); // is the issue that ActiveUser is null?
         }
     }
 }

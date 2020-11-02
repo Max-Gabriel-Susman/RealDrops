@@ -36,6 +36,8 @@ namespace Drops.ViewModels
                     {
                         UsersMeta.Registration(username, password);
 
+                        // we shouldn't need this // UsersMeta.ActiveUser = 
+
                         return "REGISTER";
                     }
                     else

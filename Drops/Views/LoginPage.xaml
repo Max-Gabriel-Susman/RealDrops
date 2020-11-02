@@ -49,8 +49,7 @@
                     BorderColor="Pink"
                     Margin="55,0,55,5"
                     HeightRequest="{OnPlatform Android=45, iOS=35}"
-                    Clicked="OnLoginButtonClicked"
-                    BackgroundColor="{OnPlatform Android=Purple, iOS=Orange}"/>
+                    Clicked="OnLoginButtonClicked"/>
 
             <!-- Registration is currently under testing -->
 

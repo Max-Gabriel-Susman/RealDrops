@@ -25,28 +25,40 @@ namespace Drops.Views
             {
                 System.Diagnostics.Debug.WriteLine("create are acommand invoked");
 
-                NewArea = new DropsArea()
+            if(Latitude != null && Longitude != null && AreaNameEntry != null)
                 {
-                    AreaName = AreaNameEntry,
-
-                    Latitude = Latitude ?? 0.0,
-
-                    Longitude = Longitude ?? 0.0,
-
-                    JSONPins = new Dictionary<string, Dictionary<string, string>>(),
-
-                    Subscribers = new Dictionary<string, string>()
+                    NewArea = new DropsArea()
                     {
-                        {UsersMeta.ActiveUser.Username, "owner"}
-                    },
+                        AreaName = AreaNameEntry,
 
-                    DropsCreated = 0
-                };
+                        Latitude = Latitude ?? 0.0,
 
-                await CosmosDBService.InsertArea(NewArea);
+                        Longitude = Longitude ?? 0.0,
 
-                // if I can navigate back to the mappage with the new area it should fix the problem
-                await Application.Current.MainPage.Navigation.PopAsync();
+                        JSONPins = new Dictionary<string, Dictionary<string, string>>(),
+
+                        Subscribers = new Dictionary<string, string>()
+                        {
+                            {UsersMeta.ActiveUser.Username, "owner"}
+                        },
+
+                        DropsCreated = 0
+                    };
+
+                    AreasMeta.Areas.Add(NewArea);
+
+                    AreasMeta.ActiveArea = NewArea;
+
+                    await CosmosDBService.InsertArea(NewArea);
+
+                    await Application.Current.MainPage.Navigation.PopAsync();
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("Area creation has failed");
+
+                    // We need to provide the user with additional feedback
+                }
             });
 
             BindingContext = this;

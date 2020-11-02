@@ -54,6 +54,10 @@ namespace Drops.ViewModels
 
             UsersMeta.ActiveUser.ActiveAreaName = area.AreaName;
 
+            // this is it
+
+
+
             UsersMeta.UpdateActiveUser();
 
             AreasMeta.UpdateActiveArea(area);

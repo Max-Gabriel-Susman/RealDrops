@@ -16,8 +16,6 @@ namespace Drops.Views
         {
             InitializeComponent();
 
-            System.Diagnostics.Debug.WriteLine("People list code behind constructed");
-
             vm = new RegistrationPageViewModel();
 
             BindingContext = vm;
@@ -27,7 +25,6 @@ namespace Drops.Views
         async void OnRegistrationButtonClicked(object sender, EventArgs e)
         {
             string registrationSuccess = vm.RegistrationValidation(vm.UsernameEntry, vm.PasswordEntry);
-
 
             System.Diagnostics.Debug.WriteLine(registrationSuccess);
 

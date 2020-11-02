@@ -15,8 +15,6 @@ namespace Drops.Views
         {
             InitializeComponent();
 
-            System.Diagnostics.Debug.WriteLine("People list code behind constructed");
-
             vm = new LoginPageViewModel();
 
             BindingContext = vm;
@@ -24,14 +22,10 @@ namespace Drops.Views
 
         // EVENT HANDLERS
         async void OnLoginButtonClicked(object sender, EventArgs e)
-        // Is there a way to reference this page object from the viewmodel? if so I  can migrate this functionality to the view model
         {
-            //vm.LoginCommand.Execute(null);
-
             bool loginSuccess = vm.LoginValidation(vm.UsernameEntry, vm.PasswordEntry);
 
-
-            if (loginSuccess) // why is active user not getting assigned?
+            if (loginSuccess)
             {
                 Navigation.InsertPageBefore(new MapControlPage(), this);
 
@@ -52,7 +46,7 @@ namespace Drops.Views
         {
             base.OnAppearing(); 
 
-            // I should turn these into regular methods put them in theiir respective metadata classes and invoke them from app.xaml.cs
+            // I should refactor these into regular methods put them in theiir respective metadata classes and invoke them from app.xaml.cs
             vm.PopulateUsersCommand.Execute(null); 
             vm.PopulateAreasCommand.Execute(null); 
         }
