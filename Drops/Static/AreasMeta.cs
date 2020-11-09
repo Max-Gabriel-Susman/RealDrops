@@ -16,24 +16,6 @@ namespace Drops.Static
 
         public static ObservableCollection<DropsArea> Areas = new ObservableCollection<DropsArea>();
 
-        public static DropsArea PublicArea
-        {
-            get 
-            {
-                DropsArea publicArea = new DropsArea();
-
-                foreach(DropsArea area in Areas)
-                {
-                    if(area.AreaName == "Public")
-                    {
-                        publicArea = area;
-                    }
-                }
-
-                return publicArea;
-            }
-        }
-
         public static DropsArea ActiveArea = new DropsArea()
         {
             Latitude = 41.7377780,
@@ -144,7 +126,13 @@ namespace Drops.Static
         public static async void UpdateActiveArea()
         {
             // updates the active area as long as the new name offered is not the reserved name of 'default'
-            if(ActiveArea.AreaName != "default") { await CosmosDBService.UpdateArea(ActiveArea); }
+            //DropsArea area = AreasMeta.ActiveArea;
+
+            //string a = (area.ID != null) ? $"area id is {area.ID}" : "area id is null";
+
+            //System.Diagnostics.Debug.WriteLine(a);
+
+            if (ActiveArea.AreaName != "default") { await CosmosDBService.UpdateArea(ActiveArea); }
         }
 
         public static async void UpdateArea(DropsArea area)

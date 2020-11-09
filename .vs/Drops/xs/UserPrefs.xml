@@ -1,41 +1,18 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/AreaCreationOutOfOrderPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops.iOS/Main.cs">
     <Files>
-      <File FileName="Drops/Resources/SmallDevicesStyle.xaml" Line="8" Column="90" />
-      <File FileName="Drops/App.xaml" Line="29" Column="39" />
-      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="42" Column="10" />
-      <File FileName="Drops/Views/LoginPage.xaml" Line="52" Column="51" />
-      <File FileName="Drops/Views/RegistrationPage.xaml" Line="29" Column="20" />
-      <File FileName="Drops/Views/DropListViewPage.xaml" />
-      <File FileName="Drops.Android/Resources/values/styles.xml" />
-      <File FileName="Drops/Views/PeopleListViewPage.xaml" />
-      <File FileName="Drops/Views/AreaShareViewPage.xaml" />
-      <File FileName="Drops/Views/AreaListViewPage.xaml" Line="53" Column="69" />
-      <File FileName="Drops/Views/AreaCreationDetailView.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Views/DropDetailViewPage.xaml" />
-      <File FileName="Drops/Views/LostCredentialsViewPage.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Views/MapControlPage.xaml" />
-      <File FileName="Drops/Static/UsersMeta.cs" Line="49" Column="28" />
-      <File FileName="Drops/Views/AreaListViewPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Drops/ViewModels/AreaListViewModel.cs" Line="18" Column="13" />
-      <File FileName="Drops/Views/RegistrationPage.xaml.cs" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="24" Column="59" />
-      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="47" Column="26" />
-      <File FileName="Drops/ViewModels/ValidationViewModel.cs" Line="31" Column="50" />
-      <File FileName="Drops/ViewModels/AreaCreationViewModel.cs" Line="1" Column="1" />
-      <File FileName="Drops/Services/CosmosDBService.cs" Line="195" Column="1" />
-      <File FileName="Drops/Static/AreasMeta.cs" Line="87" Column="34" />
-      <File FileName="Drops/App.xaml.cs" Line="5" Column="20" />
-      <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" Line="20" Column="69" />
-      <File FileName="Drops.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Drops/Views/MapControlPage.xaml.cs" Line="141" Column="32" />
-      <File FileName="Drops/Models/DropsArea.cs" Line="14" Column="6" />
-      <File FileName="Drops/Views/AreaShareViewPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Drops/ViewModels/AreaShareViewModel.cs" Line="44" Column="52" />
+      <File FileName="Drops/Services/CosmosDBService.cs" Line="101" Column="28" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
+      <File FileName="Drops/Static/UsersMeta.cs" />
+      <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" />
+      <File FileName="Drops/Models/DropsArea.cs" />
+      <File FileName="Drops/Models/DropsPin.cs" />
+      <File FileName="Drops/Models/DropsUser.cs" Line="10" Column="1" />
       <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/AreaCreationOutOfOrderPage.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Views/AreaCreationOutOfOrderPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Views/MapControlPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops.iOS/Main.cs" Line="17" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -50,9 +27,7 @@
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="AreaCreationDetailView.xaml" expanded="True" />
-                <Node name="AreaCreationOutOfOrderPage.xaml" expanded="True">
-                  <Node name="AreaCreationOutOfOrderPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="AreaCreationOutOfOrderPage.xaml" expanded="True" />
                 <Node name="AreaListViewPage.xaml" expanded="True" />
                 <Node name="AreaShareViewPage.xaml" expanded="True" />
                 <Node name="LoginPage.xaml" expanded="True" />
@@ -61,7 +36,9 @@
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Drops.iOS" expanded="True" />
+            <Node name="Drops.iOS" expanded="True">
+              <Node name="Main.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -71,7 +48,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/MGS/Projects/Drops/Drops/ViewModels/RegistrationPageViewModel.cs" relfile="Drops/ViewModels/RegistrationPageViewModel.cs" line="33" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

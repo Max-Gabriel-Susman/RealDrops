@@ -21,10 +21,10 @@ namespace Drops.Services
         static readonly string areaCollectionName = "Areas";
 
         static async Task<bool> Initialize()
-        {
+        { // 1
             // Returns method if docClient has already been initialized
-            if (docClient != null)
-                return true;
+            if (docClient != null) // docClient isn't null right?
+                return true; // 1
 
             // The rest of this Method is executed only once per session
             try
@@ -52,7 +52,7 @@ namespace Drops.Services
                 return false;
             }
 
-            return true;
+            return true; // 0
         }
 
         // USER CONTAINER CRUD METHODS
@@ -86,15 +86,21 @@ namespace Drops.Services
 
         // CREATE
         public async static Task InsertUser(DropsUser user)
-        {
+        { // 1 2 
             // Enforces the Initialize method to be called prior to this one
             if (!await Initialize())
-                return;
+                return; // 1
 
             // creates document and appends in to container
+
+            Debug.WriteLine(user.Username ?? "user was null"); // I think the types on either side of the null coalescing operator have to be the same
+            Debug.WriteLine(user.Password ?? "user was null");
+            Debug.WriteLine(user.ID ?? "user was null");
+            Debug.WriteLine(user.Areas ?? new Dictionary<string, string>());
+
             await docClient.CreateDocumentAsync(
                 UriFactory.CreateDocumentCollectionUri(databaseName, userCollectionName),
-                user);
+                user); // 2 this is where it's crashing, is it creating the document tho?
         }
 
         // DELETE - Not yet implemented
@@ -183,6 +189,13 @@ namespace Drops.Services
             // Enforces the Initialize method to be called prior to this one
             if (!await Initialize())
                 return;
+
+            // string a = (databaseName != null) ? databaseName
+            //string a = (area.ID != null) ? $"area id is {area.ID}" : "area id is null"; // it was null actually
+
+            //System.Diagnostics.Debug.WriteLine(a);
+            //Console.WriteLine(b);
+            //Console.WriteLine(c);
 
             // Creates a URI for accessing the Document in the Database
             var docUri = UriFactory.CreateDocumentUri(databaseName, areaCollectionName, area.ID);

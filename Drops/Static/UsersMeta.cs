@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Drops.Services;
 using Drops.Models;
+using System.Linq;
 
 
 namespace Drops.Static
@@ -99,11 +100,37 @@ namespace Drops.Static
                 Areas = new Dictionary<string, string>()
             };
 
-            ActiveUser = newUser;
+            
+
+            string newUserID = (newUser.ID != null) ? $"id is {newUser.ID}" : "id is null";
+
+            await CosmosDBService.InsertUser(newUser); // this is where it's breaking I think, yup yup yup, let's annotate the internal mechanics of it
+
+            System.Diagnostics.Debug.WriteLine(newUserID);
+
+            foreach (DropsUser user in await CosmosDBService.GetUsers())
+            {
+                if (user.Username == newUser.Username)
+                {
+                    newUser = user;
+
+                    System.Diagnostics.Debug.WriteLine($"{user.ID}");
+
+                    System.Diagnostics.Debug.WriteLine("User was retrieved from the database");
+                }
+            }
 
             Users.Add(newUser);
 
-            await CosmosDBService.InsertUser(newUser);
+            ActiveUser = newUser;
+
+            string activeUser = (ActiveUser != null) ? $"active user is {ActiveUser.Username}" : "active user is null";
+
+            System.Diagnostics.Debug.WriteLine(activeUser);
+
+            newUserID = (newUser.ID != null) ? $"id is {newUser.ID}" : "id is null";
+
+            System.Diagnostics.Debug.WriteLine(newUserID);
         }
 
         public static async void UpdateActiveUser()

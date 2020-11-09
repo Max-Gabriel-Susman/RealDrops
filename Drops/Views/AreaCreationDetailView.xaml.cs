@@ -48,13 +48,31 @@ namespace Drops.Views
 
                     // Original
 
-                    AreasMeta.ActiveArea = NewArea;
+                    string a = (NewArea.ID != null) ? $"area id is {NewArea.ID}" : "area id is null"; // it was null actually
 
-                    UsersMeta.ActiveUser.ActiveAreaName = NewArea.AreaName;
+                    
 
                     UsersMeta.UpdateActiveUser();
 
                     await CosmosDBService.InsertArea(NewArea);
+
+                    System.Diagnostics.Debug.WriteLine($"prior to retrieval the {a}");
+
+                    foreach (DropsArea area in await CosmosDBService.GetAreas())
+                    {
+                        if(area.AreaName == NewArea.AreaName)
+                        {
+                            NewArea = area;
+                        }
+                    }
+
+                    string b = (NewArea.ID != null) ? $"area id is {NewArea.ID}" : "area id is null"; // it was null actually
+
+                    System.Diagnostics.Debug.WriteLine($"after retrieval the {b}");
+
+                    AreasMeta.ActiveArea = NewArea;
+
+                    UsersMeta.ActiveUser.ActiveAreaName = NewArea.AreaName;
 
                     //AreasMeta.PopulateAreas(); // maybe?
 
@@ -75,7 +93,7 @@ namespace Drops.Views
 
                     //UsersMeta.ActiveUser.ActiveAreaName = newAreaWithID.AreaName;
 
-                    
+
 
                     // Pallete cleanser
 

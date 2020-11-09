@@ -24,11 +24,11 @@ namespace Drops.ViewModels
             // COMMANDS
             CreateAreaCommand = new Command(() =>
             {
-                //Application.Current.MainPage.Navigation.InsertPageBefore(new AreaCreationDetailView(), PagesMeta.ThisPage);
+                Application.Current.MainPage.Navigation.InsertPageBefore(new AreaCreationDetailView(), PagesMeta.ThisPage);
 
-                //Application.Current.MainPage.Navigation.PopAsync();
+                Application.Current.MainPage.Navigation.PopAsync();
 
-                Application.Current.MainPage.Navigation.PushAsync(new AreaCreationOutOfOrderPage());
+                // Application.Current.MainPage.Navigation.PushAsync(new AreaCreationOutOfOrderPage());
             });
 
             SelectCommand = new Command(OnActivateAreaButtonClicked);

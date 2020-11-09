@@ -32,10 +32,6 @@ namespace Drops.ViewModels
                     {
                         UsersMeta.Registration(username, password);
 
-                        AreasMeta.PublicArea.Subscribers.Add(username, "recipient");
-
-                        AreasMeta.UpdateArea(AreasMeta.PublicArea);
-
                         return "REGISTER";
                     }
                     else
