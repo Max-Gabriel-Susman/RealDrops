@@ -1,18 +1,21 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops.iOS/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/RegistrationPage.xaml.cs">
     <Files>
       <File FileName="Drops/Services/CosmosDBService.cs" Line="101" Column="28" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="49" Column="1" />
       <File FileName="Drops/Static/UsersMeta.cs" />
       <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" />
-      <File FileName="Drops/Models/DropsArea.cs" />
+      <File FileName="Drops/Models/DropsArea.cs" Line="1" Column="1" />
       <File FileName="Drops/Models/DropsPin.cs" />
       <File FileName="Drops/Models/DropsUser.cs" Line="10" Column="1" />
-      <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/LoginPage.xaml" Line="1" Column="1" />
-      <File FileName="Drops/Views/MapControlPage.xaml" Line="1" Column="1" />
-      <File FileName="Drops.iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" />
+      <File FileName="Drops/Views/LoginPage.xaml" />
+      <File FileName="Drops/Views/MapControlPage.xaml" />
+      <File FileName="Drops.iOS/Main.cs" />
+      <File FileName="Drops/Static/AreasMeta.cs" Line="23" Column="37" />
+      <File FileName="Drops/Helpers/APIKeys.cs" Line="13" Column="1" />
+      <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="33" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,13 +35,13 @@
                 <Node name="AreaShareViewPage.xaml" expanded="True" />
                 <Node name="LoginPage.xaml" expanded="True" />
                 <Node name="MapControlPage.xaml" expanded="True" />
-                <Node name="RegistrationPage.xaml" expanded="True" />
+                <Node name="RegistrationPage.xaml" expanded="True">
+                  <Node name="RegistrationPage.xaml.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Drops.iOS" expanded="True">
-              <Node name="Main.cs" selected="True" />
-            </Node>
+            <Node name="Drops.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
