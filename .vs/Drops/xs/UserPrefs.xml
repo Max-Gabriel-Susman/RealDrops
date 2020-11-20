@@ -3,19 +3,19 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/RegistrationPage.xaml.cs">
     <Files>
       <File FileName="Drops/Services/CosmosDBService.cs" Line="101" Column="28" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="49" Column="1" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
       <File FileName="Drops/Static/UsersMeta.cs" />
       <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" />
-      <File FileName="Drops/Models/DropsArea.cs" Line="1" Column="1" />
+      <File FileName="Drops/Models/DropsArea.cs" />
       <File FileName="Drops/Models/DropsPin.cs" />
-      <File FileName="Drops/Models/DropsUser.cs" Line="10" Column="1" />
+      <File FileName="Drops/Models/DropsUser.cs" />
       <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" />
       <File FileName="Drops/Views/LoginPage.xaml" />
       <File FileName="Drops/Views/MapControlPage.xaml" />
       <File FileName="Drops.iOS/Main.cs" />
-      <File FileName="Drops/Static/AreasMeta.cs" Line="23" Column="37" />
-      <File FileName="Drops/Helpers/APIKeys.cs" Line="13" Column="1" />
-      <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="33" Column="1" />
+      <File FileName="Drops/Static/AreasMeta.cs" />
+      <File FileName="Drops/Helpers/APIKeys.cs" />
+      <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="35" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
