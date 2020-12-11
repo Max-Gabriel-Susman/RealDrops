@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "/Users/MGS/Projects/Drops/Drops.iOS/Drops.iOS.csproj": {}
+    "/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/Drops.iOS.csproj": {}
   },
   "projects": {
-    "/Users/MGS/Projects/Drops/Drops.iOS/Drops.iOS.csproj": {
+    "/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/Drops.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/MGS/Projects/Drops/Drops.iOS/Drops.iOS.csproj",
+        "projectUniqueName": "/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/Drops.iOS.csproj",
         "projectName": "Drops.iOS",
-        "projectPath": "/Users/MGS/Projects/Drops/Drops.iOS/Drops.iOS.csproj",
-        "packagesPath": "/Users/MGS/.nuget/packages/",
-        "outputPath": "/Users/MGS/Projects/Drops/Drops.iOS/obj/",
+        "projectPath": "/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/Drops.iOS.csproj",
+        "packagesPath": "/Users/prometheus/.nuget/packages/",
+        "outputPath": "/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "/Users/MGS/.config/NuGet/NuGet.Config"
+          "/Users/prometheus/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "xamarinios10"
@@ -26,8 +26,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "/Users/MGS/Projects/Drops/Drops/Drops.csproj": {
-                "projectPath": "/Users/MGS/Projects/Drops/Drops/Drops.csproj"
+              "/Users/prometheus/Desktop/Xamarin/Drops/Drops/Drops.csproj": {
+                "projectPath": "/Users/prometheus/Desktop/Xamarin/Drops/Drops/Drops.csproj"
               }
             }
           }
@@ -71,17 +71,17 @@
         }
       }
     },
-    "/Users/MGS/Projects/Drops/Drops/Drops.csproj": {
+    "/Users/prometheus/Desktop/Xamarin/Drops/Drops/Drops.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/MGS/Projects/Drops/Drops/Drops.csproj",
+        "projectUniqueName": "/Users/prometheus/Desktop/Xamarin/Drops/Drops/Drops.csproj",
         "projectName": "Drops",
-        "projectPath": "/Users/MGS/Projects/Drops/Drops/Drops.csproj",
-        "packagesPath": "/Users/MGS/.nuget/packages/",
-        "outputPath": "/Users/MGS/Projects/Drops/Drops/obj/",
+        "projectPath": "/Users/prometheus/Desktop/Xamarin/Drops/Drops/Drops.csproj",
+        "packagesPath": "/Users/prometheus/.nuget/packages/",
+        "outputPath": "/Users/prometheus/Desktop/Xamarin/Drops/Drops/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/MGS/.config/NuGet/NuGet.Config"
+          "/Users/prometheus/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"

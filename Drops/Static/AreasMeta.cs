@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Drops.Services;
 using Drops.Models;
@@ -36,9 +37,16 @@ namespace Drops.Static
         {
             Areas.Clear();
 
-            foreach(DropsArea area in await CosmosDBService.GetAreas())
+            try
             {
-                Areas.Add(area);
+                foreach (DropsArea area in await CosmosDBService.GetAreas())
+                {
+                    Areas.Add(area);
+                }
+            }
+            catch (Exception e) // I'm definitely going to want to be more specific and only handle exceptions I have code to handle
+            {
+                System.Diagnostics.Debug.WriteLine($"a {e} was thrown");
             }
         }
 
