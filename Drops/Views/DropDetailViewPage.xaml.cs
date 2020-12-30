@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
-using Drops.Static;
+using Drops.SharedResources;
 using Drops.Services;
 
 namespace Drops.Views

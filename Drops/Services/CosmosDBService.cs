@@ -171,8 +171,10 @@ namespace Drops.Services
             // creates document and appends in to container
             await docClient.CreateDocumentAsync(
                 UriFactory.CreateDocumentCollectionUri(databaseName, areaCollectionName),
-                area);
+                area); // this is the statement that ultimately breaks registration area creation
         }
+
+        // How about I say fuck the registration flow, we create a user update db populate cache and then login with newuser creds
 
         // DELETE - Not Yet Implemented
         //public async static Task DeleteArea(DropsArea area)

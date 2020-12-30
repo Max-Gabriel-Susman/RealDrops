@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using Drops.Models;
 using Drops.Views;
-using Drops.Static;
+using Drops.SharedResources;
 using Drops.Services;
 using Xamarin.Forms;
 
@@ -24,6 +24,8 @@ namespace Drops.ViewModels
             NavToRegistrationCommand = new Command(() =>
             {
                 Application.Current.MainPage.Navigation.PushAsync(new RegistrationPage());
+
+
             });
         }
 

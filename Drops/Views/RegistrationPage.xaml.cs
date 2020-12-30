@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Drops.ViewModels;
-using Drops.Static;
+using Drops.SharedResources;
 using Xamarin.Forms;
 
 namespace Drops.Views
@@ -30,7 +30,22 @@ namespace Drops.Views
 
             if(registrationSuccess == "REGISTER")
             {
-                Navigation.InsertPageBefore(new MapControlPage(), this);
+                // UsersMeta.PopulateUsers();
+
+                //Navigation.InsertPageBefore(new MapControlPage(), this);
+
+                //await Navigation.PopAsync();
+
+                // we need to navigate to login here
+
+                //await Application.Current.MainPage.Navigation.PushAsync(new LoginPage(){
+
+
+                //});
+
+                //Navigation.InsertPageBefore(new MapControlPage(), this);
+
+                UsersMeta.PopulateUsers();
 
                 await Navigation.PopAsync();
             }

@@ -1,5 +1,5 @@
 ﻿using Xamarin.Forms;
-using Drops.Static;
+using Drops.SharedResources;
 
 
 namespace Drops.Views

@@ -15,44 +15,6 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./dropslog.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropslog.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropslog.pdf.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropslog.pdf.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropslog.pdf.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropslog.pdf.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropslog.pdf.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropslog.pdf.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "dropslog.pdf" has 8 unassigned children.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./dropsglyph.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "dropsglyph.png" has 8 unassigned children.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./dropsglyph.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
 				<string>./dropsglyph.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
 				<string>./dropsglyph.pdf.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
@@ -72,6 +34,25 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
+				<string>./dropslog.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropslog.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropslog.pdf.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropslog.pdf.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropslog.pdf.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropslog.pdf.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropslog.pdf.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropslog.pdf.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "dropslog.pdf" has 8 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
 				<string>./registrationglyph.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
 				<string>./registrationglyph.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
 				<string>./registrationglyph.pdf.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
@@ -85,6 +66,25 @@
 			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>The image set "registrationglyph.pdf" has 8 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./dropsglyph.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "dropsglyph.png" has 8 unassigned children.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>
@@ -115,44 +115,6 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./registrationglyph.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./registrationglyph.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./registrationglyph.pdf.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./registrationglyph.pdf.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./registrationglyph.pdf.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./registrationglyph.pdf.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./registrationglyph.pdf.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./registrationglyph.pdf.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "registrationglyph.pdf" has 8 unassigned children.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./dropsglyph.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./dropsglyph.png.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "dropsglyph.png" has 8 unassigned children.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./dropslog.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
 				<string>./dropslog.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
 				<string>./dropslog.pdf.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
@@ -185,6 +147,44 @@
 			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>The image set "dropsglyph.pdf" has 8 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./dropsglyph.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./dropsglyph.png.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "dropsglyph.png" has 8 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./registrationglyph.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./registrationglyph.pdf.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./registrationglyph.pdf.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./registrationglyph.pdf.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./registrationglyph.pdf.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./registrationglyph.pdf.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./registrationglyph.pdf.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./registrationglyph.pdf.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "registrationglyph.pdf" has 8 unassigned children.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>

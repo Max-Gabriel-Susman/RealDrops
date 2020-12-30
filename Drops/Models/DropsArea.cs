@@ -15,7 +15,6 @@ namespace Drops.Models
         // PROPERTIES
         public event PropertyChangedEventHandler PropertyChanged;
 
-        // is this still in use?
         int dropsCreated;
         [JsonProperty("dropsCount")]
         public int DropsCreated
@@ -32,7 +31,6 @@ namespace Drops.Models
             }
         }
 
-        // we can replace this with the primary ID
         string id;
         [JsonProperty("id")]
         public string ID
@@ -113,7 +111,6 @@ namespace Drops.Models
             }
         }
 
-        // array of arrays of strings
         Dictionary<string, Dictionary<string, string>> jsonPins;
         [JsonProperty("pins")]
         public Dictionary<string, Dictionary<string, string>> JSONPins 

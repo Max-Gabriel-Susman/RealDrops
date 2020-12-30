@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Drops.Models;
 using Drops.Services;
-using Drops.Static;
+using Drops.SharedResources;
 using Drops.Views;
 using Xamarin.Forms;
 

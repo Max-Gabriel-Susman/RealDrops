@@ -23,7 +23,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
-    <Folder Include="Static\" />
+    <Folder Include="SharedResources\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@
                 Command="{Binding CreateAreaCommand}"
                 Margin="10,10,10,0"
                 CornerRadius="{OnPlatform Android=5}"/>
-
+        <!--
         <Label Text="Current Active Area"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"
@@ -27,7 +27,7 @@
         <Label Text="{Binding NumberOfSubscribersLabel}"
                VerticalOptions="CenterAndExpand"
                Margin="5"/>
-        
+        -->
 
         <ListView x:Name="MyList"
                   HasUnevenRows="True"

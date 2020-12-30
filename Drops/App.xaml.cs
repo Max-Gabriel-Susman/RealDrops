@@ -2,7 +2,7 @@
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using Drops.Views;
-using Drops.Static;
+using Drops.SharedResources;
 
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)] 
@@ -24,7 +24,13 @@ namespace Drops
 
             UsersMeta.PopulateUsers(); // we need to switch from using these caches to making calls to the db instead
 
-            AreasMeta.PopulateAreas();
+            AreasMeta.PopulateAreas(); // in order to do a good job of making that switch I should first identify everywhere
+            // the data in these caches is being used
+
+            // first I think it's important to make the network calls more robust and then maybe add some visual feedback for the user
+            // to
+
+            // an important question is do we even need try catch for the services?
 
             MainPage = new NavigationPage(new LoginPage());
         }

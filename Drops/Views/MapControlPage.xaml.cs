@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
-using Drops.Static;
+using Drops.SharedResources;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -61,8 +61,6 @@ namespace Drops.Views
             });
 
             BindingContext = this;
-
-            System.Diagnostics.Debug.WriteLine($"This area has {AreasMeta.ActiveArea.DropsCreated} drops in it");
         }
 
         // PROPERTIES

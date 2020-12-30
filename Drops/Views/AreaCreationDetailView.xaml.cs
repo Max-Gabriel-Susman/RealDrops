@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Drops.Models;
 using Drops.Services;
-using Drops.Static;
+using Drops.SharedResources;
 using Drops.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -54,7 +54,7 @@ namespace Drops.Views
 
                     UsersMeta.UpdateActiveUser();
 
-                    await CosmosDBService.InsertArea(NewArea);
+                    await CosmosDBService.InsertArea(NewArea); // I believe this is where it's geting caught we'll have to check at runtime
 
                     System.Diagnostics.Debug.WriteLine($"prior to retrieval the {a}");
 
@@ -72,46 +72,7 @@ namespace Drops.Views
 
                     AreasMeta.ActiveArea = NewArea;
 
-                    UsersMeta.ActiveUser.ActiveAreaName = NewArea.AreaName;
-
-                    //AreasMeta.PopulateAreas(); // maybe?
-
-                    //DropsArea newAreaWithID = new DropsArea();
-
-                    //foreach(DropsArea area in AreasMeta.Areas)
-                    //{
-                    //    if(area.AreaName == NewArea.AreaName)
-                    //    {
-                    //        System.Diagnostics.Debug.WriteLine("newAreaWithID was assigned");
-                    //        newAreaWithID = area;
-                    //    }
-                    //}
-
-                    //AreasMeta.ActiveArea = newAreaWithID;
-
-                    //AreasMeta.ActiveArea.JSONPins = newAreaWithID.JSONPins;
-
-                    //UsersMeta.ActiveUser.ActiveAreaName = newAreaWithID.AreaName;
-
-
-
-                    // Pallete cleanser
-
-                    //DropsArea PublicArea = AreasMeta.PublicArea;
-
-                    //AreasMeta.ActiveArea = PublicArea;
-
-                    //UsersMeta.ActiveUser.ActiveAreaName = PublicArea.AreaName;
-
-                    //UsersMeta.UpdateActiveUser();
-
-                    //// return of the king                   
-                    //AreasMeta.ActiveArea = NewArea;
-
-                    //UsersMeta.ActiveUser.ActiveAreaName = NewArea.AreaName;
-
-                    //UsersMeta.UpdateActiveUser();
-
+                    UsersMeta.ActiveUser.ActiveAreaName = NewArea.AreaName;                   
 
                     await Application.Current.MainPage.Navigation.PopAsync();
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using Drops.ViewModels;
-using Drops.Static;
+using Drops.SharedResources;
 using Xamarin.Forms;
 
 namespace Drops.Views
@@ -20,10 +20,10 @@ namespace Drops.Views
             BindingContext = vm;
         }
 
-        // EVENT HANDLERS
-        async void OnLoginButtonClicked(object sender, EventArgs e)
+        // METHODS
+        async void Login(string username, string password)
         {
-            bool loginSuccess = vm.LoginValidation(vm.UsernameEntry, vm.PasswordEntry);
+            bool loginSuccess = vm.LoginValidation(username, password);
 
             if (loginSuccess)
             {
@@ -38,6 +38,25 @@ namespace Drops.Views
                 vm.PasswordEntry = string.Empty;
 
                 System.Diagnostics.Debug.WriteLine("login failed");
+            }
+        }
+
+        // EVENT HANDLERS
+        async void OnLoginButtonClicked(object sender, EventArgs e)
+        {
+            Login(vm.UsernameEntry, vm.PasswordEntry);   
+        }
+
+        // LIFECYCLE METHODS
+        // sumthin like onappearing right?
+        //public void OnApp
+        async protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (UsersMeta.ActiveUser != null)
+            {
+                Login(UsersMeta.ActiveUser.Username, UsersMeta.ActiveUser.Password);
             }
         }
     }
