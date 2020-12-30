@@ -12,7 +12,9 @@ using Drops.Models;
 namespace Drops.Services
 {
     public static class CosmosDBService
-    {      
+    {
+
+        // I need to place all of the network calls inside of try catch blocks to handle network loss
         static DocumentClient docClient = null;
 
         // String constants for database interaction
