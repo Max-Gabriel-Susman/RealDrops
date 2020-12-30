@@ -22,7 +22,7 @@ namespace Drops
 
             LoadStyles();
 
-            UsersMeta.PopulateUsers();
+            UsersMeta.PopulateUsers(); // we need to switch from using these caches to making calls to the db instead
 
             AreasMeta.PopulateAreas();
 
