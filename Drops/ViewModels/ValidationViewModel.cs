@@ -46,11 +46,14 @@ namespace Drops.ViewModels
 
         public bool ExistenceCheck(string username)
         {
+            
             foreach (DropsUser user in UsersMeta.Users)
             {
                 if (user.Username == username)
                 {
-                    UsersMeta.ActiveUser = user; 
+                    UsersMeta.ActiveUser = user;
+
+                    System.Diagnostics.Debug.WriteLine(user.Username);
 
                     return true;
                 }

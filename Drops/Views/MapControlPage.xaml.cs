@@ -53,9 +53,15 @@ namespace Drops.Views
             {
                 Navigation.InsertPageBefore(new LoginPage(), this);
 
+                // Clear user and area meta data caches
                 UsersMeta.ClearUserMetaData();
 
                 AreasMeta.ClearAreaMetaData();
+
+                // Repopulate User and Area caches
+                UsersMeta.PopulateUsers();
+
+                AreasMeta.PopulateAreas();
 
                 Navigation.PopAsync();
             });

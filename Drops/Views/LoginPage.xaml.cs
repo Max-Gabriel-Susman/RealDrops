@@ -23,11 +23,21 @@ namespace Drops.Views
         // METHODS
         async void Login(string username, string password)
         {
+            //UsersMeta.PopulateUsers();
+
+            var testTube = UsersMeta.Users;
+
             bool loginSuccess = vm.LoginValidation(username, password);
+
+            var petriDish = UsersMeta.Users;
 
             if (loginSuccess)
             {
                 Navigation.InsertPageBefore(new MapControlPage(), this);
+
+                vm.UsernameEntry = string.Empty;
+
+                vm.PasswordEntry = string.Empty;
 
                 await Navigation.PopAsync();
             }

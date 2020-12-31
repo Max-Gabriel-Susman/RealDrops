@@ -38,6 +38,7 @@ namespace Drops.ViewModels
         // Handles Validation against The Users Collection
         public bool LoginValidation(string username, string password)
         {
+            System.Diagnostics.Debug.WriteLine(username);
             // checks if username entry is currently in use
             bool usernameTaken = ExistenceCheck(username);
 
