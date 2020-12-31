@@ -16,7 +16,6 @@ namespace Drops.ViewModels
         {
             ConfigureValidationEntries("Create a new username", "Create a new password");
         }
-
         // METHODS
         public string RegistrationValidation(string username, string password)
         {

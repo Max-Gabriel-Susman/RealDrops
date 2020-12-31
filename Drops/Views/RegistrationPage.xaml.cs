@@ -30,21 +30,6 @@ namespace Drops.Views
 
             if(registrationSuccess == "REGISTER")
             {
-                // UsersMeta.PopulateUsers();
-
-                //Navigation.InsertPageBefore(new MapControlPage(), this);
-
-                //await Navigation.PopAsync();
-
-                // we need to navigate to login here
-
-                //await Application.Current.MainPage.Navigation.PushAsync(new LoginPage(){
-
-
-                //});
-
-                //Navigation.InsertPageBefore(new MapControlPage(), this);
-
                 UsersMeta.PopulateUsers();
 
                 await Navigation.PopAsync();

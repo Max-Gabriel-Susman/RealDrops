@@ -46,7 +46,6 @@ namespace Drops.ViewModels
 
         public bool ExistenceCheck(string username)
         {
-            
             foreach (DropsUser user in UsersMeta.Users)
             {
                 if (user.Username == username)
@@ -58,7 +57,6 @@ namespace Drops.ViewModels
                     return true;
                 }
             }
-
             return false;
         }
     }

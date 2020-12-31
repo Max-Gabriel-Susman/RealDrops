@@ -79,19 +79,5 @@ namespace Drops.ViewModels
 
             await CosmosDBService.UpdateArea(AreasMeta.ActiveArea);
         }
-
-        // I Think we're actually going to have to have this method signature in the xaml.cs file but we can keep logic here
-        //void OnDropSelected(object obj)
-        //{
-        //    // System.Diagnostics.Debug.WriteLine($"The index of the drop you've selected is {e.SelectedItemIndex}");
-
-        //    DropsPin drop = obj as DropsPin;
-
-        //    // AreasMeta.SelectedDrop = AreasMeta.ActiveAreaDropPins[];
-
-        //    Application.Current.MainPage.Navigation.InsertPageBefore(new DropDetailViewPage(), PagesMeta.ThisPage);
-
-        //    Application.Current.MainPage.Navigation.PopAsync();
-        //}
     }
 }

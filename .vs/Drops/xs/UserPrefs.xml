@@ -1,58 +1,57 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/RegistrationPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/LoginPage.xaml.cs">
     <Files>
-      <File FileName="Drops/Services/CosmosDBService.cs" Line="177" Column="12" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
-      <File FileName="Drops/Static/UsersMeta.cs" Line="113" Column="1" />
+      <File FileName="Drops/Services/CosmosDBService.cs" Line="87" Column="1" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="18" Column="10" />
+      <File FileName="Drops/Static/UsersMeta.cs" Line="48" Column="1" />
       <File FileName="Drops/Views/AreaCreationDetailView.xaml.cs" Line="26" Column="1" />
       <File FileName="Drops/Models/DropsArea.cs" />
       <File FileName="Drops/Models/DropsPin.cs" />
       <File FileName="Drops/Models/DropsUser.cs" />
-      <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" />
-      <File FileName="Drops/Views/LoginPage.xaml" />
+      <File FileName="Drops/ViewModels/MapControlPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml" Line="1" Column="1" />
       <File FileName="Drops/Views/MapControlPage.xaml" />
-      <File FileName="Drops.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Drops/Static/AreasMeta.cs" Line="47" Column="133" />
+      <File FileName="Drops.iOS/Main.cs" Line="10" Column="29" />
+      <File FileName="Drops/Static/AreasMeta.cs" Line="9" Column="32" />
       <File FileName="Drops/Helpers/APIKeys.cs" />
-      <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="57" Column="14" />
-      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="28" Column="65" />
-      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="32" Column="45" />
-      <File FileName="Drops/ViewModels/ValidationViewModel.cs" Line="47" Column="21" />
-      <File FileName="Drops/App.xaml.cs" />
-      <File FileName="Drops/Views/MapControlPage.xaml.cs" />
+      <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="32" Column="14" />
+      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="51" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="26" Column="1" />
+      <File FileName="Drops/ViewModels/ValidationViewModel.cs" Line="48" Column="10" />
+      <File FileName="Drops/App.xaml.cs" Line="117" Column="55" />
+      <File FileName="Drops/Views/MapControlPage.xaml.cs" Line="59" Column="47" />
       <File FileName="Drops/Resources/GeneralDevicesStyle.xaml" />
       <File FileName="Drops/Views/AreaListViewPage.xaml" />
-      <File FileName="Drops/ViewModels/PeopleListViewModel.cs" />
-      <File FileName="Drops/ViewModels/DropListViewModel.cs" />
-      <File FileName="Drops/ViewModels/DropDetailViewModel.cs" />
+      <File FileName="Drops/ViewModels/PeopleListViewModel.cs" Line="42" Column="16" />
+      <File FileName="Drops/ViewModels/DropListViewModel.cs" Line="81" Column="10" />
+      <File FileName="Drops/ViewModels/DropDetailViewModel.cs" Line="1" Column="1" />
       <File FileName="Drops/Views/AreaCreationOutOfOrderPage.xaml" />
       <File FileName="Drops/ViewModels/AreaCreationViewModel.cs" Line="1" Column="1" />
-      <File FileName="Drops/Static/DeviceMeta.cs" Line="1" Column="1" />
-      <File FileName="Drops/Static/PagesMeta.cs" Line="1" Column="1" />
+      <File FileName="Drops/Static/DeviceMeta.cs" Line="6" Column="32" />
+      <File FileName="Drops/Static/PagesMeta.cs" Line="5" Column="32" />
+      <File FileName="Drops/ViewModels/BaseViewModel.cs" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/AreaShareViewModel.cs" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/AreaListViewModel.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Drops" expanded="True">
             <Node name="Drops" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-                <Node name="SdkDependencies" expanded="True" />
-              </Node>
-              <Node name="Helpers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Resources" expanded="True" />
+              <Node name="Dependencies" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="Static" expanded="True" />
+              <Node name="SharedResources" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="AreaCreationDetailView.xaml" expanded="True" />
-                <Node name="LoginPage.xaml" expanded="True" />
-                <Node name="MapControlPage.xaml" expanded="True" />
-                <Node name="RegistrationPage.xaml" expanded="True">
-                  <Node name="RegistrationPage.xaml.cs" selected="True" />
+                <Node name="LoginPage.xaml" expanded="True">
+                  <Node name="LoginPage.xaml.cs" selected="True" />
                 </Node>
+                <Node name="MapControlPage.xaml" expanded="True" />
+                <Node name="PeopleListViewPage.xaml" expanded="True" />
+                <Node name="RegistrationPage.xaml" expanded="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
@@ -66,10 +65,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/prometheus/Desktop/Xamarin/Drops/Drops/ViewModels/RegistrationPageViewModel.cs" relfile="Drops/ViewModels/RegistrationPageViewModel.cs" line="33" column="1" />
-      <Breakpoint file="/Users/prometheus/Desktop/Xamarin/Drops/Drops/Views/AreaCreationDetailView.xaml.cs" relfile="Drops/Views/AreaCreationDetailView.xaml.cs" line="26" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
