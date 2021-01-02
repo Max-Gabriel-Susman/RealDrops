@@ -14,7 +14,7 @@ namespace Drops.ViewModels
         // CONSTRUCTORS
         public LoginPageViewModel()
         {
-            ConfigureValidationEntries("See GitHub README for Username", "See GitHub README for Password");
+            ConfigureValidationEntries("Enter your Username: ", "Enter your password: ");
 
             CredentialRecoveryCommand = new Command(() =>
             {
