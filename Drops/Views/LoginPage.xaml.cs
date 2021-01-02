@@ -33,6 +33,7 @@ namespace Drops.Views
             }
             else
             {
+                // we need visual feedback so the user knows their credential combination was invalid
                 vm.UsernameEntry = string.Empty;
 
                 vm.PasswordEntry = string.Empty;
