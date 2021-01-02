@@ -1,6 +1,6 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
-  <MonoDevelop.Ide.ItemProperties.Drops.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/LoginPage.xaml.cs">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
+  <MonoDevelop.Ide.ItemProperties.Drops.Android TriggeredFromHotReload="False" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/RegistrationPage.xaml">
     <Files>
       <File FileName="Drops/Services/CosmosDBService.cs" Line="87" Column="1" />
       <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="18" Column="10" />
@@ -16,8 +16,8 @@
       <File FileName="Drops/Static/AreasMeta.cs" Line="9" Column="32" />
       <File FileName="Drops/Helpers/APIKeys.cs" />
       <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="32" Column="14" />
-      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="51" Column="1" />
-      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="26" Column="1" />
+      <File FileName="Drops/ViewModels/LoginPageViewModel.cs" Line="18" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="36" Column="102" />
       <File FileName="Drops/ViewModels/ValidationViewModel.cs" Line="48" Column="10" />
       <File FileName="Drops/App.xaml.cs" Line="117" Column="55" />
       <File FileName="Drops/Views/MapControlPage.xaml.cs" Line="59" Column="47" />
@@ -34,6 +34,7 @@
       <File FileName="Drops/ViewModels/AreaShareViewModel.cs" Line="1" Column="1" />
       <File FileName="Drops/ViewModels/AreaListViewModel.cs" Line="1" Column="1" />
       <File FileName="Drops/Views/PeopleListViewPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/RegistrationPage.xaml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -46,12 +47,10 @@
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="AreaCreationDetailView.xaml" expanded="True" />
-                <Node name="LoginPage.xaml" expanded="True">
-                  <Node name="LoginPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="LoginPage.xaml" expanded="True" />
                 <Node name="MapControlPage.xaml" expanded="True" />
                 <Node name="PeopleListViewPage.xaml" expanded="True" />
-                <Node name="RegistrationPage.xaml" expanded="True" />
+                <Node name="RegistrationPage.xaml" expanded="True" selected="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>

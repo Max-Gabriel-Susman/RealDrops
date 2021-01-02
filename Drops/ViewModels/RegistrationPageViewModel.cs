@@ -14,7 +14,7 @@ namespace Drops.ViewModels
         // CONSTRUCTORS
         public RegistrationPageViewModel()
         {
-            ConfigureValidationEntries("Create a new username", "Create a new password");
+            ConfigureValidationEntries("Enter a new username", "Enter a new password");
         }
         // METHODS
         public string RegistrationValidation(string username, string password)
