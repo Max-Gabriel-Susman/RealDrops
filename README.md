@@ -1,7 +1,5 @@
 # Drops
 
-## !LoginPage logo is currenly not present on android because I need to make a vectorDrawable of it!
-
 ## Description
 
 RealDrops is an outdoor Sales Lead management application that allows users to represent potential leads and other entities with a pin(referred to as a drop) using their devices default maps API. Drops are persisted in collections that are members of area objects that have a pair of coordinates to center the map view upon rendering.
