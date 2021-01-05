@@ -7,28 +7,16 @@
     <ContentPage.BindingContext>
         <local:LoginPageViewModel/>
     </ContentPage.BindingContext>
-
-
     <ContentPage.Content>
-    
-        
-        
-
         <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
                      Orientation="Vertical"
                      Padding="20"
                      Spacing="8">
-
-            <!-- I'm going to assign Source to a Property via data binding that is in turn dynamically assinged based on device os and idiom -->
-            <!--<Image Source="dropsglyph.pdf"
+            <Image Source="{OnPlatform iOS=dropsglyph.pdf, Android=Drops.png}"
                    WidthRequest="{OnPlatform iOS=300, Android=250}"
-                   HorizontalOptions="Center" />-->
-
-            <!-- I'm temporarily going to use a raster Source until I can fix rendering problem on android -->
-            <Image Source="{OnPlatform iOS=dropsglyph.pdf}"
-                   WidthRequest="{OnPlatform iOS=300, Android=250}"
-                   HorizontalOptions="Center" /> 
+                   HorizontalOptions="Center" />
+            
 
             <Entry Placeholder="{Binding UsernamePlaceholder}"
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"
@@ -69,6 +57,8 @@
                     Margin="10,10,10,0"/>
                     
         </StackLayout>
-
     </ContentPage.Content>
+
+    
+    
 </ContentPage>

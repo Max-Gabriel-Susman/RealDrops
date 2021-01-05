@@ -658,7 +658,9 @@
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/res/mipmap-xxxhdpi/launcher_foreground.png
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/res/drawable/registrationglyph.pdf
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/res/drawable/dropsglyph.pdf
-/Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/res/drawable/dropsglyph.png
+/Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/res/drawable/dropsglyph.jpg
+/Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/res/drawable/xamarinlogo.png
+/Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/res/drawable/drops.png
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/uploadflags.txt
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/resolvedassemblies.hash
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.Android/obj/Debug/android/assets/Drops.Android.dll

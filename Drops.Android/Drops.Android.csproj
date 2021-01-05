@@ -100,7 +100,15 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\dropsglyph.png">
+    <AndroidResource Include="Resources\drawable\dropsglyph.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\XamarinLogo.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Drops.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
