@@ -15,44 +15,6 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./Registration.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Registration.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Registration.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Registration.png.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Registration.png.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Registration.png.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Registration.png.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Registration.png.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "Registration.png" has 8 unassigned children.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Drops.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Drops.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Drops.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Drops.png.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Drops.png.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Drops.png.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Drops.png.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Drops.png.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "Drops.png" has 8 unassigned children.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./Drops.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
 				<string>./Drops.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
 				<string>./Drops.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
@@ -85,6 +47,25 @@
 			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>The image set "Registration.png" has 8 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Drops.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Drops.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Drops.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Drops.png.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Drops.png.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Drops.png.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Drops.png.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Drops.png.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "Drops.png" has 8 unassigned children.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>
@@ -109,6 +90,25 @@
 			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>The app icon set "AppIcon" has 13 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Registration.png.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Registration.png.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Registration.png.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Registration.png.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Registration.png.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Registration.png.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Registration.png.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Registration.png.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-14.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "Registration.png" has 8 unassigned children.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>

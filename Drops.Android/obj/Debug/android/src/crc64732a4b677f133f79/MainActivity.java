@@ -10,6 +10,7 @@ public class MainActivity
 	public static final String __md_methods;
 	static {
 		__md_methods = 
+			"n_onConfigurationChanged:(Landroid/content/res/Configuration;)V:GetOnConfigurationChanged_Landroid_content_res_Configuration_Handler\n" +
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onStart:()V:GetOnStartHandler\n" +
 			"n_onRequestPermissionsResult:(I[Ljava/lang/String;[I)V:GetOnRequestPermissionsResult_IarrayLjava_lang_String_arrayIHandler\n" +
@@ -24,6 +25,14 @@ public class MainActivity
 		if (getClass () == MainActivity.class)
 			mono.android.TypeManager.Activate ("Drops.Droid.MainActivity, Drops.Android", "", this, new java.lang.Object[] {  });
 	}
+
+
+	public void onConfigurationChanged (android.content.res.Configuration p0)
+	{
+		n_onConfigurationChanged (p0);
+	}
+
+	private native void n_onConfigurationChanged (android.content.res.Configuration p0);
 
 
 	public void onCreate (android.os.Bundle p0)
