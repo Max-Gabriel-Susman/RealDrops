@@ -13,10 +13,10 @@
                      Orientation="Vertical"
                      Padding="20"
                      Spacing="8">
-            <Image Source="{OnPlatform iOS=dropsglyph.pdf, Android=Drops.png}"
-                   WidthRequest="{OnPlatform iOS=300, Android=250}"
+
+            <Image Source="Drops.png"
+                   WidthRequest="{OnPlatform iOS=300, Android=300}"
                    HorizontalOptions="Center" />
-            
 
             <Entry Placeholder="{Binding UsernamePlaceholder}"
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"
@@ -38,8 +38,6 @@
                     Margin="55,0,55,5"
                     HeightRequest="{OnPlatform Android=45, iOS=35}"
                     Clicked="OnLoginButtonClicked"/>
-
-            <!-- Registration is currently under testing -->
 
             <Button Text="Registration"
                     Margin="75,0,75,0"

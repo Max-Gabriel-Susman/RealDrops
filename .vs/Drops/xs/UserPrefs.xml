@@ -1,9 +1,19 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android TriggeredFromHotReload="False" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Views/LoginPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/App.xaml.cs">
     <Files>
       <File FileName="Drops/Views/LoginPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/LoginPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml" Line="17" Column="38" />
+      <File FileName="Drops.Android/Properties/AndroidManifest.xml" />
+      <File FileName="Drops/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="../../../Downloads/Drops.png" />
+      <File FileName="Drops/Views/RegistrationPage.xaml" Line="15" Column="44" />
+      <File FileName="Drops/Resources/GeneralDevicesStyle.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Resources/GeneralDevicesStyle.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/Resources/MainPage.xaml" Line="1" Column="1" />
+      <File FileName="Drops/Resources/SmallDevicesStyle.xaml" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="Drops/App.xaml" Line="15" Column="66" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,19 +22,25 @@
             <Node name="Drops" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Models" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="GeneralDevicesStyle.xaml" expanded="True" />
+              </Node>
               <Node name="Services" expanded="True" />
               <Node name="SharedResources" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="AreaCreationDetailView.xaml" expanded="True" />
-                <Node name="LoginPage.xaml" expanded="True" selected="True" />
+                <Node name="LoginPage.xaml" expanded="True" />
                 <Node name="MapControlPage.xaml" expanded="True" />
                 <Node name="PeopleListViewPage.xaml" expanded="True" />
                 <Node name="RegistrationPage.xaml" expanded="True" />
               </Node>
-              <Node name="App.xaml" expanded="True" />
+              <Node name="App.xaml" expanded="True">
+                <Node name="App.xaml.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="Drops.Android" expanded="True">
+              <Node name="Packages" expanded="True" />
               <Node name="Resources" expanded="True">
                 <Node name="drawable" expanded="True" />
               </Node>

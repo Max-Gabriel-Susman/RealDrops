@@ -12,7 +12,7 @@
             Padding="20"
             Spacing="8">
 
-            <Image Source="{OnPlatform iOS=registrationglyph.pdf}"
+            <Image Source="Registration.png"
                    WidthRequest="{OnPlatform iOS=200, Android=250}"
                    HeightRequest="{OnPlatform iOS=200, Android=250}"
                    HorizontalOptions="Center" />
