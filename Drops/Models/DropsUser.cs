@@ -7,11 +7,9 @@ using Newtonsoft.Json.Serialization;
 
 namespace Drops.Models
 {
-    public class DropsUser : INotifyPropertyChanged
+    public class DropsUser 
     {
         // PROPERTIES
-        public event PropertyChangedEventHandler PropertyChanged;
-
         string id;
         [JsonProperty("id")]
         public string ID
@@ -23,8 +21,6 @@ namespace Drops.Models
                     return;
 
                 id = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -39,8 +35,6 @@ namespace Drops.Models
                     return;
 
                 username = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -55,8 +49,6 @@ namespace Drops.Models
                     return;
 
                 password = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -71,8 +63,6 @@ namespace Drops.Models
                     return;
 
                 activeArea = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -87,18 +77,7 @@ namespace Drops.Models
                     return;
 
                 areas = value;
-
-                HandlePropertyChanged();
             }
         }
-
-        // METHODS
-        void HandlePropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var eventArgs = new PropertyChangedEventArgs(propertyName);
-
-            PropertyChanged?.Invoke(this, eventArgs);
-        }
-
     }
 }

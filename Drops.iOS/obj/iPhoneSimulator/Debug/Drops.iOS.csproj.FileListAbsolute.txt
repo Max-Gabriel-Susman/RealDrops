@@ -145,3 +145,4 @@
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csproj.CopyComplete
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.exe
 /Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.pdb
+/Users/prometheus/Desktop/Xamarin/Drops/Drops.iOS/obj/iPhoneSimulator/Debug/Drops.iOS.csprojAssemblyReference.cache

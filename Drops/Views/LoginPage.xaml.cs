@@ -38,14 +38,14 @@ namespace Drops.Views
 
                 vm.PasswordEntry = string.Empty;
 
-                //vm.UsernamePlaceholder = "Incorrect credential combination";
+                vm.UsernamePlaceholder = "Incorrect credential combination";
 
-                //vm.PasswordPlaceholder = "Incorrect credential combination";
+                vm.PasswordPlaceholder = "Incorrect credential combination";
 
-                //// let's change the text color to red and maybe the background color to pinkish
-                //vm.UsernamePlaceholderColor = string.Empty;
+                // let's change the text color to red and maybe the background color to pinkish
+                vm.UsernamePlaceholderColor = "Red";
 
-                //vm.PasswordPlaceholderColor = string.Empty;
+                vm.PasswordPlaceholderColor = "Red";
 
                 System.Diagnostics.Debug.WriteLine("login failed");
             }

@@ -13,8 +13,6 @@ namespace Drops.Models
     public class DropsArea
     {
         // PROPERTIES
-        public event PropertyChangedEventHandler PropertyChanged;
-
         int dropsCreated;
         [JsonProperty("dropsCount")]
         public int DropsCreated
@@ -26,8 +24,6 @@ namespace Drops.Models
                     return;
 
                 dropsCreated = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -42,8 +38,6 @@ namespace Drops.Models
                     return;
 
                 id = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -58,8 +52,6 @@ namespace Drops.Models
                     return;
 
                 latitude = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -74,8 +66,6 @@ namespace Drops.Models
                     return;
 
                 longitude = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -90,8 +80,6 @@ namespace Drops.Models
                     return;
 
                 subscribers = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -106,8 +94,6 @@ namespace Drops.Models
                     return;
 
                 areaName = value;
-
-                HandlePropertyChanged();
             }
         }
 
@@ -122,17 +108,7 @@ namespace Drops.Models
                     return;
 
                 jsonPins = value;
-
-                HandlePropertyChanged();
             }
-        }
-
-        // METHODS
-        void HandlePropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var eventArgs = new PropertyChangedEventArgs(propertyName);
-
-            PropertyChanged?.Invoke(this, eventArgs);
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android TriggeredFromHotReload="False" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops.Android/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Models/DropsUser.cs">
     <Files>
-      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Drops/Views/LoginPage.xaml" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="46" Column="51" />
+      <File FileName="Drops/Views/LoginPage.xaml" Line="34" Column="47" />
       <File FileName="Drops.Android/Properties/AndroidManifest.xml" />
-      <File FileName="Drops/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/App.xaml.cs" />
       <File FileName="Drops/Views/RegistrationPage.xaml" />
       <File FileName="Drops/Resources/GeneralDevicesStyle.xaml" />
       <File FileName="Drops/Resources/GeneralDevicesStyle.xaml.cs" />
@@ -14,7 +14,10 @@
       <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
       <File FileName="Drops/App.xaml" />
       <File FileName="Drops.iOS/Info.plist" />
-      <File FileName="Drops.Android/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="Drops.Android/MainActivity.cs" />
+      <File FileName="Drops/Models/DropsArea.cs" Line="26" Column="38" />
+      <File FileName="Drops/Models/DropsUser.cs" Line="10" Column="28" />
+      <File FileName="Drops/Models/DropsPin.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +25,9 @@
           <Node name="Drops" expanded="True">
             <Node name="Drops" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="DropsUser.cs" selected="True" />
+              </Node>
               <Node name="Resources" expanded="True">
                 <Node name="GeneralDevicesStyle.xaml" expanded="True" />
               </Node>
@@ -39,10 +44,7 @@
               <Node name="App.xaml" expanded="True" />
             </Node>
             <Node name="Drops.Android" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
-              </Node>
-              <Node name="MainActivity.cs" selected="True" />
+              <Node name="Properties" expanded="True" />
             </Node>
             <Node name="Drops.iOS" expanded="True" />
           </Node>

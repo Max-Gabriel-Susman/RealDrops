@@ -22,14 +22,16 @@
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"
                    FontSize="14"
                    Text="{Binding UsernameEntry}"
-                   Margin="15,20,15,0"/>
+                   Margin="15,20,15,0"
+                   IsSpellCheckEnabled="False"/>
 
             <Entry Placeholder="{Binding PasswordPlaceholder}"
                    PlaceholderColor="{Binding PasswordPlaceholderColor}"
                    FontSize="14"
                    IsPassword="True"
                    Text="{Binding PasswordEntry}"
-                   Margin="15,0,15,8"/>
+                   Margin="15,0,15,8"
+                   IsSpellCheckEnabled="False"/>
 
             <Button Text="Login"
                     FontSize="20"
