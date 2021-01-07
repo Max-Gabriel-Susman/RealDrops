@@ -18,11 +18,16 @@
                    WidthRequest="{OnPlatform iOS=300, Android=300}"
                    HorizontalOptions="Center" />
 
+            <Label IsVisible="False"
+                   TextColor="DarkRed"
+                   Margin="15,20,15,0"
+                   Text="Invalid Credential Combination"/>
+
             <Entry Placeholder="{Binding UsernamePlaceholder}"
                    PlaceholderColor="{Binding UsernamePlaceholderColor}"
                    FontSize="14"
                    Text="{Binding UsernameEntry}"
-                   Margin="15,20,15,0"
+                   Margin="15,5,15,0"
                    IsSpellCheckEnabled="False"/>
 
             <Entry Placeholder="{Binding PasswordPlaceholder}"

@@ -18,11 +18,15 @@ namespace Drops.ViewModels
 
             CredentialRecoveryCommand = new Command(() =>
             {
+                System.Diagnostics.Debug.WriteLine("Nav to cred recovery invoked");
+
                 Application.Current.MainPage.Navigation.PushAsync(new LostCredentialsViewPage());
             });
 
             NavToRegistrationCommand = new Command(() =>
             {
+                System.Diagnostics.Debug.WriteLine("Nav to reg invoked");
+
                 Application.Current.MainPage.Navigation.PushAsync(new RegistrationPage());
 
 

@@ -1,58 +1,32 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{50B82791-D9F0-4FF6-A21E-D00691CC0292}|Default">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{84869017-754A-4353-91F2-B6C28256F9C5}|Default">
   <MonoDevelop.Ide.ItemProperties.Drops.Android TriggeredFromHotReload="False" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/Models/DropsUser.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drops/ViewModels/RegistrationPageViewModel.cs">
     <Files>
-      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="46" Column="51" />
-      <File FileName="Drops/Views/LoginPage.xaml" Line="34" Column="47" />
-      <File FileName="Drops.Android/Properties/AndroidManifest.xml" />
-      <File FileName="Drops/App.xaml.cs" />
-      <File FileName="Drops/Views/RegistrationPage.xaml" />
-      <File FileName="Drops/Resources/GeneralDevicesStyle.xaml" />
-      <File FileName="Drops/Resources/GeneralDevicesStyle.xaml.cs" />
-      <File FileName="Drops/Resources/MainPage.xaml" />
-      <File FileName="Drops/Resources/SmallDevicesStyle.xaml" />
-      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" />
-      <File FileName="Drops/App.xaml" />
-      <File FileName="Drops.iOS/Info.plist" />
-      <File FileName="Drops.Android/MainActivity.cs" />
-      <File FileName="Drops/Models/DropsArea.cs" Line="26" Column="38" />
-      <File FileName="Drops/Models/DropsUser.cs" Line="10" Column="28" />
-      <File FileName="Drops/Models/DropsPin.cs" Line="1" Column="1" />
+      <File FileName="Drops/Views/LoginPage.xaml.cs" Line="39" Column="49" />
+      <File FileName="Drops/Views/LoginPage.xaml" Line="24" Column="59" />
+      <File FileName="Drops/Views/RegistrationPage.xaml" Line="26" Column="20" />
+      <File FileName="Drops/Views/RegistrationPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Drops/ViewModels/RegistrationPageViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Drops" expanded="True">
             <Node name="Drops" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="DropsUser.cs" selected="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="RegistrationPageViewModel.cs" selected="True" />
               </Node>
-              <Node name="Resources" expanded="True">
-                <Node name="GeneralDevicesStyle.xaml" expanded="True" />
-              </Node>
-              <Node name="Services" expanded="True" />
-              <Node name="SharedResources" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="AreaCreationDetailView.xaml" expanded="True" />
                 <Node name="LoginPage.xaml" expanded="True" />
-                <Node name="MapControlPage.xaml" expanded="True" />
-                <Node name="PeopleListViewPage.xaml" expanded="True" />
                 <Node name="RegistrationPage.xaml" expanded="True" />
               </Node>
-              <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Drops.Android" expanded="True">
-              <Node name="Properties" expanded="True" />
-            </Node>
-            <Node name="Drops.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Drops.iOS Xamarin.HotReload.DebuggerTimeoutException.Drops.iOS.HideInfoBar="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.50268405-04F0-48B9-AEEC-3E7F4A0FC5EC" />
+  <MonoDevelop.Ide.ItemProperties.Drops.iOS Xamarin.HotReload.DebuggerTimeoutException.Drops.iOS.HideInfoBar="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9177B6B8-530C-4679-A261-A4F41A3B0D5A" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
